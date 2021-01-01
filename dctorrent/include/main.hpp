@@ -27,66 +27,39 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "main.hpp"
+
+#pragma once
+
+#include <iostream>
+#include <exception>
+
+#include <app.hpp>
 
 
 
 
-class Command{
 
-protected:
-
-    std::string name_;
-    size_t minArgv_;
-    size_t maxArgv_;
-public:
-
-    Command(const std::vector<std::string> argv){
-
-
-     ~Command(){}
-
-    size_t maximumArguments()const{
-        return maxArgv_;
-    }
-
-    size_t minimumArguments()const{
-        return minArgv_;
-    }
-
-     size_t currentArguments()const{
-        return 0;
-    }
-
-     std::string atArgument(const size_t& index)const{
-        return {};
-    }
-
-    std::string name()const{
-        return name_;
-    }
-
-};
+int main(int argc, char **argv );
 
 
 
 
 
 
-int main( int argc, char** argv ){
 
 
 
-    try {
-        App app(argc,argv);
-        std::cout << nlohmann::json({"dctorrent",{"status","run"}})<<std::endl;
-        return  app.run();
 
-    } catch (std::exception const& exception) {
-        std::cerr << "ERROR: " << exception.what() << std::endl;
-        return  EXIT_FAILURE;
-    }
-}
+
+
+
+
+
+
+
+
+
+
 
 
 

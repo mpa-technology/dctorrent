@@ -28,72 +28,28 @@
  */
 
 
+#pragma once
+#include <string>
+#include <exception>
 
-#include "TorrentService.hpp"
-
-
-void TorrentService::updateTorrent_(){
-
-
+class NotImplementedException_ : public std::exception{
 
 
+    std::string msg_;
 
-}
-
-TorrentService::TorrentService(){
-
-}
-
-std::vector<Torrent> TorrentService::torrentHandle() const
-{
-return torrentHandle_;
-}
+public:
 
 
-void TorrentService::addTorrent(const std::string &path , const std::string& savePath){
-    auto torrent = session_.addTorrent(path,savePath);
-    torrent.update();
-    torrentHandle_.push_back(torrent);
-}
+    NotImplementedException_(const std::string &fnName , const std::string &msg);
 
-void TorrentService::update(){
-    for(auto& it: torrentHandle_){
-        it.update();
 
-    }
-}
+    virtual  ~NotImplementedException_();
 
-void TorrentService::start(){
-    //thread_ = std::thread(&TorrentService::update,this);
-    appIsRun_ = true;
-}
 
-TorrentService::~TorrentService(){
-    appIsRun_ = false;
-    //thread_.join();
+    virtual const char* what() const noexcept;
 
-}
 
-void TorrentService::resumeAll(){
+};
 
-    for(auto& it : torrentHandle_)
-        it.resumeAll();
 
-}
-
-void TorrentService::pauseAll(){
-
-    for(auto& it : torrentHandle_)
-        it.pauseAll();
-
-}
-
-void TorrentService::pause(const size_t &tid, const size_t &fid){
-
-    torrentHandle_.at(tid).pause(fid);
-
-}
-
-void TorrentService::resume(const size_t &tid, const size_t &fid){
-    torrentHandle_.at(tid).resume(fid);
-}
+#define NotImplementedException(msg) NotImplementedException_(__func__,msg)

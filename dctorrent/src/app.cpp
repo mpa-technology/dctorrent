@@ -28,19 +28,67 @@
  */
 
 
+#include "app.hpp"
 
-#include "Session.hpp"
 
 
-Torrent Session::addTorrent(const std::string &path , const std::string& savePath){
-    lt::add_torrent_params p;
-    p.save_path = savePath.empty() ? "./" : savePath;
-    lt::add_torrent_params ap;
-    p.ti = boost::make_shared<lt::torrent_info>(path);
-    return  session_.add_torrent(p);
+App::App(int argc, char **argv){
+
+    appPath_ = argv[0];
+
+    for(int i = 1 ; i != argc; ++i)
+        arguments_.push_back(argv[i]);
+
 }
 
-void Session::removeTorrent(const size_t &id){
-    session_.remove_torrent(torrentList_.at(id).getTorrentHandle());
-    torrentList_.erase(torrentList_.begin()+id);
+int App::run(){
+
+
+    if(arguments_.empty()){
+        std::cerr << "argc == 1 " << std::endl;
+        return EXIT_SUCCESS;
+    }
+
+
+    session_ = std::make_unique<Session>();
+
+    TorrentInfo torrentInfo(arguments_.at(0));
+    torrentInfo.setSavePath( arguments_.size() >= 2 ? arguments_.at(1) : "." );
+
+    auto torrent = session_->addTorrent(std::move(torrentInfo));
+
+
+    std::string inputStr;
+
+
+    while (true) {
+
+
+
+        std::cin >> inputStr;
+
+        if(inputStr == "exit")
+            break;
+
+        if(inputStr == "info"){
+
+
+            std::cout << torrent.name() << '\t' << torrent.isFinished() << std::endl;
+
+            for( const auto& it : torrent.getNode()){
+
+                const auto progress = std::ceil( 100.0/static_cast<float>(it.size)*static_cast<float>(it.progress));
+                std::string priority = !it.priority ? "[pause]" : "";
+
+
+                std::cout << it.id <<  ") " << priority << it.name  <<  '\t' << progress << '%' << std::endl;
+            }
+
+
+        }
+
+
+    }
+
+    return EXIT_SUCCESS;
 }

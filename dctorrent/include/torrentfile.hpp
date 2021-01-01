@@ -27,63 +27,43 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#pragma once
+
+#include <torrentnode.hpp>
+
+#include <vector>
+#include <string>
 
 
-#include "TorrentFile.hpp"
+#ifndef TORRENT_NO_DEPRECATE
+#define TORRENT_NO_DEPRECATE
+#endif
+
+#include <libtorrent/torrent_handle.hpp>
+#include <libtorrent/torrent_status.hpp>
+
+class TorrentFile{
+
+    lt::torrent_handle torrentHandle_;
+    std::vector<TorrentNode>torrentNodes_;
+
+public:
 
 
-std::uint64_t TorrentFile::size() const
-{
-return size_;
-}
-
-void TorrentFile::setSize(const std::uint64_t &size)
-{
-size_ = size;
-}
-
-std::int64_t TorrentFile::progress() const
-{
-return progress_;
-}
-
-void TorrentFile::setProgress(std::int64_t progress)
-{
-progress_ = progress;
-}
-
-std::size_t TorrentFile::id() const
-{
-    return id_;
-}
-
-void TorrentFile::setId(const std::size_t &id)
-{
-    id_ = id;
-}
-
-size_t TorrentFile::status() const
-{
-    return status_;
-}
-
-void TorrentFile::setStatus(const size_t &status)
-{
-    status_ = status;
+    TorrentFile(lt::torrent_handle th);
 
 
-}
+    void pause(const int &id);
 
-TorrentFile::TorrentFile():progress_(0), size_(0) {
-    status_ = 0;
-}
+    void resume(const int &id);
 
-std::string TorrentFile::name() const
-{
-    return name_;
-}
 
-void TorrentFile::setName(const std::string &name)
-{
-    name_ = name;
-}
+    std::vector<TorrentNode> getNode();
+
+
+    bool isFinished()const;
+
+    std::string name()const;
+
+
+};
