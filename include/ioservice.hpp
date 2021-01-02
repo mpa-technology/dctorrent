@@ -36,36 +36,23 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/locale.hpp>
 
+#include <nlohmann/json.hpp>
+
 #include <torrentfile.hpp>
+#include <respons.hpp>
+
+#include <boost/signals2.hpp>
 
 class IoService{
-
-
-
-
-    const std::array<std::string,4>comands_{"exit","info","pause","resume"};
-
-    //TODO:rename
-    std::vector<std::string> getComand_(const std::string& line);
-
-
-    void cm_info(TorrentFile& torrentFile);
-
-
-    void cm_pause(TorrentFile& torrentFile,const int& id);
-
-    void cm_resume(TorrentFile& torrentFile,const int& id);
-
-
 public:
 
 
     IoService();
 
 
+    void work(const std::vector<TorrentFile> &torrentFiles );
 
-    bool work(TorrentFile& torrentFile );
-
+    boost::signals2::signal<void()>onExit;
 
 };
 

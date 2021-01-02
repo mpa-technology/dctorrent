@@ -8,11 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_compile_options(
     -Werror
-
     -Wall
     -Wextra
     -Wpedantic
-
     -Wcast-align
     -Wcast-qual
     -Wconversion

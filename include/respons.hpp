@@ -27,78 +27,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <app.hpp>
 
 
-App::App(int argc, char **argv){
-
-
-    ioService_ = std::make_unique<IoService>();
-
-    ioService_->onExit.connect(std::bind(&App::onExit_,this));
-
-    appPath_ = argv[0];
-
-    for(int i = 1 ; i != argc; ++i)
-        arguments_.push_back(argv[i]);
-
-    flags_.run = true;
-
-}
+#pragma once
 
 
 
+enum class RESPONSE_CODE{
 
-
-
-void App::onExit_(){
-    flags_.run = false;
-}
-
-
-
-
-int App::run(){
-
-
-    if(arguments_.empty()){
-
-        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::START_FAILURE} , {"message" , "argv==1"} } << '\n';
-        return EXIT_SUCCESS;
-    }
-
-
-    session_ = std::make_unique<Session>();
-
-
-    for(const auto& it : arguments_){
-        TorrentInfo torrentInfo(it);
-        torrentInfo.setSavePath(std::string("."));
-        session_->addTorrent(std::move(torrentInfo));
-    }
-
-
-    std::cout << nlohmann::json{ {"code", RESPONSE_CODE::START_OK} , {"message" , "start"} } << '\n';
-
-
-    while (flags_.run) {
-
-        auto& torrentList = session_->get();
-
-        for(auto& it : torrentList)
-            it.update();
-
-
-        ioService_->work(torrentList);
-
-
-
-
-    }
-
-
-    std::cout << nlohmann::json{ {"code", RESPONSE_CODE::EXIT_OK} , {"message" , "exit"}} << '\n';
-
-
-    return EXIT_SUCCESS;
-}
+        START_FAILURE,
+        START_OK,
+        EXIT_OK,
+        CODE_OK,
+        CODE_ERROR
+};

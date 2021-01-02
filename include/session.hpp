@@ -52,13 +52,14 @@ class Session{
 
     std::vector<lt::torrent_handle>torrentHandles_;
 
+    std::vector<TorrentFile>torrentFiles_;
 
 public:
 
+    std::vector<TorrentFile> &get();
 
 
-
-    lt::session& session();
+    lt::session &session();
 
 
     TorrentFile addTorrent(TorrentInfo &&tf);

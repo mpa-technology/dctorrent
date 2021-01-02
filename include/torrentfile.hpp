@@ -29,7 +29,6 @@
 
 #pragma once
 
-#include <torrentnode.hpp>
 
 #include <vector>
 #include <string>
@@ -42,32 +41,36 @@
 #include <libtorrent/torrent_handle.hpp>
 #include <libtorrent/torrent_status.hpp>
 
+#include <nlohmann/json.hpp>
+
+#include <torrentnode.hpp>
+
+
 class TorrentFile{
 
     lt::torrent_handle torrentHandle_;
     std::vector<TorrentNode>torrentNodes_;
 
 public:
-
+    TorrentFile();
 
     TorrentFile(lt::torrent_handle th);
-
 
     void pause(const int &id);
 
     void resume(const int &id);
 
+    float totalProgress()const;
 
-    float totalProgress()const{
-      return  torrentHandle_.status().progress;
-    }
+    std::vector<TorrentNode> getNode()const;
 
-    std::vector<TorrentNode> getNode();
-
+    void update();
 
     bool isFinished()const;
 
     std::string name()const;
+
+    nlohmann::json json()const;
 
 
 };

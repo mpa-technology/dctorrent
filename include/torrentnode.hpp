@@ -46,7 +46,7 @@ struct TorrentNode{
     std::int64_t progress;
     lt::file_index_t index;
 
-    //TODO: fix
+    //FIXME: add eunem
     //0 stop 1 def
     int priority;
 

@@ -66,9 +66,13 @@ void TorrentFile::resume(const int &id){
     torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::default_priority);
 }
 
-std::vector<TorrentNode> TorrentFile::getNode(){
+std::vector<TorrentNode> TorrentFile::getNode() const{
 
 
+    return torrentNodes_;
+}
+
+void TorrentFile::update(){
     auto files = torrentHandle_.torrent_file()->files();
 
     for( auto& it : torrentNodes_){
@@ -84,9 +88,6 @@ std::vector<TorrentNode> TorrentFile::getNode(){
 
     }
 
-
-
-    return torrentNodes_;
 }
 
 bool TorrentFile::isFinished() const{
@@ -95,4 +96,39 @@ bool TorrentFile::isFinished() const{
 
 std::__cxx11::string TorrentFile::name() const{
     return torrentHandle_.status().name;
+}
+
+nlohmann::json TorrentFile::json() const{
+    nlohmann::json json{ {"name",name()}};
+    std::vector<nlohmann::json> tlist;
+
+    for(auto& it : getNode()){
+
+        nlohmann::json obj{
+            {"id",it.id},
+            {"name",it.name},
+            {"priority",it.priority},
+            {"progress",it.progress},
+            {"size",it.size}
+
+        };
+
+
+        tlist.push_back(obj);
+
+
+    }
+
+
+
+    json["torrent"]=tlist;
+
+
+    return json;
+}
+
+TorrentFile::TorrentFile(){}
+
+float TorrentFile::totalProgress() const{
+    return  torrentHandle_.status().progress;
 }

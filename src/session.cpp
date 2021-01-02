@@ -30,6 +30,11 @@
 
 #include <session.hpp>
 
+
+std::vector<TorrentFile> &Session::get(){
+    return torrentFiles_;
+}
+
 libtorrent::session &Session::session(){
     return session_;
 }
@@ -40,6 +45,8 @@ TorrentFile Session::addTorrent(TorrentInfo &&tf){
 
     torrentHandles_.push_back(th);
     torrentInfos_.push_back(std::move(tf));
+
+    torrentFiles_.push_back(th);
 
     return th;
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.0, 2021-01-02T16:34:04. -->
+<!-- Written by QtCreator 4.14.0, 2021-01-02T23:21:21. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -194,6 +194,7 @@
        <value type="QString">all</value>
       </valuelist>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -207,6 +208,7 @@
        <value type="QString">clean</value>
       </valuelist>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Сборка</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -340,7 +342,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">dctorrent</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.dctorrent</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">dctorrent</value>
-    <value type="QString" key="RunConfiguration.Arguments">C:\Users\maxim\Downloads\1.torrent</value>
+    <value type="QString" key="RunConfiguration.Arguments">C:\Users\maxim\Downloads\1.torrent C:\Users\maxim\Downloads\2.torrent</value>
     <value type="bool" key="RunConfiguration.Arguments.multi">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

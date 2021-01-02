@@ -31,8 +31,12 @@
 
 #include <iostream>
 #include <memory>
+
 #include <session.hpp>
 #include <ioservice.hpp>
+#include <respons.hpp>
+
+
 
 class App{
 
@@ -43,6 +47,11 @@ class App{
     std::unique_ptr<Session>session_;
     std::unique_ptr<IoService>ioService_;
 
+    void onExit_();
+
+    struct{
+        bool run;
+    }flags_;
 
 public:
 

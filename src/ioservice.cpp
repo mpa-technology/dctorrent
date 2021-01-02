@@ -32,56 +32,6 @@
 #include <ioservice.hpp>
 
 
-std::vector<std::string> IoService::getComand_(const std::string &line){
-
-    std::vector<std::string>list;
-
-    boost::split(list,line,boost::is_any_of(" "));
-
-    return list;
-}
-
-void IoService::cm_info(TorrentFile &torrentFile){
-
-    std::cout << torrentFile.name() << '\t' <<   (!torrentFile.isFinished()?"[in process]":"[finish]") << ' ' << torrentFile.totalProgress()  << '\n';
-
-    for( const auto& it : torrentFile.getNode()){
-
-        const auto progress = std::ceil( 100.0/static_cast<float>(it.size)*static_cast<float>(it.progress));
-        std::string priority = !it.priority ? "[pause]" : "";
-
-
-        std::cout << it.id <<  ") " << priority << it.name  <<  '\t' << progress << '%' << '\n';
-    }
-
-}
-
-void IoService::cm_pause(TorrentFile &torrentFile, const int &id){
-
-    try {
-        torrentFile.pause(id);
-        std::cout << "torrent file pause" << '\n';
-    }  catch (const std::out_of_range& exp) {
-        std::cerr << "id: " << id << "not found" << '\n';
-
-    }
-
-
-}
-
-void IoService::cm_resume(TorrentFile &torrentFile, const int &id){
-
-    try {
-        torrentFile.resume(id);
-        std::cout << "torrent file pause" << '\n';
-    }  catch (const std::out_of_range& exp) {
-        std::cerr << "id: " << id << "not found" << '\n';
-
-    }
-
-
-}
-
 IoService::IoService(){
 
     boost::locale::generator gen;
@@ -91,51 +41,37 @@ IoService::IoService(){
     std::cerr.imbue(loc);
 }
 
-bool IoService::work(TorrentFile &torrentFile){
+void IoService::work(const std::vector<TorrentFile>& torrentFiles){
 
     std::flush(std::cout);
-
 
     std::string inputStr;
 
     std::getline(std::cin,inputStr);
 
-    const auto commnd = getComand_(inputStr);
 
+    auto resp = nlohmann::json::parse(inputStr);
+    const std::vector<std::string>argv = resp;
 
-    if(commnd.empty())
-        return true;
-
-
-    if(std::find(comands_.begin(), comands_.end(), comands_.at(0)) == comands_.end()){
-        std::cerr << "comand: " << commnd.at(0) << " not found" << '\n';
-        return true;
+    if(argv.at(0)=="exit"){
+        onExit();
+        return;
     }
 
+    if(argv.at(0)=="info"){
 
-    if(commnd.at(0)=="exit")
-        return false;
 
-    if(commnd.at(0)=="info"){
-        cm_info(torrentFile);
-        return true;
+        nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
+
+        for(auto& it : torrentFiles){
+            json["torrent"] += it.json();
+        }
+
+
+
+
+        std::cout << json << std::endl;
+
     }
 
-    if(commnd.at(0) == "pause" && commnd.size() == 2 ){
-        cm_pause(torrentFile,std::stoi(commnd.at(1)));
-        return true;
-    }
-
-
-    if(commnd.at(0) == "resume" && commnd.size() == 2 ){
-        cm_resume(torrentFile,std::stoi(commnd.at(1)));
-        return true;
-    }
-
-
-
-    std::cerr << "comand error" << '\n';
-
-
-    return true;
 }
