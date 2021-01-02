@@ -30,26 +30,31 @@
 
 #pragma once
 #include <string>
-#include <exception>
 
-class NotImplementedException_ : public std::exception{
+#ifndef TORRENT_NO_DEPRECATE
+#define TORRENT_NO_DEPRECATE
+#endif
 
+#include <libtorrent/add_torrent_params.hpp>
+#include <libtorrent/torrent_info.hpp>
 
-    std::string msg_;
+class TorrentInfo{
+
+    std::string path_;
+    std::string savePath_;
 
 public:
 
 
-    NotImplementedException_(const std::string &fnName , const std::string &msg);
+    TorrentInfo( const std::string_view &filePath);
 
 
-    virtual  ~NotImplementedException_();
+    void setSavePath( const std::string_view &savePath);
+
+    lt::add_torrent_params params();
 
 
-    virtual const char* what() const noexcept;
+
 
 
 };
-
-
-#define NotImplementedException(msg) NotImplementedException_(__func__,msg)

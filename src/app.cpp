@@ -27,72 +27,61 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "torrentfile.hpp"
+#include <app.hpp>
+
+
+#include <response.hpp>
 
 
 
-TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
 
-    auto files = torrentHandle_.torrent_file()->files();
 
-    torrentHandle_.torrent_file()->files().file_range();
 
-    for( auto it : files.file_range()){
 
-        const auto inti = static_cast<int>(it);
+App::App(int argc, char **argv){
 
-        TorrentNode node;
-        node.id = inti;
 
-        node.name = files.file_name(it).to_string();
-        node.size = files.file_size(it);
-        node.index = it;
+    ioService_ = std::make_unique<IoService>();
 
-        node.progress = torrentHandle_.file_progress().at(static_cast<size_t>(inti));
+    appPath_ = argv[0];
 
-        torrentNodes_.push_back(node);
+    for(int i = 1 ; i != argc; ++i)
+        arguments_.push_back(argv[i]);
+
+}
+
+
+
+int App::run(){
+
+
+    if(arguments_.empty()){
+        std::cerr << "argc == 1 " << '\n';
+        return EXIT_SUCCESS;
     }
 
 
-
-}
-
-void TorrentFile::pause(const int &id){
-    torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::dont_download);
-
-}
-
-void TorrentFile::resume(const int &id){
-    torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::default_priority);
-}
-
-std::vector<TorrentNode> TorrentFile::getNode(){
+    session_ = std::make_unique<Session>();
 
 
-    auto files = torrentHandle_.torrent_file()->files();
+    TorrentInfo torrentInfo(arguments_.at(0));
+    torrentInfo.setSavePath( arguments_.size() >= 2 ? arguments_.at(1) : "." );
 
-    for( auto& it : torrentNodes_){
+    auto torrent = session_->addTorrent(std::move(torrentInfo));
 
 
-        it.name = files.file_name(it.index).to_string();
-        it.size = files.file_size(it.index);
 
-        it.priority = torrentHandle_.file_priority(it.index) == lt::dont_download?0:1;
 
-        it.progress = torrentHandle_.file_progress().at(static_cast<size_t>(it.id));
+
+    while (true) {
+
+        if(!ioService_->work(torrent)){
+            break;
+        }
+
 
 
     }
 
-
-
-    return torrentNodes_;
-}
-
-bool TorrentFile::isFinished() const{
-    return torrentHandle_.status().is_finished;
-}
-
-std::__cxx11::string TorrentFile::name() const{
-    return torrentHandle_.status().name;
+    return EXIT_SUCCESS;
 }

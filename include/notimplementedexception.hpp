@@ -28,17 +28,31 @@
  */
 
 
-#include "notimplementedexception.hpp"
+#pragma once
+#include <string>
+#include <exception>
+
+class NotImplementedException_ : public std::exception{
 
 
-NotImplementedException_::NotImplementedException_(const std::string &fnName, const std::string &msg){
-    msg_ =  "function(" +fnName+") :" + msg;
+    std::string msg_;
 
-}
+public:
 
-NotImplementedException_::~NotImplementedException_(){}
 
-const char *NotImplementedException_::what() const noexcept
-{
-    return msg_.c_str();
-}
+    NotImplementedException_(const std::string &fnName , const std::string &className , const std::string &msg);
+
+
+
+    virtual  ~NotImplementedException_();
+
+
+    virtual const char* what() const noexcept;
+
+
+};
+
+#ifndef NotImplementedException
+#define NotImplementedException NotImplementedException_(__func__,__PRETTY_FUNCTION__,std::string())
+#define NotImplementedExceptionMessage(msg) NotImplementedException_(__func__,__PRETTY_FUNCTION__,msg)
+#endif

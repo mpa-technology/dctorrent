@@ -27,32 +27,72 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma once
-
-#include <iostream>
-#include <memory>
-#include <session.hpp>
-
-class App{
-
-
-    std::vector<std::string> arguments_;
-    std::string appPath_;
-
-    std::unique_ptr<Session>session_;
-
-public:
-
-
-    App(int argc, char **argv);
-
-
-    int run();
-
-};
+#include <torrentfile.hpp>
 
 
 
+TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
+
+    auto files = torrentHandle_.torrent_file()->files();
+
+    torrentHandle_.torrent_file()->files().file_range();
+
+    for( auto it : files.file_range()){
+
+        const auto inti = static_cast<int>(it);
+
+        TorrentNode node;
+        node.id = inti;
+
+        node.name = files.file_name(it).to_string();
+        node.size = files.file_size(it);
+        node.index = it;
+
+        node.progress = torrentHandle_.file_progress().at(static_cast<size_t>(inti));
+
+        torrentNodes_.push_back(node);
+    }
 
 
 
+}
+
+void TorrentFile::pause(const int &id){
+    torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::dont_download);
+
+}
+
+void TorrentFile::resume(const int &id){
+    torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::default_priority);
+}
+
+std::vector<TorrentNode> TorrentFile::getNode(){
+
+
+    auto files = torrentHandle_.torrent_file()->files();
+
+    for( auto& it : torrentNodes_){
+
+
+        it.name = files.file_name(it.index).to_string();
+        it.size = files.file_size(it.index);
+
+        it.priority = torrentHandle_.file_priority(it.index) == lt::dont_download?0:1;
+
+        it.progress = torrentHandle_.file_progress().at(static_cast<size_t>(it.id));
+
+
+    }
+
+
+
+    return torrentNodes_;
+}
+
+bool TorrentFile::isFinished() const{
+    return torrentHandle_.status().is_finished;
+}
+
+std::__cxx11::string TorrentFile::name() const{
+    return torrentHandle_.status().name;
+}

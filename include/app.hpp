@@ -27,19 +27,35 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#pragma once
 
-#include "session.hpp"
+#include <iostream>
+#include <memory>
+#include <session.hpp>
+#include <ioservice.hpp>
 
-libtorrent::session &Session::session(){
-    return session_;
-}
+class App{
 
-TorrentFile Session::addTorrent(TorrentInfo &&tf){
 
-    auto th = session_.add_torrent(tf.params());
+    std::vector<std::string> arguments_;
+    std::string appPath_;
 
-    torrentHandles_.push_back(th);
-    torrentInfos_.push_back(std::move(tf));
+    std::unique_ptr<Session>session_;
+    std::unique_ptr<IoService>ioService_;
 
-    return th;
-}
+
+public:
+
+
+    App(int argc, char **argv);
+
+
+    int run();
+
+};
+
+
+
+
+
+

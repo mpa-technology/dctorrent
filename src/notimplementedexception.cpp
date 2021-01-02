@@ -28,67 +28,21 @@
  */
 
 
-#include "app.hpp"
+#include <notimplementedexception.hpp>
 
 
+NotImplementedException_::NotImplementedException_(const std::string &fnName, const std::string &className, const std::string &msg){
+    msg_ =  "function(" +fnName+") in class(" + className +")";
 
-App::App(int argc, char **argv){
-
-    appPath_ = argv[0];
-
-    for(int i = 1 ; i != argc; ++i)
-        arguments_.push_back(argv[i]);
+    if(!msg.empty())
+        msg_.append(" : ").append(msg);
 
 }
 
-int App::run(){
 
+NotImplementedException_::~NotImplementedException_(){}
 
-    if(arguments_.empty()){
-        std::cerr << "argc == 1 " << std::endl;
-        return EXIT_SUCCESS;
-    }
-
-
-    session_ = std::make_unique<Session>();
-
-    TorrentInfo torrentInfo(arguments_.at(0));
-    torrentInfo.setSavePath( arguments_.size() >= 2 ? arguments_.at(1) : "." );
-
-    auto torrent = session_->addTorrent(std::move(torrentInfo));
-
-
-    std::string inputStr;
-
-
-    while (true) {
-
-
-
-        std::cin >> inputStr;
-
-        if(inputStr == "exit")
-            break;
-
-        if(inputStr == "info"){
-
-
-            std::cout << torrent.name() << '\t' << torrent.isFinished() << std::endl;
-
-            for( const auto& it : torrent.getNode()){
-
-                const auto progress = std::ceil( 100.0/static_cast<float>(it.size)*static_cast<float>(it.progress));
-                std::string priority = !it.priority ? "[pause]" : "";
-
-
-                std::cout << it.id <<  ") " << priority << it.name  <<  '\t' << progress << '%' << std::endl;
-            }
-
-
-        }
-
-
-    }
-
-    return EXIT_SUCCESS;
+const char *NotImplementedException_::what() const noexcept
+{
+    return msg_.c_str();
 }

@@ -28,31 +28,44 @@
  */
 
 
+
 #pragma once
-#include <string>
 
-#ifndef TORRENT_NO_DEPRECATE
-#define TORRENT_NO_DEPRECATE
-#endif
+#include <iostream>
 
-#include <libtorrent/add_torrent_params.hpp>
-#include <libtorrent/torrent_info.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/locale.hpp>
 
-class TorrentInfo{
+#include <torrentfile.hpp>
 
-    std::string path_;
-    std::string savePath_;
+class IoService{
+
+
+
+
+    const std::array<std::string,4>comands_{"exit","info","pause","resume"};
+
+    //TODO:rename
+    std::vector<std::string> getComand_(const std::string& line);
+
+
+    void cm_info(TorrentFile& torrentFile);
+
+
+    void cm_pause(TorrentFile& torrentFile,const int& id);
+
+    void cm_resume(TorrentFile& torrentFile,const int& id);
+
 
 public:
 
 
-    TorrentInfo( const std::string_view &filePath);
+    IoService();
 
 
-    void setSavePath( const std::string_view &savePath);
 
-
-    lt::add_torrent_params params();
+    bool work(TorrentFile& torrentFile );
 
 
 };
+

@@ -27,43 +27,5 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma once
 
 #include <torrentnode.hpp>
-
-#include <vector>
-#include <string>
-
-
-#ifndef TORRENT_NO_DEPRECATE
-#define TORRENT_NO_DEPRECATE
-#endif
-
-#include <libtorrent/torrent_handle.hpp>
-#include <libtorrent/torrent_status.hpp>
-
-class TorrentFile{
-
-    lt::torrent_handle torrentHandle_;
-    std::vector<TorrentNode>torrentNodes_;
-
-public:
-
-
-    TorrentFile(lt::torrent_handle th);
-
-
-    void pause(const int &id);
-
-    void resume(const int &id);
-
-
-    std::vector<TorrentNode> getNode();
-
-
-    bool isFinished()const;
-
-    std::string name()const;
-
-
-};
