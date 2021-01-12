@@ -36,6 +36,7 @@ App::App(int argc, char **argv){
     ioService_ = std::make_unique<IoService>();
 
     ioService_->onExit.connect(std::bind(&App::onExit_,this));
+    ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1));
 
     appPath_ = argv[0];
 
@@ -49,10 +50,22 @@ App::App(int argc, char **argv){
 
 
 
-
-
 void App::onExit_(){
     flags_.run = false;
+}
+
+void App::onAddTorrent_(const std::string &fileName)
+{
+
+    if(!std::filesystem::exists(fileName)){
+
+        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "file("+fileName+") no exists"} } << '\n';
+        return;
+    }
+
+    TorrentInfo torrentInfo(fileName);
+    torrentInfo.setSavePath(std::string("."));
+    session_->addTorrent(std::move(torrentInfo));
 }
 
 
@@ -72,9 +85,7 @@ int App::run(){
 
 
     for(const auto& it : arguments_){
-        TorrentInfo torrentInfo(it);
-        torrentInfo.setSavePath(std::string("."));
-        session_->addTorrent(std::move(torrentInfo));
+        onAddTorrent_(it);
     }
 
 

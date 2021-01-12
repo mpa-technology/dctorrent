@@ -43,6 +43,8 @@
 
 #include <boost/signals2.hpp>
 
+#include <session.hpp>
+
 class IoService{
 public:
 
@@ -53,6 +55,7 @@ public:
     void work(const std::vector<TorrentFile> &torrentFiles );
 
     boost::signals2::signal<void()>onExit;
+    boost::signals2::signal<void(const std::string&)>onAddTorrent;
 
 };
 

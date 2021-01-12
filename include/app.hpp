@@ -31,10 +31,13 @@
 
 #include <iostream>
 #include <memory>
+#include <filesystem>
 
 #include <session.hpp>
 #include <ioservice.hpp>
 #include <respons.hpp>
+
+
 
 
 
@@ -48,6 +51,7 @@ class App{
     std::unique_ptr<IoService>ioService_;
 
     void onExit_();
+    void onAddTorrent_(const std::string &fileName);
 
     struct{
         bool run;

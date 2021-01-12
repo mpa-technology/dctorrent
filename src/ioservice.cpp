@@ -74,4 +74,9 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
 
     }
 
+    if(argv.at(0)=="add"){
+
+    }
+
+
 }
