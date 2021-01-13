@@ -47,25 +47,34 @@ class Session{
     lt::session session_;
 
 
-    //TODO:rename
-    std::vector<TorrentInfo>torrentInfos_;
+    std::list<TorrentFile>torrentFiles_;
 
-    std::vector<lt::torrent_handle>torrentHandles_;
+    int64_t findFreeId_(const int64_t &id = 0){
+        if(torrentFiles_.empty())
+            return 0;
 
-    std::vector<TorrentFile>torrentFiles_;
+        for(auto& it : torrentFiles_)
+        if(it.getId()==id){
+            return findFreeId_(id+1);
+        }
+
+        return id;
+    }
+
 
 public:
 
-    std::vector<TorrentFile> &get();
+    std::list<TorrentFile> &get();
 
 
     lt::session &session();
 
 
-    TorrentFile addTorrent(TorrentInfo &&tf);
+    void addTorrent(TorrentInfo &&tf);
 
 
-
+    void removeTorrent(const TorrentFile &tf);
+    void removeTorrent(const int64_t id);
 
 
 };
