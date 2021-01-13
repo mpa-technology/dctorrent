@@ -41,7 +41,9 @@
 
 
 
-
+/*!
+    \brief Application class.Essential for good style.
+*/
 class App{
 
 
@@ -51,7 +53,15 @@ class App{
     std::unique_ptr<Session>session_;
     std::unique_ptr<IoService>ioService_;
 
+    /*!
+        \brief Signal to end the program
+        \details Applications guarantees exit only after the cycle has run
+    */
     void onExit_();
+    /*!
+        \brief Signal for adding a torrent
+        \details Checks the name of the transferred file
+    */
     void onAddTorrent_(const std::string &fileName);
 
     struct{
@@ -63,7 +73,9 @@ public:
 
     App(int argc, char **argv);
 
-
+    /*!
+        \brief Launches the main loop of the application
+    */
     int run();
 
 };
