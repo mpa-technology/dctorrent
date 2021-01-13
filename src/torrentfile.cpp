@@ -81,7 +81,7 @@ void TorrentFile::update(){
         it.name = files.file_name(it.index).to_string();
         it.size = files.file_size(it.index);
 
-        it.priority = torrentHandle_.file_priority(it.index) == lt::dont_download?0:1;
+        it.priority = toTorrentPriority(torrentHandle_.file_priority(it.index));
 
         it.progress = torrentHandle_.file_progress().at(static_cast<size_t>(it.id));
 

@@ -29,14 +29,27 @@
 #pragma once
 
 #include <string>
+#include <stdexcept>
 
 #ifndef TORRENT_NO_DEPRECATE
 #define TORRENT_NO_DEPRECATE
 #endif
 
 #include <libtorrent/units.hpp>
+#include <libtorrent/download_priority.hpp>
+enum class TORRENT_PRIORITY : int{
+
+    DONT_DOWNLOAD = 0,
+    DEFAULT_PRIORITY = 4,
+    LOW_PRIORITY = 1,
+    TOP_PRIORITY = 7,
 
 
+};
+
+TORRENT_PRIORITY toTorrentPriority(lt::download_priority_t value);
+
+TORRENT_PRIORITY toTorrentPriority(const int value);
 
 
 struct TorrentNode{
@@ -46,9 +59,7 @@ struct TorrentNode{
     std::int64_t progress;
     lt::file_index_t index;
 
-    //FIXME: add eunem
-    //0 stop 1 def
-    int priority;
+    TORRENT_PRIORITY priority;
 
 
 };
