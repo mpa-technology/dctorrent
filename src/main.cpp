@@ -39,7 +39,6 @@ int main( int argc, char **argv ){
     try {
         App app(argc,argv);
         return app.run();
-
     }  catch (const std::exception &exp) {
         std::cerr << exp.what() << std::endl;
     }
@@ -49,7 +48,7 @@ int main( int argc, char **argv ){
 
 
 
-    return EXIT_SUCCESS;
+    return EXIT_FAILURE;
 }
 
 
