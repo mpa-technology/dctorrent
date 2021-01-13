@@ -32,12 +32,13 @@
 #pragma once
 
 
-
+/*! This enum contains a list of response codes */
 enum class RESPONSE_CODE{
 
-        START_FAILURE,
-        START_OK,
-        EXIT_OK,
-        CODE_OK,
-        CODE_ERROR
+
+        START_FAILURE, /*!< dctorrent start error */
+        START_OK, /*!< dctorrent start ok */
+        EXIT_OK, /*!< dctorrent exit */
+        CODE_OK, /*!< response code ok */
+        CODE_ERROR /*!< response code error */
 };
