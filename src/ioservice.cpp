@@ -35,14 +35,13 @@
 void IoService::info_(const std::vector<TorrentFile>& torrentFiles){
     nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
 
-    for(auto& it : torrentFiles){
+    for(auto& it : torrentFiles)
         json["torrent"] += it.json();
 
 
 
-        std::cout << json << std::endl;
+    std::cout << json << std::endl;
 
-    }
 }
 
 IoService::IoService(){
@@ -84,6 +83,7 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
         //FIXME: rename
     default: std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "COMMAND NOT" } } << '\n'; break;
     }
+
 
 
 
