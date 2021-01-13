@@ -73,4 +73,9 @@ public:
     nlohmann::json json()const;
 
 
+    lt::torrent_handle getNativeTorrentHandle()const{
+        return torrentHandle_;
+    }
+
+
 };
