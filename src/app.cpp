@@ -54,18 +54,20 @@ void App::onExit_(){
     flags_.run = false;
 }
 
+
 void App::onAddTorrent_(const std::string &fileName)
 {
 
-    if(!std::filesystem::exists(fileName)){
-
+    if(!boost::filesystem::exists(fileName)){
         std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "file("+fileName+") no exists"} } << '\n';
         return;
     }
 
+
     TorrentInfo torrentInfo(fileName);
     torrentInfo.setSavePath(std::string("."));
     session_->addTorrent(std::move(torrentInfo));
+
 }
 
 
@@ -73,21 +75,7 @@ void App::onAddTorrent_(const std::string &fileName)
 
 int App::run(){
 
-
-    if(arguments_.empty()){
-
-        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::START_FAILURE} , {"message" , "argv==1"} } << '\n';
-        return EXIT_SUCCESS;
-    }
-
-
     session_ = std::make_unique<Session>();
-
-
-    for(const auto& it : arguments_){
-        onAddTorrent_(it);
-    }
-
 
     std::cout << nlohmann::json{ {"code", RESPONSE_CODE::START_OK} , {"message" , "start"} } << '\n';
 

@@ -49,9 +49,15 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
 
     std::getline(std::cin,inputStr);
 
+    std::vector<std::string> argv;
 
+    try{
     auto resp = nlohmann::json::parse(inputStr);
-    const std::vector<std::string>argv = resp;
+    argv = resp.get<std::vector<std::string>>();
+    }catch(const std::exception &exp){
+         std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , exp.what() } } << '\n';
+         return;
+    }
 
     if(argv.at(0)=="exit"){
         onExit();
@@ -75,7 +81,7 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
     }
 
     if(argv.at(0)=="add"){
-
+        onAddTorrent(argv.at(1));
     }
 
 
