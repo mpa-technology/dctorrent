@@ -12,6 +12,18 @@ enum class COMMAND : int{
 
 
 
+std::string toCommand(const int var){
+
+    switch (static_cast<COMMAND>(var)) {
+    case COMMAND::EXIT: return "EXIT";
+    case COMMAND::INFO: return "INFO";
+    case COMMAND::ADD: return "ADD";
+    case COMMAND::ERROR_COMMAND: return "ERROR_COMMAND";
+    }
+
+    return {};
+}
+
 
 constexpr int commandToInt( const std::string_view sv){
 
