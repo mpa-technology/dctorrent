@@ -94,7 +94,7 @@ bool TorrentFile::isFinished() const{
     return torrentHandle_.status().is_finished;
 }
 
-std::__cxx11::string TorrentFile::name() const{
+std::string TorrentFile::name() const{
     return torrentHandle_.status().name;
 }
 
