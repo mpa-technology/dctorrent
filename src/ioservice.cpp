@@ -52,37 +52,40 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
     std::vector<std::string> argv;
 
     try{
-    auto resp = nlohmann::json::parse(inputStr);
-    argv = resp.get<std::vector<std::string>>();
+        auto resp = nlohmann::json::parse(inputStr);
+        argv = resp.get<std::vector<std::string>>();
     }catch(const std::exception &exp){
-         std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , exp.what() } } << '\n';
-         return;
-    }
-
-    if(argv.at(0)=="exit"){
-        onExit();
+        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , exp.what() } } << '\n';
         return;
     }
 
-    if(argv.at(0)=="info"){
+
+    const int eccode = commandToInt(argv.at(0));
 
 
+    switch (static_cast<COMMAND>(eccode)){
+    case COMMAND::EXIT: onExit() ; break;
+    case COMMAND::INFO: {
         nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
 
         for(auto& it : torrentFiles){
             json["torrent"] += it.json();
+
+
+
+            std::cout << json << std::endl;
+
         }
+    } break;
 
-
-
-
-        std::cout << json << std::endl;
-
+    case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
+        //FIXME: rename
+    default: std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "COMMAND NOT" } } << '\n'; break;
     }
 
-    if(argv.at(0)=="add"){
-        onAddTorrent(argv.at(1));
-    }
+
+
+
 
 
 }

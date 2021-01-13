@@ -42,3 +42,5 @@ enum class RESPONSE_CODE{
         CODE_OK, /*!< response code ok */
         CODE_ERROR /*!< response code error */
 };
+
+

@@ -35,15 +35,14 @@
 
 #include <boost/algorithm/string.hpp>
 #include <boost/locale.hpp>
+#include <boost/signals2.hpp>
 
 #include <nlohmann/json.hpp>
 
+#include <session.hpp>
 #include <torrentfile.hpp>
 #include <respons.hpp>
-
-#include <boost/signals2.hpp>
-
-#include <session.hpp>
+#include <command.hpp>
 
 class IoService{
 public:

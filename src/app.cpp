@@ -89,10 +89,6 @@ int App::run(){
 
 
         ioService_->work(torrentList);
-
-
-
-
     }
 
 
