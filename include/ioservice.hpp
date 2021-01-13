@@ -45,6 +45,10 @@
 #include <command.hpp>
 
 class IoService{
+
+
+    void info_(const std::vector<TorrentFile> &torrentFiles);
+
 public:
 
 

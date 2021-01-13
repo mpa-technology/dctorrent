@@ -32,6 +32,19 @@
 #include <ioservice.hpp>
 
 
+void IoService::info_(const std::vector<TorrentFile>& torrentFiles){
+    nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
+
+    for(auto& it : torrentFiles){
+        json["torrent"] += it.json();
+
+
+
+        std::cout << json << std::endl;
+
+    }
+}
+
 IoService::IoService(){
 
     boost::locale::generator gen;
@@ -64,20 +77,9 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
 
 
     switch (static_cast<COMMAND>(eccode)){
+
     case COMMAND::EXIT: onExit() ; break;
-    case COMMAND::INFO: {
-        nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
-
-        for(auto& it : torrentFiles){
-            json["torrent"] += it.json();
-
-
-
-            std::cout << json << std::endl;
-
-        }
-    } break;
-
+    case COMMAND::INFO: info_(torrentFiles); break;
     case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
         //FIXME: rename
     default: std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "COMMAND NOT" } } << '\n'; break;
