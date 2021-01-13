@@ -37,6 +37,7 @@ enum class COMMAND : int{
     EXIT,
     INFO,
     ADD,
+    REMOVE,
     ERROR_COMMAND
 
 };
@@ -56,6 +57,9 @@ constexpr int commandToInt( const std::string_view sv){
 
     if(sv == "ADD" || sv=="add")
         return static_cast<int>(COMMAND::ADD);
+
+    if(sv == "REMOVE" || sv=="remove")
+        return static_cast<int>(COMMAND::REMOVE);
 
     return static_cast<int>(COMMAND::ERROR_COMMAND);
 }

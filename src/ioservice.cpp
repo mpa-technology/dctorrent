@@ -32,7 +32,7 @@
 #include <ioservice.hpp>
 
 
-void IoService::info_(const std::vector<TorrentFile>& torrentFiles){
+void IoService::info_(const std::list<TorrentFile> &torrentFiles){
     nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
 
     for(auto& it : torrentFiles)
@@ -53,7 +53,7 @@ IoService::IoService(){
     std::cerr.imbue(loc);
 }
 
-void IoService::work(const std::vector<TorrentFile>& torrentFiles){
+void IoService::work(const std::list<TorrentFile>& torrentFiles){
 
     std::flush(std::cout);
 
@@ -80,6 +80,8 @@ void IoService::work(const std::vector<TorrentFile>& torrentFiles){
     case COMMAND::EXIT: onExit() ; break;
     case COMMAND::INFO: info_(torrentFiles); break;
     case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
+    case COMMAND::REMOVE: onRemoveTorrent(std::stoll(argv.at(1)));break;
+
         //FIXME: rename
     default: std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "COMMAND NOT" } } << '\n'; break;
     }

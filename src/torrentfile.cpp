@@ -99,7 +99,7 @@ std::string TorrentFile::name() const{
 }
 
 nlohmann::json TorrentFile::json() const{
-    nlohmann::json json{ {"name",name()}};
+    nlohmann::json json{ {"name",name()}, {"id",id_}};
     std::vector<nlohmann::json> tlist;
 
     for(auto& it : getNode()){
@@ -125,6 +125,16 @@ nlohmann::json TorrentFile::json() const{
 
 
     return json;
+}
+
+int64_t TorrentFile::getId() const
+{
+    return id_;
+}
+
+void TorrentFile::setId(const int64_t &id)
+{
+    id_ = id;
 }
 
 TorrentFile::TorrentFile(){}

@@ -47,7 +47,7 @@
 class IoService{
 
 
-    void info_(const std::vector<TorrentFile> &torrentFiles);
+    void info_(const std::list<TorrentFile> &torrentFiles);
 
 public:
 
@@ -55,10 +55,11 @@ public:
     IoService();
 
 
-    void work(const std::vector<TorrentFile> &torrentFiles );
+    void work(const std::list<TorrentFile> &torrentFiles );
 
     boost::signals2::signal<void()>onExit;
     boost::signals2::signal<void(const std::string&)>onAddTorrent;
+    boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
 
 };
 

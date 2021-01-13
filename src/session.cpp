@@ -31,7 +31,7 @@
 #include <session.hpp>
 
 
-std::vector<TorrentFile> &Session::get(){
+std::list<TorrentFile> &Session::get(){
     return torrentFiles_;
 }
 
@@ -39,14 +39,34 @@ libtorrent::session &Session::session(){
     return session_;
 }
 
-TorrentFile Session::addTorrent(TorrentInfo &&tf){
+void Session::addTorrent(TorrentInfo &&tf){
 
     auto th = session_.add_torrent(tf.params());
 
-    torrentHandles_.push_back(th);
-    torrentInfos_.push_back(std::move(tf));
 
     torrentFiles_.push_back(th);
 
-    return th;
+    torrentFiles_.back().setId(findFreeId_());
+
+
+}
+
+void Session::removeTorrent(const TorrentFile &tf){
+ session_.remove_torrent(tf.getNativeTorrentHandle());
+    torrentFiles_.remove(tf);
+
+
+}
+
+void Session::removeTorrent(const int64_t id)
+{
+
+    for(const auto& it :  torrentFiles_)
+    if(it.getId() == id){
+
+        removeTorrent(it);
+        return;
+    }
+
+    throw std::invalid_argument("id not foind");
 }

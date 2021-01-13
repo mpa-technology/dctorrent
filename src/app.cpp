@@ -37,6 +37,7 @@ App::App(int argc, char **argv){
 
     ioService_->onExit.connect(std::bind(&App::onExit_,this));
     ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1));
+    ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
 
     appPath_ = argv[0];
 
@@ -67,6 +68,21 @@ void App::onAddTorrent_(const std::string &fileName)
     TorrentInfo torrentInfo(fileName);
     torrentInfo.setSavePath(std::string("."));
     session_->addTorrent(std::move(torrentInfo));
+
+
+    std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_OK} , {"message" , "torrent add"} } << '\n';
+}
+
+void App::onRemoveTorrent_(const int64_t id){
+
+
+    try{
+        session_->removeTorrent(id);
+        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_OK} , {"message" , "torrent remove"} } << '\n';
+    }catch(...){
+        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "id not foind"} } << '\n';
+    }
+
 
 }
 

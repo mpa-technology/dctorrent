@@ -64,6 +64,13 @@ class App{
     */
     void onAddTorrent_(const std::string &fileName);
 
+    /*!
+        \brief Signal to delete torrent
+        \details I guarantee verification id
+    */
+    void onRemoveTorrent_(const int64_t id);
+
+
     struct{
         bool run;
     }flags_;

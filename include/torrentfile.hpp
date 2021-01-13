@@ -51,6 +51,8 @@ class TorrentFile{
     lt::torrent_handle torrentHandle_;
     std::vector<TorrentNode>torrentNodes_;
 
+    int64_t id_;
+
 public:
     TorrentFile();
 
@@ -72,10 +74,16 @@ public:
 
     nlohmann::json json()const;
 
+    bool operator==(const TorrentFile &file)const{
+        return id_ == file.id_;
+    }
+
 
     lt::torrent_handle getNativeTorrentHandle()const{
         return torrentHandle_;
     }
 
 
+    int64_t getId() const;
+    void setId(const int64_t &id);
 };
