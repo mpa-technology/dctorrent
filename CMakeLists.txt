@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+
 project(dctorrent CXX)
 
 
@@ -27,14 +29,13 @@ add_compile_options(
 
 file(GLOB SOURCE "src/*.cpp")
 
-include_directories(include/)
 
-add_executable(${PROJECT_NAME} ${SOURCE} )
+add_executable( ${PROJECT_NAME} ${SOURCE} )
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} -lstdc++ -lboost_system -lboost_locale -ltorrent-rasterbar -lpthread  )
-
+target_link_libraries( ${PROJECT_NAME} -lstdc++ -lboost_system -lboost_locale -ltorrent-rasterbar -lpthread  )
 
 
+target_include_directories( ${PROJECT_NAME} PUBLIC include/)
 
 if(WIN32)
 
