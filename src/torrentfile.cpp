@@ -127,6 +127,19 @@ nlohmann::json TorrentFile::json() const{
     return json;
 }
 
+bool TorrentFile::operator==(const TorrentFile &file) const{
+    return id_ == file.id_ && hash() == file.hash();
+}
+
+std::string TorrentFile::hash() const{
+
+    return  torrentHandle_.info_hash().to_string();
+}
+
+libtorrent::torrent_handle TorrentFile::getNativeTorrentHandle() const{
+    return torrentHandle_;
+}
+
 int64_t TorrentFile::getId() const
 {
     return id_;

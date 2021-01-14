@@ -74,14 +74,12 @@ public:
 
     nlohmann::json json()const;
 
-    bool operator==(const TorrentFile &file)const{
-        return id_ == file.id_;
-    }
+    bool operator==(const TorrentFile &file)const;
+
+    std::string hash() const;
 
 
-    lt::torrent_handle getNativeTorrentHandle()const{
-        return torrentHandle_;
-    }
+    lt::torrent_handle getNativeTorrentHandle()const;
 
 
     int64_t getId() const;
