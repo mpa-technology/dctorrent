@@ -59,6 +59,10 @@ struct TorrentNode{
     std::int64_t size;
     std::int64_t progress;
     lt::file_index_t index;
+    std::string hash;
+
+
+
 
     TORRENT_PRIORITY priority;
 

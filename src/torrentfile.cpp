@@ -47,6 +47,7 @@ TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
         node.name = files.file_name(it).to_string();
         node.size = files.file_size(it);
         node.index = it;
+        node.hash = files.hash(it).to_string();
 
         node.progress = torrentHandle_.file_progress().at(static_cast<size_t>(inti));
 
@@ -99,7 +100,7 @@ std::string TorrentFile::name() const{
 }
 
 nlohmann::json TorrentFile::json() const{
-    nlohmann::json json{ {"name",name()}, {"id",id_}};
+    nlohmann::json json{ {"name",name()}, {"id",id_} , {"hash",hash()}};
     std::vector<nlohmann::json> tlist;
 
     for(auto& it : getNode()){
@@ -109,7 +110,8 @@ nlohmann::json TorrentFile::json() const{
             {"name",it.name},
             {"priority",it.priority},
             {"progress",it.progress},
-            {"size",it.size}
+            {"size",it.size},
+            {"hash",it.hash}
 
         };
 
