@@ -37,6 +37,7 @@
 
 #include <libtorrent/units.hpp>
 #include <libtorrent/download_priority.hpp>
+
 enum class TORRENT_PRIORITY : int{
 
     DONT_DOWNLOAD = 0,

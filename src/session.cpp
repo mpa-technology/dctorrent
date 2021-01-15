@@ -31,6 +31,18 @@
 #include <session.hpp>
 
 
+int64_t Session::findFreeId_(const int64_t &id){
+    if(torrentFiles_.empty())
+        return 0;
+
+    for(auto& it : torrentFiles_)
+        if(it.getId()==id){
+            return findFreeId_(id+1);
+        }
+
+    return id;
+}
+
 std::list<TorrentFile> &Session::get(){
     return torrentFiles_;
 }

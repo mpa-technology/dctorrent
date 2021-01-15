@@ -49,17 +49,7 @@ class Session{
 
     std::list<TorrentFile>torrentFiles_;
 
-    int64_t findFreeId_(const int64_t &id = 0){
-        if(torrentFiles_.empty())
-            return 0;
-
-        for(auto& it : torrentFiles_)
-        if(it.getId()==id){
-            return findFreeId_(id+1);
-        }
-
-        return id;
-    }
+    int64_t findFreeId_(const int64_t &id = 0);
 
 
 public:
