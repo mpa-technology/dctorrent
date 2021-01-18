@@ -80,7 +80,7 @@ void IoService::work(){
         auto resp = nlohmann::json::parse(inputStr);
         argv = resp.get<std::vector<std::string>>();
     }catch(const std::exception &exp){
-        std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , exp.what() } } << '\n';
+        simpleResponse(exp.what(),RESPONSE_CODE::CODE_ERROR);
         return;
     }
 
@@ -94,15 +94,18 @@ void IoService::work(){
     case COMMAND::INFO: info_(argv); break;
     case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
     case COMMAND::REMOVE: onRemoveTorrent(std::stoll(argv.at(1)));break;
-
         //FIXME: rename
-    default: std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "COMMAND NOT" } } << '\n'; break;
+    default: simpleResponse("COMMAND NOT",RESPONSE_CODE::CODE_ERROR); break;
     }
 
 
+}
 
+void IoService::simpleResponse(const std::string &msg, int code){
+    std::cout << nlohmann::json{ {"code", toResponseCode(code)} , {"message" , msg} } << '\n';
+}
 
-
-
-
+void IoService::simpleResponse(const std::string &msg, RESPONSE_CODE code)
+{
+    std::cout << nlohmann::json{ {"code", code} , {"message" , msg} } << '\n';
 }

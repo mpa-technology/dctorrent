@@ -58,6 +58,10 @@ public:
 
     void work( );
 
+    void simpleResponse(const std::string &msg , int code);
+    void simpleResponse(const std::string &msg , RESPONSE_CODE code);
+
+
     boost::signals2::signal<void()>onExit;
     boost::signals2::signal<void(const std::string&)>onAddTorrent;
     boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
