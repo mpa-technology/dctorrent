@@ -100,7 +100,8 @@ std::string TorrentFile::name() const{
 }
 
 nlohmann::json TorrentFile::json() const{
-    nlohmann::json json{ {"name",name()}, {"id",id_} , {"hash",hash()}};
+    //FIXME: add hash print
+    nlohmann::json json{ {"name",name()}, {"id",id_}};
     std::vector<nlohmann::json> tlist;
 
     for(auto& it : getNode()){
@@ -111,6 +112,7 @@ nlohmann::json TorrentFile::json() const{
             {"priority",it.priority},
             {"progress",it.progress},
             {"size",it.size},
+            //FIXME:add hash print
             {"hash",it.hash}
 
         };

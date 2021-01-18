@@ -47,7 +47,7 @@
 class IoService{
 
 
-    void info_(const std::list<TorrentFile> &torrentFiles);
+    void info_(const std::list<TorrentFile> &torrentFiles,const std::vector<std::string> &argv);
 
 public:
 

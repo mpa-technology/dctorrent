@@ -60,6 +60,7 @@ void App::onAddTorrent_(const std::string &fileName)
 {
 
     if(!boost::filesystem::exists(fileName)){
+        //TODO: move to ioservice
         std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "file("+fileName+") no exists"} } << '\n';
         return;
     }
@@ -78,11 +79,22 @@ void App::onRemoveTorrent_(const int64_t id){
 
     try{
         session_->removeTorrent(id);
+        //TODO: move to ioservice
         std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_OK} , {"message" , "torrent remove"} } << '\n';
     }catch(...){
+        //TODO: move to ioservice
         std::cout << nlohmann::json{ {"code", RESPONSE_CODE::CODE_ERROR} , {"message" , "id not foind"} } << '\n';
     }
 
+
+}
+
+std::string App::onInfo_(const std::vector<int64_t> &idList)
+{
+
+    static_cast<void>(idList);
+
+    throw  NotImplementedException;
 
 }
 
@@ -93,6 +105,8 @@ int App::run(){
 
     session_ = std::make_unique<Session>();
 
+
+   //TODO: move to ioservice
     std::cout << nlohmann::json{ {"code", RESPONSE_CODE::START_OK} , {"message" , "start"} } << '\n';
 
 
@@ -107,7 +121,7 @@ int App::run(){
         ioService_->work(torrentList);
     }
 
-
+    //TODO: move to ioservice
     std::cout << nlohmann::json{ {"code", RESPONSE_CODE::EXIT_OK} , {"message" , "exit"}} << '\n';
 
 

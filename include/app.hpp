@@ -34,6 +34,8 @@
 
 #include <boost/filesystem.hpp>
 
+#include <notimplementedexception.hpp>
+
 #include <session.hpp>
 #include <ioservice.hpp>
 #include <respons.hpp>
@@ -70,6 +72,9 @@ class App{
     */
     void onRemoveTorrent_(const int64_t id);
 
+
+    //TODO: move info to
+    std::string onInfo_(const std::vector<int64_t> &idList);
 
     struct{
         bool run;
