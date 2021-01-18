@@ -27,38 +27,4 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-
-#pragma once
-
-
-/*! This enum contains a list of response codes */
-enum class RESPONSE_CODE{
-
-
-    START_FAILURE, /*!< dctorrent start error */
-    START_OK, /*!< dctorrent start ok */
-    EXIT_OK, /*!< dctorrent exit */
-    CODE_OK, /*!< response code ok */
-    CODE_ERROR, /*!< response code error */
-    CODE_NON /*!< response non code */
-};
-
-
-
-
-constexpr RESPONSE_CODE toResponseCode ( const int code){
-
-
-
-    switch (static_cast<RESPONSE_CODE>(code)) {
-    case RESPONSE_CODE::START_FAILURE:return RESPONSE_CODE::START_FAILURE;
-    case RESPONSE_CODE::START_OK:return RESPONSE_CODE::START_OK;
-    case RESPONSE_CODE::EXIT_OK:return RESPONSE_CODE::EXIT_OK;
-    case RESPONSE_CODE::CODE_OK:return RESPONSE_CODE::CODE_OK;
-    case RESPONSE_CODE::CODE_ERROR:return RESPONSE_CODE::CODE_ERROR;
-    case RESPONSE_CODE::CODE_NON:return RESPONSE_CODE::CODE_NON;
-    }
-
-    return RESPONSE_CODE::CODE_NON;
-}
+#include <respons.hpp>
