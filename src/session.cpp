@@ -49,8 +49,8 @@ TorrentFile Session::getTorrent(const int64_t id){
         if(it.getId() == id)
             return it;
 
-    //FIXME: add throw
-    throw ;;
+
+    throw std::invalid_argument("id not found");
 }
 
 void Session::torrentUpdate(){
