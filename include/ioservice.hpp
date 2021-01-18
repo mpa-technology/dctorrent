@@ -37,8 +37,7 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/locale.hpp>
 #include <boost/signals2.hpp>
-
-#include <nlohmann/json.hpp>
+#include <boost/json.hpp>
 
 #include <session.hpp>
 #include <torrentfile.hpp>
@@ -48,7 +47,7 @@
 class IoService{
 
 
-    void info_(const std::vector<std::string> &argv);
+    void info_(const boost::json::array &argv);
 
 public:
 
@@ -65,7 +64,7 @@ public:
     boost::signals2::signal<void()>onExit;
     boost::signals2::signal<void(const std::string&)>onAddTorrent;
     boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
-    boost::signals2::signal<nlohmann::json(const int64_t)>onInfo;
+    boost::signals2::signal<boost::json::object(const int64_t)>onInfo;
 
     boost::signals2::signal<std::vector<int64_t>()>onGetAllTorrentId;
 

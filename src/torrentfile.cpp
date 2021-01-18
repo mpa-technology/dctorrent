@@ -94,17 +94,17 @@ std::string TorrentFile::name() const{
     return torrentHandle_.status().name;
 }
 
-nlohmann::json TorrentFile::json() const{
+boost::json::object TorrentFile::json() const{
 
-    nlohmann::json json{ {"name",name()}, {"id",id_}};
-    std::vector<nlohmann::json> tlist;
+    boost::json::object json{ {"name",name()}, {"id",id_}};
+    boost::json::array tlist;
 
     for(auto& it : getNode()){
 
-        nlohmann::json obj{
+       boost::json::object obj{
             {"id",it.id},
             {"name",it.name},
-            {"priority",it.priority},
+            {"priority",static_cast<int>(it.priority)},
             {"progress",it.progress},
             {"size",it.size},
 

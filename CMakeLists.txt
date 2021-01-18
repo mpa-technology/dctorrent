@@ -32,7 +32,7 @@ file(GLOB SOURCE "src/*.cpp")
 
 add_executable( ${PROJECT_NAME} ${SOURCE} )
 
-target_link_libraries( ${PROJECT_NAME} -lstdc++ -lboost_system -lboost_locale -lboost_filesystem -ltorrent-rasterbar -lpthread )
+target_link_libraries( ${PROJECT_NAME} -lstdc++ -lboost_system -lboost_locale -lboost_json -lboost_filesystem -ltorrent-rasterbar -lpthread )
 
 
 target_include_directories( ${PROJECT_NAME} PUBLIC include/)

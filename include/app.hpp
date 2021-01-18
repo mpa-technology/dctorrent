@@ -72,7 +72,7 @@ class App{
     void onRemoveTorrent_(const int64_t id);
 
 
-    nlohmann::json onInfo_(const int64_t id);
+    boost::json::object onInfo_(const int64_t id);
 
     std::vector<int64_t> onGetAllTorrentId();
 

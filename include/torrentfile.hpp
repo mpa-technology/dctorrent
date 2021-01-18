@@ -41,10 +41,9 @@
 #include <libtorrent/torrent_handle.hpp>
 #include <libtorrent/torrent_status.hpp>
 
-#include <nlohmann/json.hpp>
-
 #include <torrentnode.hpp>
 
+#include <boost/json.hpp>
 
 class TorrentFile{
 
@@ -72,7 +71,7 @@ public:
 
     std::string name()const;
 
-    nlohmann::json json()const;
+    boost::json::object json()const;
 
     bool operator==(const TorrentFile &file)const;
 

@@ -91,7 +91,7 @@ void App::onRemoveTorrent_(const int64_t id){
 
 }
 
-nlohmann::json App::onInfo_(const int64_t id)
+boost::json::object App::onInfo_(const int64_t id)
 {
     return session_->getTorrent(id).json();
 }

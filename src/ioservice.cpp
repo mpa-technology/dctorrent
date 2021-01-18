@@ -32,26 +32,40 @@
 #include <ioservice.hpp>
 
 //FIXME: Bad code
-void IoService::info_(const std::vector<std::string> &argv){
+void IoService::info_(const boost::json::array &argv){
 
-    nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
+    boost::json::object json;
+    boost::json::array array;
 
-    std::vector<int64_t>idList;
 
-    if(argv.size()==1){
-        idList = *onGetAllTorrentId();
+    try{
+
+
+    if(argv.size() == 1){
+        for(const auto & id:*onGetAllTorrentId()){
+            array.push_back(*onInfo(id));
+        }
     }
     else{
         for(auto it = argv.begin()+1;it!=argv.end();++it){
-            idList.push_back(std::stoll(*it));
+            auto id = it->get_int64();
+            array.push_back(*onInfo(id));
+
         }
+
+
+    }
+
+    json["code"] = static_cast<int>(RESPONSE_CODE::CODE_OK);
+
+    }catch(const std::exception &exp){
+        json["code"] = static_cast<int>(RESPONSE_CODE::CODE_ERROR);
+        json["message"] = exp.what();
     }
 
 
-    for(const auto &tf:idList)
-        json["torrent"] += *onInfo(tf);;
 
-
+    json["torrent"] = array;
 
     std::cout << json << std::endl;
 
@@ -74,26 +88,26 @@ void IoService::work(){
 
     std::getline(std::cin,inputStr);
 
-    std::vector<std::string> argv;
+    boost::json::array argv;
+
 
     try{
-        auto resp = nlohmann::json::parse(inputStr);
-        argv = resp.get<std::vector<std::string>>();
+        argv = boost::json::parse(inputStr).as_array();
     }catch(const std::exception &exp){
         simpleResponse(exp.what(),RESPONSE_CODE::CODE_ERROR);
         return;
     }
 
 
-    const int eccode = commandToInt(argv.at(0));
+    const int eccode = commandToInt(argv.at(0).as_string().c_str());
 
 
     switch (static_cast<COMMAND>(eccode)){
 
     case COMMAND::EXIT: onExit() ; break;
     case COMMAND::INFO: info_(argv); break;
-    case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
-    case COMMAND::REMOVE: onRemoveTorrent(std::stoll(argv.at(1)));break;
+    case COMMAND::ADD: onAddTorrent(argv.at(1).as_string().c_str()); break;
+    case COMMAND::REMOVE: onRemoveTorrent(argv.at(1).to_number<int64_t>());break;
 
     default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
     }
@@ -102,10 +116,20 @@ void IoService::work(){
 }
 
 void IoService::simpleResponse(const std::string &msg, int code){
-    std::cout << nlohmann::json{ {"code", toResponseCode(code)} , {"message" , msg} } << '\n';
+
+    boost::json::object obj;
+    obj["code"] = code;
+    obj["message"] = msg;
+
+   std::cout << obj << '\n';
 }
 
 void IoService::simpleResponse(const std::string &msg, RESPONSE_CODE code)
 {
-    std::cout << nlohmann::json{ {"code", code} , {"message" , msg} } << '\n';
+    boost::json::object obj;
+    obj["code"] = static_cast<int>(code);
+    obj["message"] = msg;
+
+    std::cout << obj << '\n';
+
 }
