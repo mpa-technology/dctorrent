@@ -94,8 +94,8 @@ void IoService::work(){
     case COMMAND::INFO: info_(argv); break;
     case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
     case COMMAND::REMOVE: onRemoveTorrent(std::stoll(argv.at(1)));break;
-        //FIXME: rename
-    default: simpleResponse("COMMAND NOT",RESPONSE_CODE::CODE_ERROR); break;
+
+    default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
     }
 
 
