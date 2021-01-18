@@ -96,5 +96,5 @@ void Session::removeTorrent(const int64_t id)
         return;
     }
 
-    throw std::invalid_argument("id not foind");
+    throw std::invalid_argument("id not found");
 }
