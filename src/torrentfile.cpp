@@ -94,21 +94,21 @@ std::string TorrentFile::name() const{
     return torrentHandle_.status().name;
 }
 
-boost::json::object TorrentFile::json() const{
+    boost::json::object TorrentFile::json() const{
 
-    boost::json::object json{ {"name",name()}, {"id",id_}};
+        boost::json::object json{ {"name",name()}, {"id",id_}};
     boost::json::array tlist;
 
-    for(auto& it : getNode()){
+        for(auto& it : getNode()){
 
-       boost::json::object obj{
-            {"id",it.id},
-            {"name",it.name},
-            {"priority",static_cast<int>(it.priority)},
-            {"progress",it.progress},
-            {"size",it.size},
+            boost::json::object obj{
+                {"id",it.id},
+                {"name",it.name},
+                {"priority",static_cast<int>(it.priority)},
+                {"progress",it.progress},
+                {"size",it.size},
 
-        };
+                };
 
 
         tlist.push_back(obj);

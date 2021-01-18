@@ -80,7 +80,7 @@ void Session::addTorrent(TorrentInfo &&tf){
 }
 
 void Session::removeTorrent(const TorrentFile &tf){
- session_.remove_torrent(tf.getNativeTorrentHandle());
+    session_.remove_torrent(tf.getNativeTorrentHandle());
     torrentFiles_.remove(tf);
 
 
@@ -90,11 +90,11 @@ void Session::removeTorrent(const int64_t id)
 {
 
     for(const auto& it :  torrentFiles_)
-    if(it.getId() == id){
+        if(it.getId() == id){
 
-        removeTorrent(it);
-        return;
-    }
+            removeTorrent(it);
+            return;
+        }
 
     throw std::invalid_argument("id not found");
 }

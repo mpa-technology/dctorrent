@@ -41,22 +41,22 @@ void IoService::info_(const boost::json::array &argv){
     try{
 
 
-    if(argv.size() == 1){
-        for(const auto & id:*onGetAllTorrentId()){
-            array.push_back(*onInfo(id));
+        if(argv.size() == 1){
+            for(const auto & id:*onGetAllTorrentId()){
+                array.push_back(*onInfo(id));
+            }
         }
-    }
-    else{
-        for(auto it = argv.begin()+1;it!=argv.end();++it){
-            auto id = it->get_int64();
-            array.push_back(*onInfo(id));
+        else{
+            for(auto it = argv.begin()+1;it!=argv.end();++it){
+                auto id = it->get_int64();
+                array.push_back(*onInfo(id));
+
+            }
+
 
         }
 
-
-    }
-
-    json["code"] = static_cast<int>(RESPONSE_CODE::CODE_OK);
+        json["code"] = static_cast<int>(RESPONSE_CODE::CODE_OK);
 
     }catch(const std::exception &exp){
         json["code"] = static_cast<int>(RESPONSE_CODE::CODE_ERROR);
@@ -121,7 +121,7 @@ void IoService::simpleResponse(const std::string &msg, int code){
     obj["code"] = code;
     obj["message"] = msg;
 
-   std::cout << obj << '\n';
+    std::cout << obj << '\n';
 }
 
 void IoService::simpleResponse(const std::string &msg, RESPONSE_CODE code)
