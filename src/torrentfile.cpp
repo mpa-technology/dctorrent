@@ -113,7 +113,7 @@ nlohmann::json TorrentFile::json() const{
             {"progress",it.progress},
             {"size",it.size},
             //FIXME:add hash print
-            {"hash",it.hash}
+            //{"hash",it.hash}
 
         };
 
