@@ -33,6 +33,14 @@
 App::App(int argc, char **argv){
 
 
+    appPath_ = argv[0];
+
+    for(int i = 1 ; i != argc; ++i)
+        arguments_.push_back(argv[i]);
+
+
+
+
     ioService_ = std::make_unique<IoService>();
 
     ioService_->onExit.connect(std::bind(&App::onExit_,this));
@@ -41,13 +49,8 @@ App::App(int argc, char **argv){
     ioService_->onInfo.connect(std::bind(&App::onInfo_,this,std::placeholders::_1));
     ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
 
-    appPath_ = argv[0];
-
-    for(int i = 1 ; i != argc; ++i)
-        arguments_.push_back(argv[i]);
 
     flags_.run = true;
-
 }
 
 
