@@ -96,6 +96,16 @@ nlohmann::json App::onInfo_(const int64_t id)
     return session_->getTorrent(id).json();
 }
 
+std::vector<int64_t> App::onGetAllTorrentId(){
+
+    std::vector<int64_t>id;
+
+    for(const auto &it : session_->getAllTorrent())
+        id.push_back(it.getId());
+
+    return id;
+}
+
 
 
 
@@ -104,7 +114,7 @@ int App::run(){
     session_ = std::make_unique<Session>();
 
 
-   //TODO: move to ioservice
+    //TODO: move to ioservice
     std::cout << nlohmann::json{ {"code", RESPONSE_CODE::START_OK} , {"message" , "start"} } << '\n';
 
 

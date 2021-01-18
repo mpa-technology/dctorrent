@@ -75,15 +75,7 @@ class App{
 
     nlohmann::json onInfo_(const int64_t id);
 
-    std::vector<int64_t> onGetAllTorrentId(){
-
-        std::vector<int64_t>id;
-
-        for(const auto &it : session_->getAllTorrent())
-            id.push_back(it.getId());
-
-        return id;
-    }
+    std::vector<int64_t> onGetAllTorrentId();
 
     struct{
         bool run;

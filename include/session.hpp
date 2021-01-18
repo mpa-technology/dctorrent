@@ -58,11 +58,7 @@ public:
 
     TorrentFile getTorrent(const int64_t id);
 
-    void torrentUpdate(){
-
-        for(auto &it : torrentFiles_)
-            it.update();
-    }
+    void torrentUpdate();
 
     lt::session &session();
 

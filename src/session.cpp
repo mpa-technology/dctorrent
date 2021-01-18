@@ -53,6 +53,12 @@ TorrentFile Session::getTorrent(const int64_t id){
     throw ;;
 }
 
+void Session::torrentUpdate(){
+
+    for(auto &it : torrentFiles_)
+        it.update();
+}
+
 std::list<TorrentFile> Session::getAllTorrent(){
     return torrentFiles_;
 }
