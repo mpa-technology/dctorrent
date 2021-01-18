@@ -76,7 +76,6 @@ public:
 
     bool operator==(const TorrentFile &file)const;
 
-    std::string hash() const;
 
 
     lt::torrent_handle getNativeTorrentHandle()const;

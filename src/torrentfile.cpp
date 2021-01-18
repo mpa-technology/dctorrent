@@ -30,7 +30,6 @@
 #include <torrentfile.hpp>
 
 
-
 TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
 
     auto files = torrentHandle_.torrent_file()->files();
@@ -47,7 +46,6 @@ TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
         node.name = files.file_name(it).to_string();
         node.size = files.file_size(it);
         node.index = it;
-        node.hash = files.hash(it).to_string();
 
         node.progress = torrentHandle_.file_progress().at(static_cast<size_t>(inti));
 
@@ -78,12 +76,9 @@ void TorrentFile::update(){
 
     for( auto& it : torrentNodes_){
 
-
         it.name = files.file_name(it.index).to_string();
         it.size = files.file_size(it.index);
-
         it.priority = toTorrentPriority(torrentHandle_.file_priority(it.index));
-
         it.progress = torrentHandle_.file_progress().at(static_cast<size_t>(it.id));
 
 
@@ -100,7 +95,7 @@ std::string TorrentFile::name() const{
 }
 
 nlohmann::json TorrentFile::json() const{
-    //FIXME: add hash print
+
     nlohmann::json json{ {"name",name()}, {"id",id_}};
     std::vector<nlohmann::json> tlist;
 
@@ -112,8 +107,6 @@ nlohmann::json TorrentFile::json() const{
             {"priority",it.priority},
             {"progress",it.progress},
             {"size",it.size},
-            //FIXME:add hash print
-            //{"hash",it.hash}
 
         };
 
@@ -132,13 +125,10 @@ nlohmann::json TorrentFile::json() const{
 }
 
 bool TorrentFile::operator==(const TorrentFile &file) const{
-    return id_ == file.id_ && hash() == file.hash();
+    return id_ == file.id_;
 }
 
-std::string TorrentFile::hash() const{
 
-    return  torrentHandle_.info_hash().to_string();
-}
 
 libtorrent::torrent_handle TorrentFile::getNativeTorrentHandle() const{
     return torrentHandle_;
