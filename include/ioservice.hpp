@@ -32,6 +32,7 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/locale.hpp>
@@ -47,7 +48,7 @@
 class IoService{
 
 
-    void info_(const std::list<TorrentFile> &torrentFiles,const std::vector<std::string> &argv);
+    void info_(const std::vector<std::string> &argv);
 
 public:
 
@@ -55,11 +56,14 @@ public:
     IoService();
 
 
-    void work(const std::list<TorrentFile> &torrentFiles );
+    void work( );
 
     boost::signals2::signal<void()>onExit;
     boost::signals2::signal<void(const std::string&)>onAddTorrent;
     boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
+    boost::signals2::signal<nlohmann::json(const int64_t)>onInfo;
+
+    boost::signals2::signal<std::vector<int64_t>()>onGetAllTorrentId;
 
 };
 

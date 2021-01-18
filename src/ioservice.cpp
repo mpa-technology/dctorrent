@@ -32,54 +32,25 @@
 #include <ioservice.hpp>
 
 //FIXME: Bad code
-void IoService::info_(const std::list<TorrentFile> &torrentFiles,const std::vector<std::string> &argv){
+void IoService::info_(const std::vector<std::string> &argv){
 
     nlohmann::json json{ {"code",RESPONSE_CODE::CODE_OK} };
 
     std::vector<int64_t>idList;
 
     if(argv.size()==1){
-        for(const auto & it : torrentFiles)
-            idList.push_back(it.getId());
-    }else
-        for(auto it = argv.begin()+1;it!=argv.end();++it)
+        idList = *onGetAllTorrentId();
+    }
+    else{
+        for(auto it = argv.begin()+1;it!=argv.end();++it){
             idList.push_back(std::stoll(*it));
-
-
-
-    for(const auto &tf:torrentFiles){
-
-        for(const auto &id : idList)
-            if(id == tf.getId()){
-                json["torrent"] += tf.json();
-                break;
-            }
-
-
+        }
     }
 
 
+    for(const auto &tf:idList)
+        json["torrent"] += *onInfo(tf);;
 
-
-//    if(argv.size() == 1){
-
-
-
-
-
-
-//        for(auto& it : torrentFiles)
-//            json["torrent"] += it.json();
-
-//    }
-
-//    for(auto it = argv.begin()+1;it!=argv.end();++it){
-//        auto id = std::stoll(*it);
-//        for(auto f : torrentFiles)
-//            if(f.getId()==id)
-//
-
-//    }
 
 
     std::cout << json << std::endl;
@@ -95,7 +66,7 @@ IoService::IoService(){
     std::cerr.imbue(loc);
 }
 
-void IoService::work(const std::list<TorrentFile>& torrentFiles){
+void IoService::work(){
 
     std::flush(std::cout);
 
@@ -120,7 +91,7 @@ void IoService::work(const std::list<TorrentFile>& torrentFiles){
     switch (static_cast<COMMAND>(eccode)){
 
     case COMMAND::EXIT: onExit() ; break;
-    case COMMAND::INFO: info_(torrentFiles,argv); break;
+    case COMMAND::INFO: info_(argv); break;
     case COMMAND::ADD: onAddTorrent(argv.at(1)); break;
     case COMMAND::REMOVE: onRemoveTorrent(std::stoll(argv.at(1)));break;
 

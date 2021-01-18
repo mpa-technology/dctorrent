@@ -43,7 +43,17 @@ int64_t Session::findFreeId_(const int64_t &id){
     return id;
 }
 
-std::list<TorrentFile> &Session::get(){
+TorrentFile Session::getTorrent(const int64_t id){
+
+    for(const auto& it : torrentFiles_)
+        if(it.getId() == id)
+            return it;
+
+    //FIXME: add throw
+    throw ;;
+}
+
+std::list<TorrentFile> Session::getAllTorrent(){
     return torrentFiles_;
 }
 

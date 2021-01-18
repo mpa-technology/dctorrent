@@ -38,6 +38,8 @@ App::App(int argc, char **argv){
     ioService_->onExit.connect(std::bind(&App::onExit_,this));
     ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1));
     ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
+    ioService_->onInfo.connect(std::bind(&App::onInfo_,this,std::placeholders::_1));
+    ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
 
     appPath_ = argv[0];
 
@@ -89,13 +91,9 @@ void App::onRemoveTorrent_(const int64_t id){
 
 }
 
-std::string App::onInfo_(const std::vector<int64_t> &idList)
+nlohmann::json App::onInfo_(const int64_t id)
 {
-
-    static_cast<void>(idList);
-
-    throw  NotImplementedException;
-
+    return session_->getTorrent(id).json();
 }
 
 
@@ -112,13 +110,9 @@ int App::run(){
 
     while (flags_.run) {
 
-        auto& torrentList = session_->get();
+        session_->torrentUpdate();
 
-        for(auto& it : torrentList)
-            it.update();
-
-
-        ioService_->work(torrentList);
+        ioService_->work();
     }
 
     //TODO: move to ioservice

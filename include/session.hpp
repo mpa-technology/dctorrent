@@ -54,8 +54,15 @@ class Session{
 
 public:
 
-    std::list<TorrentFile> &get();
+    std::list<TorrentFile> getAllTorrent();
 
+    TorrentFile getTorrent(const int64_t id);
+
+    void torrentUpdate(){
+
+        for(auto &it : torrentFiles_)
+            it.update();
+    }
 
     lt::session &session();
 
