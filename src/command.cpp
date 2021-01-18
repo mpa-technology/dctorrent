@@ -40,6 +40,6 @@ std::string toCommand(const int var){
     }
 
 
-    //FIXMI: add throw
+    //FIXME: add throw
     return {};
 }
