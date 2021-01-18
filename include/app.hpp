@@ -73,7 +73,6 @@ class App{
     void onRemoveTorrent_(const int64_t id);
 
 
-    //TODO: move info to
     nlohmann::json onInfo_(const int64_t id);
 
     std::vector<int64_t> onGetAllTorrentId(){
