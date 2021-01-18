@@ -32,10 +32,7 @@
 
 App::App(int argc, char **argv){
 
-
-    appPath_ = argv[0];
-
-    for(int i = 1 ; i != argc; ++i)
+    for(int i = 0 ; i != argc; ++i)
         arguments_.push_back(argv[i]);
 
 

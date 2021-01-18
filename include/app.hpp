@@ -51,9 +51,6 @@ class App{
 
     std::vector<std::string> arguments_;
 
-    //TODO:rename
-    std::string appPath_;
-
     std::unique_ptr<Session>session_;
     std::unique_ptr<IoService>ioService_;
 
