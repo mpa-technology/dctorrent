@@ -32,7 +32,20 @@
 
 TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
 
-    auto files = torrentHandle_.torrent_file()->files();
+
+
+
+
+
+
+
+
+
+auto files = torrentHandle_.torrent_file()->files();
+
+
+
+
 
     torrentHandle_.torrent_file()->files().file_range();
 
@@ -53,7 +66,6 @@ TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
     }
 
 
-
 }
 
 void TorrentFile::pause(const int &id){
@@ -72,6 +84,9 @@ std::vector<TorrentNode> TorrentFile::getNode() const{
 }
 
 void TorrentFile::update(){
+
+
+
     auto files = torrentHandle_.torrent_file()->files();
 
     for( auto& it : torrentNodes_){

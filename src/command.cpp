@@ -36,6 +36,7 @@ std::string toCommand(const int var){
     case COMMAND::INFO: return "INFO";
     case COMMAND::ADD: return "ADD";
     case COMMAND::REMOVE: return "REMOVE";
+    case COMMAND::ADDMAGNET: return "ADDMAGNET";
     case COMMAND::ERROR_COMMAND: return "ERROR_COMMAND";
     }
 

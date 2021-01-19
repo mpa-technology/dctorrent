@@ -67,6 +67,39 @@ libtorrent::session &Session::session(){
     return session_;
 }
 
+void Session::addTorrentMagnet(const std::string &url){
+
+
+    lt::error_code ec;
+    lt::add_torrent_params tp = lt::parse_magnet_uri(url,ec);
+
+
+    if(ec.failed()){
+        std::cout << "error"<<std::endl;
+        return;
+    }
+
+
+
+    tp.save_path = ".";
+
+
+
+    auto th = session_.add_torrent(std::move(tp));
+
+
+    while (!th.status().has_metadata) {
+        //waitmeta data
+    }
+
+    torrentFiles_.push_back(th);
+
+    torrentFiles_.back().setId(findFreeId_());
+
+
+
+}
+
 void Session::addTorrent(TorrentInfo &&tf){
 
     auto th = session_.add_torrent(tf.params());

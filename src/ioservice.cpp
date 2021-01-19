@@ -107,6 +107,7 @@ void IoService::work(){
     case COMMAND::EXIT: onExit() ; break;
     case COMMAND::INFO: info_(argv); break;
     case COMMAND::ADD: onAddTorrent(argv.at(1).as_string().c_str()); break;
+    case COMMAND::ADDMAGNET: onAddMagnetTorrent(argv.at(1).as_string().c_str()); break;
     case COMMAND::REMOVE: onRemoveTorrent(argv.at(1).to_number<int64_t>());break;
 
     default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;

@@ -64,12 +64,14 @@ class App{
         \details Checks the name of the transferred file
     */
     void onAddTorrent_(const std::string &fileName);
+    void onAddMagnetTorrent_(const std::string &fileName);
 
     /*!
         \brief Signal to delete torrent
         \details I guarantee verification id
     */
     void onRemoveTorrent_(const int64_t id);
+
 
 
     boost::json::object onInfo_(const int64_t id);

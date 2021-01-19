@@ -38,8 +38,8 @@
 #endif
 
 #include <libtorrent/session.hpp>
-
-
+#include <libtorrent/magnet_uri.hpp>
+#include <iostream>
 
 class Session{
 
@@ -62,6 +62,7 @@ public:
 
     lt::session &session();
 
+    void addTorrentMagnet(const std::string &url);
 
     void addTorrent(TorrentInfo &&tf);
 

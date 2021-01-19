@@ -29,8 +29,8 @@
 
 #include <app.hpp>
 
-
 App::App(int argc, char **argv){
+
 
     for(int i = 0 ; i != argc; ++i)
         arguments_.push_back(argv[i]);
@@ -42,6 +42,7 @@ App::App(int argc, char **argv){
 
     ioService_->onExit.connect(std::bind(&App::onExit_,this));
     ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1));
+    ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1));
     ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
     ioService_->onInfo.connect(std::bind(&App::onInfo_,this,std::placeholders::_1));
     ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
@@ -75,6 +76,12 @@ void App::onAddTorrent_(const std::string &fileName)
 
     ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
 
+}
+
+void App::onAddMagnetTorrent_(const std::string &fileName)
+{
+    session_->addTorrentMagnet(fileName);
+    ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
 }
 
 void App::onRemoveTorrent_(const int64_t id){
