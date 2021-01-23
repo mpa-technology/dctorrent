@@ -67,26 +67,10 @@ libtorrent::session &Session::session(){
     return session_;
 }
 
-void Session::addTorrentMagnet(const std::string &url){
+void Session::addTorrentMagnet(TorrentParam &&tf){
+    //TODO: add check
 
-
-    lt::error_code ec;
-    lt::add_torrent_params tp = lt::parse_magnet_uri(url,ec);
-
-
-    if(ec.failed()){
-        std::cout << "error"<<std::endl;
-        return;
-    }
-
-
-
-    tp.save_path = ".";
-
-
-
-    auto th = session_.add_torrent(std::move(tp));
-
+    auto th = session_.add_torrent(tf.params());
 
     while (!th.status().has_metadata) {
         //wait meta data
@@ -100,7 +84,10 @@ void Session::addTorrentMagnet(const std::string &url){
 
 }
 
-void Session::addTorrent(TorrentInfo &&tf){
+void Session::addTorrent(TorrentParam &&tf){
+
+
+    //TODO: add check
 
     auto th = session_.add_torrent(tf.params());
 

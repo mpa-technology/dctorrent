@@ -28,21 +28,52 @@
  */
 
 
-#include <torrentinfo.hpp>
+#include <TorrentParam.hpp>
 
 
 
-TorrentInfo::TorrentInfo(const std::string_view &filePath) : path_(filePath){
+TorrentParam::TorrentParam(){
 
 }
 
-void TorrentInfo::setSavePath(const std::string_view &savePath){
+void TorrentParam::setFilePath(const std::string &filePath){
+    isFileLoad_ = true;
+    path_ = filePath;
+}
+
+void TorrentParam::setMagnet(const std::string &url){
+    isFileLoad_ = false;
+    path_ = url;
+}
+
+void TorrentParam::setSavePath(const std::string_view &savePath){
     savePath_ = savePath;
 }
 
-libtorrent::add_torrent_params TorrentInfo::params(){
+libtorrent::add_torrent_params TorrentParam::params(){
+
+
     lt::add_torrent_params tp;
+
+    //TODO: add check
+
+    if(isFileLoad_){
+        tp.ti = std::make_shared<lt::torrent_info>(path_);
+    }else{
+        tp = lt::parse_magnet_uri(path_);
+    }
+
     tp.save_path = savePath_;
-    tp.ti = std::make_shared<lt::torrent_info>(path_);
+
+
+
     return tp;
+}
+
+bool TorrentParam::isMagnet() const{
+    return  !isFileLoad_;
+}
+
+bool TorrentParam::isFile() const{
+    return isFileLoad_;
 }

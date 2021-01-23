@@ -38,38 +38,37 @@
 #include <libtorrent/add_torrent_params.hpp>
 #include <libtorrent/torrent_info.hpp>
 #include <libtorrent/magnet_uri.hpp>
-//TODO: rename
-
-struct Magnet {
-
-    lt::add_torrent_params params;
-
-    Magnet(const std::string &url){
-
-        params = lt::parse_magnet_uri(url);
-
-    }
 
 
-};
 
 
-class TorrentInfo{
+class TorrentParam{
 
     std::string path_;
     std::string savePath_;
 
+    bool isFileLoad_;
+
+
 public:
 
 
-    TorrentInfo( const std::string_view &filePath);
-    TorrentInfo(){}
+    TorrentParam();
+
+
+    void setFilePath(const std::string& filePath);
+
+    void setMagnet(const std::string& url);
 
 
     void setSavePath( const std::string_view &savePath);
 
     lt::add_torrent_params params();
 
+
+    bool isMagnet()const;
+
+    bool isFile()const;
 
 
 

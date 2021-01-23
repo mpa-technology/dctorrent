@@ -30,7 +30,7 @@
 #pragma once
 
 
-#include <torrentinfo.hpp>
+#include <TorrentParam.hpp>
 #include <torrentfile.hpp>
 
 #ifndef TORRENT_NO_DEPRECATE
@@ -62,9 +62,9 @@ public:
 
     lt::session &session();
 
-    void addTorrentMagnet(const std::string &url);
+    void addTorrentMagnet(TorrentParam &&tf);
 
-    void addTorrent(TorrentInfo &&tf);
+    void addTorrent(TorrentParam &&tf);
 
 
 

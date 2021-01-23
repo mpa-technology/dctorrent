@@ -64,7 +64,7 @@ class App{
         \details Checks the name of the transferred file
     */
     void onAddTorrent_(const std::string &fileName);
-    void onAddMagnetTorrent_(const std::string &fileName);
+    void onAddMagnetTorrent_(const std::string &url);
 
     /*!
         \brief Signal to delete torrent

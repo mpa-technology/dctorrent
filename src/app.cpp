@@ -68,9 +68,10 @@ void App::onAddTorrent_(const std::string &fileName)
     }
 
 
-    TorrentInfo torrentInfo(fileName);
-    torrentInfo.setSavePath(std::string("."));
-    session_->addTorrent(std::move(torrentInfo));
+    TorrentParam torrentParam;
+    torrentParam.setFilePath(fileName);
+    torrentParam.setSavePath(std::string("."));
+    session_->addTorrent(std::move(torrentParam));
 
 
 
@@ -78,9 +79,15 @@ void App::onAddTorrent_(const std::string &fileName)
 
 }
 
-void App::onAddMagnetTorrent_(const std::string &fileName)
-{
-    session_->addTorrentMagnet(fileName);
+void App::onAddMagnetTorrent_(const std::string &url){
+
+    TorrentParam torrentParam;
+    torrentParam.setMagnet(url);
+    torrentParam.setSavePath(std::string("."));
+    session_->addTorrent(std::move(torrentParam));
+
+
+    session_->addTorrentMagnet(std::move(torrentParam));
     ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
 }
 
