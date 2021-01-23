@@ -33,6 +33,32 @@
 
 #include <string>
 
+
+
+class CommandException : public std::exception{
+
+
+    std::string msg_;
+
+public:
+
+
+    CommandException(const std::string &msg):
+        msg_(msg){}
+
+
+
+    virtual  ~CommandException(){}
+
+
+    virtual const char* what() const noexcept{
+        return msg_.c_str();
+    }
+
+
+};
+
+
 enum class COMMAND : int{
     EXIT,
     INFO,

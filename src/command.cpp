@@ -29,6 +29,19 @@
 
 #include <command.hpp>
 
+
+
+CommandException::CommandException(const std::string &msg):
+    msg_(msg){}
+
+CommandException::~CommandException(){}
+
+const char *CommandException::what() const noexcept{
+    return msg_.c_str();
+}
+
+
+
 std::string toCommand(const int var){
 
     switch (static_cast<COMMAND>(var)) {
@@ -41,6 +54,7 @@ std::string toCommand(const int var){
     }
 
 
-    //FIXME: add throw
-    return {};
+
+    throw CommandException("command not found");
 }
+
