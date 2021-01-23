@@ -33,18 +33,7 @@
 TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
 
 
-
-
-
-
-
-
-
-
 auto files = torrentHandle_.torrent_file()->files();
-
-
-
 
 
     torrentHandle_.torrent_file()->files().file_range();

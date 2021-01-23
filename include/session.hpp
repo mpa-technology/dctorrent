@@ -67,6 +67,8 @@ public:
     void addTorrent(TorrentInfo &&tf);
 
 
+
+
     void removeTorrent(const TorrentFile &tf);
     void removeTorrent(const int64_t id);
 

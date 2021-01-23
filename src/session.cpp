@@ -89,7 +89,7 @@ void Session::addTorrentMagnet(const std::string &url){
 
 
     while (!th.status().has_metadata) {
-        //waitmeta data
+        //wait meta data
     }
 
     torrentFiles_.push_back(th);
