@@ -68,10 +68,12 @@ libtorrent::session &Session::session(){
 }
 
 void Session::addTorrentMagnet(TorrentParam &&tf){
-    //TODO: add check
+    //FIXME: add check
 
     auto th = session_.add_torrent(tf.params());
 
+
+   //FIXME: add check
     while (!th.status().has_metadata) {
         //wait meta data
     }
@@ -87,7 +89,7 @@ void Session::addTorrentMagnet(TorrentParam &&tf){
 void Session::addTorrent(TorrentParam &&tf){
 
 
-    //TODO: add check
+    //FIXME: add check
 
     auto th = session_.add_torrent(tf.params());
 

@@ -31,7 +31,7 @@
 
 #include <ioservice.hpp>
 
-//FIXME: Bad code
+
 void IoService::info_(const boost::json::array &argv){
 
     boost::json::object json;
