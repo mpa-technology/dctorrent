@@ -41,6 +41,26 @@
 
 
 
+class TorrentParamException : public std::exception{
+
+
+    std::string msg_;
+
+public:
+
+
+    TorrentParamException(const std::string &msg);
+
+
+
+    virtual  ~TorrentParamException();
+
+
+    virtual const char* what() const noexcept;
+
+
+};
+
 
 class TorrentParam{
 

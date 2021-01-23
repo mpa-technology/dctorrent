@@ -31,6 +31,18 @@
 #include <session.hpp>
 
 
+
+SessionException::SessionException(const std::string &msg): msg_(msg){}
+
+SessionException::~SessionException(){}
+
+const char *SessionException::what() const noexcept{
+    return msg_.c_str();
+}
+
+
+
+
 int64_t Session::findFreeId_(const int64_t &id){
     if(torrentFiles_.empty())
         return 0;
@@ -68,7 +80,12 @@ libtorrent::session &Session::session(){
 }
 
 void Session::addTorrentMagnet(TorrentParam &&tf){
-    //FIXME: add check
+
+    if(tf.isFile()){
+        throw SessionException("wrong type of parmatir. tf==FILE");
+    }
+
+
 
     auto th = session_.add_torrent(tf.params());
 
@@ -89,7 +106,9 @@ void Session::addTorrentMagnet(TorrentParam &&tf){
 void Session::addTorrent(TorrentParam &&tf){
 
 
-    //FIXME: add check
+    if(tf.isMagnet()){
+        throw SessionException("wrong type of parmatir. tf==MAGNET");
+    }
 
     auto th = session_.add_torrent(tf.params());
 
@@ -120,3 +139,4 @@ void Session::removeTorrent(const int64_t id)
 
     throw std::invalid_argument("id not found");
 }
+

@@ -41,6 +41,30 @@
 #include <libtorrent/magnet_uri.hpp>
 #include <iostream>
 
+
+
+
+class SessionException : public std::exception{
+
+
+    std::string msg_;
+
+public:
+
+
+    SessionException(const std::string &msg);
+
+
+
+    virtual  ~SessionException();
+
+
+    virtual const char* what() const noexcept;
+
+
+};
+
+
 class Session{
 
 

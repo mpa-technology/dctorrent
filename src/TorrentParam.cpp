@@ -30,6 +30,13 @@
 
 #include <TorrentParam.hpp>
 
+TorrentParamException::TorrentParamException(const std::string &msg):msg_(msg){}
+
+TorrentParamException::~TorrentParamException(){}
+
+const char *TorrentParamException::what() const noexcept{
+    return msg_.c_str();
+}
 
 
 TorrentParam::TorrentParam(){
@@ -55,12 +62,16 @@ libtorrent::add_torrent_params TorrentParam::params(){
 
     lt::add_torrent_params tp;
 
-    //TODO: add check
-
     if(isFileLoad_){
         tp.ti = std::make_shared<lt::torrent_info>(path_);
     }else{
-        tp = lt::parse_magnet_uri(path_);
+        lt::error_code ec;
+        tp = lt::parse_magnet_uri(path_,ec);
+        if(ec.failed()){
+            throw TorrentParamException(std::string{"error parse magnet: "}+ec.message());
+        }
+
+
     }
 
     tp.save_path = savePath_;
@@ -77,3 +88,4 @@ bool TorrentParam::isMagnet() const{
 bool TorrentParam::isFile() const{
     return isFileLoad_;
 }
+

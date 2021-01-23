@@ -43,17 +43,14 @@ class CommandException : public std::exception{
 public:
 
 
-    CommandException(const std::string &msg):
-        msg_(msg){}
+    CommandException(const std::string &msg);
 
 
 
-    virtual  ~CommandException(){}
+    virtual  ~CommandException();
 
 
-    virtual const char* what() const noexcept{
-        return msg_.c_str();
-    }
+    virtual const char* what() const noexcept;
 
 
 };
