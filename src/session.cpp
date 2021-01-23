@@ -90,9 +90,20 @@ void Session::addTorrentMagnet(TorrentParam &&tf){
     auto th = session_.add_torrent(tf.params());
 
 
-   //FIXME: add check
+
+    std::chrono::time_point<std::chrono::steady_clock> start = std::chrono::steady_clock::now();
+
+
+
     while (!th.status().has_metadata) {
-        //wait meta data
+
+       auto elapsed = std::chrono::duration_cast<std::chrono::seconds>
+            (std::chrono::steady_clock::now() - start).count();
+
+       if(elapsed >= 25)
+           throw SessionException("waiting for metadata >= 25");
+
+
     }
 
     torrentFiles_.push_back(th);
