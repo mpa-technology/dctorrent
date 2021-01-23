@@ -84,7 +84,6 @@ void App::onAddMagnetTorrent_(const std::string &url){
     TorrentParam torrentParam;
     torrentParam.setMagnet(url);
     torrentParam.setSavePath(std::string("."));
-    session_->addTorrent(std::move(torrentParam));
 
 
     session_->addTorrentMagnet(std::move(torrentParam));
