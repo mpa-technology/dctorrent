@@ -46,9 +46,9 @@ std::string toCommand(const int var){
 
     switch (static_cast<COMMAND>(var)) {
     case COMMAND::EXIT: return "EXIT";
-    case COMMAND::INFO: return "INFO";
-    case COMMAND::ADD: return "ADD";
-    case COMMAND::REMOVE: return "REMOVE";
+    case COMMAND::INFOT: return "INFO";
+    case COMMAND::ADDT: return "ADDT";
+    case COMMAND::REMOVET: return "REMOVET";
     case COMMAND::ADDMAGNET: return "ADDMAGNET";
     case COMMAND::ERROR_COMMAND: return "ERROR_COMMAND";
     }

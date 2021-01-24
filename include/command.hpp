@@ -58,10 +58,10 @@ public:
 
 enum class COMMAND : int{
     EXIT,
-    INFO,
-    ADD,
+    INFOT,
+    ADDT,
     ADDMAGNET,
-    REMOVE,
+    REMOVET,
     ERROR_COMMAND
 
 };
@@ -76,16 +76,16 @@ constexpr int commandToInt( const std::string_view sv){
     if(sv == "EXIT" || sv=="exit")
         return static_cast<int>(COMMAND::EXIT);
 
-    if(sv == "INFO" || sv=="info")
-        return static_cast<int>(COMMAND::INFO);
+    if(sv == "INFOT" || sv=="infot")
+        return static_cast<int>(COMMAND::INFOT);
 
-    if(sv == "ADD" || sv=="add")
-        return static_cast<int>(COMMAND::ADD);
+    if(sv == "ADDT" || sv=="addt")
+        return static_cast<int>(COMMAND::ADDT);
 
-    if(sv == "REMOVE" || sv=="remove")
-        return static_cast<int>(COMMAND::REMOVE);
+    if(sv == "REMOVET" || sv=="removet")
+        return static_cast<int>(COMMAND::REMOVET);
 
-    if(sv == "ADDM" || sv=="addm")
+    if(sv == "ADDMT" || sv=="addmt")
         return static_cast<int>(COMMAND::ADDMAGNET);
 
 

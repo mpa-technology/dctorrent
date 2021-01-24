@@ -105,10 +105,10 @@ void IoService::work(){
     switch (static_cast<COMMAND>(eccode)){
 
     case COMMAND::EXIT: onExit() ; break;
-    case COMMAND::INFO: info_(argv); break;
-    case COMMAND::ADD: onAddTorrent(argv.at(1).as_string().c_str()); break;
+    case COMMAND::INFOT: info_(argv); break;
+    case COMMAND::ADDT: onAddTorrent(argv.at(1).as_string().c_str()); break;
     case COMMAND::ADDMAGNET: onAddMagnetTorrent(argv.at(1).as_string().c_str()); break;
-    case COMMAND::REMOVE: onRemoveTorrent(argv.at(1).to_number<int64_t>());break;
+    case COMMAND::REMOVET: onRemoveTorrent(argv.at(1).to_number<int64_t>());break;
 
     default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
     }
