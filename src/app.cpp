@@ -67,27 +67,33 @@ void App::onAddTorrent_(const std::string &fileName)
         return;
     }
 
-
+    try{
     TorrentParam torrentParam;
     torrentParam.setFilePath(fileName);
     torrentParam.setSavePath(std::string("."));
+
     session_->addTorrent(std::move(torrentParam));
 
-
-
     ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
-
+    }catch(...){
+        ioService_->simpleResponse("torrent error add",RESPONSE_CODE::CODE_ERROR);
+    }
 }
 
 void App::onAddMagnetTorrent_(const std::string &url){
 
-    TorrentParam torrentParam;
-    torrentParam.setMagnet(url);
-    torrentParam.setSavePath(std::string("."));
+    try{
+        TorrentParam torrentParam;
+        torrentParam.setMagnet(url);
+        torrentParam.setSavePath(std::string("."));
 
+        session_->addTorrentMagnet(std::move(torrentParam));
 
-    session_->addTorrentMagnet(std::move(torrentParam));
-    ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
+        ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
+    }catch(...){
+        ioService_->simpleResponse("torrent error add",RESPONSE_CODE::CODE_ERROR);
+    }
+
 }
 
 void App::onRemoveTorrent_(const int64_t id){
