@@ -63,8 +63,8 @@ class App{
         \brief Signal for adding a torrent
         \details Checks the name of the transferred file
     */
-    void onAddTorrent_(const std::string &fileName);
-    void onAddMagnetTorrent_(const std::string &url);
+    void onAddTorrent_(const std::string &fileName, const std::string &savePath);
+    void onAddMagnetTorrent_(const std::string &url, const std::string &savePath);
 
     /*!
         \brief Signal to delete torrent

@@ -62,8 +62,8 @@ public:
 
 
     boost::signals2::signal<void()>onExit;
-    boost::signals2::signal<void(const std::string&)>onAddTorrent;
-    boost::signals2::signal<void(const std::string&)>onAddMagnetTorrent;
+    boost::signals2::signal<void(const std::string& , const std::string&)>onAddTorrent;
+    boost::signals2::signal<void(const std::string& , const std::string&)>onAddMagnetTorrent;
     boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
     boost::signals2::signal<boost::json::object(const int64_t)>onInfo;
 

@@ -41,8 +41,8 @@ App::App(int argc, char **argv){
     ioService_ = std::make_unique<IoService>();
 
     ioService_->onExit.connect(std::bind(&App::onExit_,this));
-    ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1));
-    ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1));
+    ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1,std::placeholders::_2));
+    ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
     ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
     ioService_->onInfo.connect(std::bind(&App::onInfo_,this,std::placeholders::_1));
     ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
@@ -59,7 +59,7 @@ void App::onExit_(){
 }
 
 
-void App::onAddTorrent_(const std::string &fileName)
+void App::onAddTorrent_(const std::string &fileName, const std::string &savePath)
 {
 
     if(!boost::filesystem::exists(fileName)){
@@ -70,7 +70,7 @@ void App::onAddTorrent_(const std::string &fileName)
     try{
     TorrentParam torrentParam;
     torrentParam.setFilePath(fileName);
-    torrentParam.setSavePath(std::string("."));
+    torrentParam.setSavePath( (savePath.empty() ? "." : savePath ) );
 
     session_->addTorrent(std::move(torrentParam));
 
@@ -80,12 +80,13 @@ void App::onAddTorrent_(const std::string &fileName)
     }
 }
 
-void App::onAddMagnetTorrent_(const std::string &url){
+void App::onAddMagnetTorrent_(const std::string &url, const std::string &savePath){
 
     try{
         TorrentParam torrentParam;
         torrentParam.setMagnet(url);
-        torrentParam.setSavePath(std::string("."));
+        torrentParam.setSavePath( (savePath.empty() ? "." : savePath ) );
+
 
         session_->addTorrentMagnet(std::move(torrentParam));
 
