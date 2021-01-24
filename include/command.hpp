@@ -85,7 +85,7 @@ constexpr int commandToInt( const std::string_view sv){
     if(sv == "REMOVET" || sv=="removet")
         return static_cast<int>(COMMAND::REMOVET);
 
-    if(sv == "ADDMT" || sv=="addmt")
+    if(sv == "ADDTM" || sv=="addtm")
         return static_cast<int>(COMMAND::ADDMAGNET);
 
 
