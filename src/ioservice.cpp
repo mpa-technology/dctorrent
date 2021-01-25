@@ -32,7 +32,7 @@
 #include <ioservice.hpp>
 
 
-void IoService::info_(const boost::json::array &argv){
+void IoService::info_(const std::vector<std::string> &argv){
 
     boost::json::object json;
     boost::json::array array;
@@ -48,7 +48,7 @@ void IoService::info_(const boost::json::array &argv){
         }
         else{
             for(auto it = argv.begin()+1;it!=argv.end();++it){
-                auto id = it->get_int64();
+                auto id = std::stoll(*it);
                 array.push_back(*onInfo(id));
 
             }
@@ -88,18 +88,26 @@ void IoService::work(){
 
     std::getline(std::cin,inputStr);
 
-    boost::json::array argv;
 
+    std::vector<std::string>argv;
 
     try{
-        argv = boost::json::parse(inputStr).as_array();
+        boost::json::array jarra = boost::json::parse(inputStr).as_array();
+
+        for(auto it : jarra){
+            argv.push_back(it.as_string().c_str());
+
+        }
+
+
     }catch(const std::exception &exp){
         simpleResponse(exp.what(),RESPONSE_CODE::CODE_ERROR);
         return;
     }
 
 
-    const int eccode = commandToInt(argv.at(0).as_string().c_str());
+
+    const int eccode = commandToInt(argv.at(0));
 
 
     switch (static_cast<COMMAND>(eccode)){
@@ -109,18 +117,18 @@ void IoService::work(){
     case COMMAND::ADDT:{
 
         if(argv.size() > 2)
-        onAddTorrent(argv.at(1).as_string().c_str(),argv.at(2).as_string().c_str());
+            onAddTorrent(argv.at(1),argv.at(2));
         else
-            onAddTorrent(argv.at(1).as_string().c_str(),{});
+            onAddTorrent(argv.at(1),{});
     }
     break;
     case COMMAND::ADDMAGNET:{
         if(argv.size() > 2)
-            onAddMagnetTorrent(argv.at(1).as_string().c_str(),argv.at(2).as_string().c_str());
+            onAddMagnetTorrent(argv.at(1),argv.at(2));
         else
-            onAddMagnetTorrent(argv.at(1).as_string().c_str(),{});
+            onAddMagnetTorrent(argv.at(1),{});
     }break;
-    case COMMAND::REMOVET: onRemoveTorrent(argv.at(1).to_number<int64_t>());break;
+    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
 
     default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
     }

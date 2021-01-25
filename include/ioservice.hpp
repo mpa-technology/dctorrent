@@ -33,6 +33,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include <boost/algorithm/string.hpp>
 #include <boost/locale.hpp>
@@ -47,7 +48,7 @@
 class IoService{
 
 
-    void info_(const boost::json::array &argv);
+    void info_(const std::vector<std::string> &argv);
 
 public:
 
