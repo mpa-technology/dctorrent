@@ -91,3 +91,19 @@ constexpr int commandToInt( const std::string_view sv){
 
     return static_cast<int>(COMMAND::ERROR_COMMAND);
 }
+
+constexpr bool commandExist(const COMMAND command){
+
+    switch (command) {
+    case COMMAND::EXIT:
+    case COMMAND::INFOT:
+    case COMMAND::ADDT:
+    case COMMAND::REMOVET:
+    case COMMAND::ADDMAGNET:
+    case COMMAND::ERROR_COMMAND:return true;
+    }
+
+    return false;
+}
+
+
