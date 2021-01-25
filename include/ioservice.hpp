@@ -50,6 +50,21 @@ class IoService{
 
     void info_(const std::vector<std::string> &argv);
 
+
+    void addt_(const std::vector<std::string>& argv){
+
+        if(argv.empty()){
+            //TODO:FIXME add exp
+            throw std::invalid_argument("argv empty");
+        }
+
+        if(argv.size() > 1)
+            onAddTorrent(argv.at(0),argv.at(1));
+        else
+            onAddTorrent(argv.at(0),{});
+
+    }
+
 public:
 
 
