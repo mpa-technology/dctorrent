@@ -32,6 +32,29 @@
 #include <ioservice.hpp>
 
 
+std::string IoService::getLine(){
+    std::string inputString;
+    std::getline(std::cin,inputString);
+    return inputString;
+}
+
+std::vector<std::string> IoService::getArgv(const std::string &string){
+
+    std::vector<std::string> argv;
+
+    boost::json::array jarra = boost::json::parse(string).as_array();
+
+    for(auto it : jarra){
+        argv.push_back(it.as_string().c_str());
+
+    }
+
+    return argv;
+
+
+
+}
+
 void IoService::info_(const std::vector<std::string> &argv){
 
     boost::json::object json;
@@ -71,6 +94,20 @@ void IoService::info_(const std::vector<std::string> &argv){
 
 }
 
+void IoService::addt_(const std::vector<std::string> &argv){
+
+    if(argv.empty()){
+        //TODO: replace exception
+        throw std::invalid_argument("argv empty");
+    }
+
+    if(argv.size() > 1)
+        onAddTorrent(argv.at(0),argv.at(1));
+    else
+        onAddTorrent(argv.at(0),{});
+
+}
+
 IoService::IoService(){
 
     boost::locale::generator gen;
@@ -85,7 +122,7 @@ void IoService::work(){
 
 
     try{
-    std::flush(std::cout);
+        std::flush(std::cout);
 
         std::string inputStr = getLine();
 
