@@ -82,57 +82,40 @@ IoService::IoService(){
 
 void IoService::work(){
 
-    std::flush(std::cout);
 
-    std::string inputStr;
-
-    std::getline(std::cin,inputStr);
-
-
-    std::vector<std::string>argv;
 
     try{
-        boost::json::array jarra = boost::json::parse(inputStr).as_array();
+    std::flush(std::cout);
 
-        for(auto it : jarra){
-            argv.push_back(it.as_string().c_str());
+        std::string inputStr = getLine();
 
+        std::vector<std::string>argv = getArgv(inputStr);
+
+
+
+
+        const int eccode = commandToInt(argv.at(0));
+
+
+
+        switch (static_cast<COMMAND>(eccode)){
+
+        case COMMAND::EXIT: onExit() ; break;
+        case COMMAND::INFOT: info_(argv); break;
+        case COMMAND::ADDT: addt_({argv.begin()+1,argv.end()});break;
+        case COMMAND::ADDMAGNET:{
+            if(argv.size() > 2)
+                onAddMagnetTorrent(argv.at(1),argv.at(2));
+            else
+                onAddMagnetTorrent(argv.at(1),{});
+        }break;
+        case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
+        //TODO: replace exception
+        default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
         }
-
-
     }catch(const std::exception &exp){
         simpleResponse(exp.what(),RESPONSE_CODE::CODE_ERROR);
-        return;
     }
-
-
-
-    const int eccode = commandToInt(argv.at(0));
-
-
-    switch (static_cast<COMMAND>(eccode)){
-
-    case COMMAND::EXIT: onExit() ; break;
-    case COMMAND::INFOT: info_(argv); break;
-    case COMMAND::ADDT:{
-
-        if(argv.size() > 2)
-            onAddTorrent(argv.at(1),argv.at(2));
-        else
-            onAddTorrent(argv.at(1),{});
-    }
-    break;
-    case COMMAND::ADDMAGNET:{
-        if(argv.size() > 2)
-            onAddMagnetTorrent(argv.at(1),argv.at(2));
-        else
-            onAddMagnetTorrent(argv.at(1),{});
-    }break;
-    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
-
-    default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
-    }
-
 
 }
 

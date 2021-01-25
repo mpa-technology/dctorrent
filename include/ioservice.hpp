@@ -47,6 +47,29 @@
 
 class IoService{
 
+    std::string getLine(){
+        std::string inputString;
+        std::getline(std::cin,inputString);
+        return inputString;
+    }
+
+    std::vector<std::string> getArgv( const std::string &string ){
+
+        std::vector<std::string> argv;
+
+        boost::json::array jarra = boost::json::parse(inputStr).as_array();
+
+        for(auto it : jarra){
+            argv.push_back(it.as_string().c_str());
+
+        }
+
+        return argv;
+
+
+
+    }
+
 
     void info_(const std::vector<std::string> &argv);
 
@@ -54,7 +77,7 @@ class IoService{
     void addt_(const std::vector<std::string>& argv){
 
         if(argv.empty()){
-            //TODO:FIXME add exp
+            //TODO: replace exception
             throw std::invalid_argument("argv empty");
         }
 
@@ -64,6 +87,8 @@ class IoService{
             onAddTorrent(argv.at(0),{});
 
     }
+
+
 
 public:
 
