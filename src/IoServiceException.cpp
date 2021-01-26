@@ -29,83 +29,15 @@
 
 
 
-#pragma once
 
-#include <iostream>
-#include <vector>
-#include <string>
-
-#include <boost/algorithm/string.hpp>
-#include <boost/locale.hpp>
-#include <boost/signals2.hpp>
-#include <boost/json.hpp>
-
-#include <utility.hpp>
-
-#include <session.hpp>
-#include <torrentfile.hpp>
-#include <respons.hpp>
-#include <command.hpp>
-
-class IoServiceException : public std::exception{
-
-
-    std::string msg_;
-
-public:
-
-
-    IoServiceException(const std::string &msg);
+#include <ioservice.hpp>
 
 
 
-    virtual  ~IoServiceException();
+IoServiceException::IoServiceException(const std::string &msg):msg_(msg){}
 
+IoServiceException::~IoServiceException(){}
 
-    virtual const char* what() const noexcept;
-
-
-};
-
-
-
-class IoService{
-
-    std::string getLine_();
-
-    std::vector<std::string> getArgv_( const std::string &string );
-
-    void commandExec( const COMMAND command , const std::vector<std::string> &argv);
-
-
-    void info_(const std::vector<std::string> &argv);
-
-
-    void addt_(const std::vector<std::string>& argv);
-
-
-
-public:
-
-
-    IoService();
-
-
-    void work( );
-
-    void simpleResponse(const std::string &msg , int code);
-    void simpleResponse(const std::string &msg , RESPONSE_CODE code);
-
-
-    boost::signals2::signal<void()>onExit;
-    boost::signals2::signal<void(const std::string& , const std::string&)>onAddTorrent;
-    boost::signals2::signal<void(const std::string& , const std::string&)>onAddMagnetTorrent;
-    boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
-    boost::signals2::signal<boost::json::object(const int64_t)>onInfo;
-
-
-
-    boost::signals2::signal<std::vector<int64_t>()>onGetAllTorrentId;
-
-};
-
+const char *IoServiceException::what() const noexcept{
+    return msg_.c_str();
+}

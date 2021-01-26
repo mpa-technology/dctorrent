@@ -186,3 +186,5 @@ void IoService::simpleResponse(const std::string &msg, RESPONSE_CODE code)
     std::cout << obj << '\n';
 
 }
+
+
