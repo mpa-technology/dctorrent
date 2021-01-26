@@ -105,9 +105,9 @@ void IoService::info_(const std::vector<std::string> &argv){
 
         json["code"] = static_cast<int>(RESPONSE_CODE::CODE_OK);
 
+
     }catch(const std::exception &exp){
-        json["code"] = static_cast<int>(RESPONSE_CODE::CODE_ERROR);
-        json["message"] = exp.what();
+        simpleResponse(exp.what(),RESPONSE_CODE::CODE_OK);
     }
 
 
