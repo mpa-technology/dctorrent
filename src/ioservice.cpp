@@ -58,11 +58,8 @@ std::vector<std::string> IoService::getArgv_(const std::string &string){
 void IoService::commandExec(const COMMAND command, const std::vector<std::string> &argv){
 
     if(!commandExist(command))
-        //TODO: replace exception
-        throw std::runtime_error("command not exist");
 
-
-
+        throw IoServiceException("command not exist");
 
     switch (command){
 
@@ -76,8 +73,7 @@ void IoService::commandExec(const COMMAND command, const std::vector<std::string
             onAddMagnetTorrent(argv.at(0),{});
     }break;
     case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
-        //TODO: replace exception
-    case COMMAND::ERROR_COMMAND: std::runtime_error("error command"); break;
+    case COMMAND::ERROR_COMMAND: IoServiceException("error command"); break;
     }
 
 
@@ -93,7 +89,7 @@ void IoService::info_(const std::vector<std::string> &argv){
     try{
 
 
-        if(argv.size() == 1){
+        if(argv.empty()){
             for(const auto & id:*onGetAllTorrentId()){
                 array.push_back(*onInfo(id));
             }
@@ -125,10 +121,9 @@ void IoService::info_(const std::vector<std::string> &argv){
 
 void IoService::addt_(const std::vector<std::string> &argv){
 
-    if(argv.empty()){
-        //TODO: replace exception
-        throw std::invalid_argument("argv empty");
-    }
+    if(argv.empty())
+        throw IoServiceException("argv empty");
+
 
     if(argv.size() > 1)
         onAddTorrent(argv.at(0),argv.at(1));
