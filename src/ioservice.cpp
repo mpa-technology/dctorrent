@@ -58,7 +58,6 @@ std::vector<std::string> IoService::getArgv_(const std::string &string){
 void IoService::commandExec(const COMMAND command, const std::vector<std::string> &argv){
 
     if(!commandExist(command))
-
         throw IoServiceException("command not exist");
 
     switch (command){
@@ -73,7 +72,7 @@ void IoService::commandExec(const COMMAND command, const std::vector<std::string
             onAddMagnetTorrent(argv.at(0),{});
     }break;
     case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
-    case COMMAND::ERROR_COMMAND: IoServiceException("error command"); break;
+    case COMMAND::ERROR_COMMAND: throw IoServiceException("error command"); break;
     }
 
 
