@@ -40,6 +40,8 @@
 #include <boost/signals2.hpp>
 #include <boost/json.hpp>
 
+#include <utility.hpp>
+
 #include <session.hpp>
 #include <torrentfile.hpp>
 #include <respons.hpp>
@@ -47,9 +49,11 @@
 
 class IoService{
 
-    std::string getLine();
+    std::string getLine_();
 
-    std::vector<std::string> getArgv( const std::string &string );
+    std::vector<std::string> getArgv_( const std::string &string );
+
+    void commandExec( const COMMAND command , const std::vector<std::string> &argv);
 
 
     void info_(const std::vector<std::string> &argv);

@@ -32,13 +32,13 @@
 #include <ioservice.hpp>
 
 
-std::string IoService::getLine(){
+std::string IoService::getLine_(){
     std::string inputString;
     std::getline(std::cin,inputString);
     return inputString;
 }
-
-std::vector<std::string> IoService::getArgv(const std::string &string){
+//TODO: replace name
+std::vector<std::string> IoService::getArgv_(const std::string &string){
 
     std::vector<std::string> argv;
 
@@ -50,6 +50,35 @@ std::vector<std::string> IoService::getArgv(const std::string &string){
     }
 
     return argv;
+
+
+
+}
+
+void IoService::commandExec(const COMMAND command, const std::vector<std::string> &argv){
+
+    if(!commandExist(command))
+        //TODO: replace exception
+        throw std::runtime_error("command not exist");
+
+
+
+
+    switch (command){
+
+    case COMMAND::EXIT: onExit() ; break;
+    case COMMAND::INFOT: info_(argv); break;
+    case COMMAND::ADDT: addt_({argv.begin(),argv.end()});break;
+    case COMMAND::ADDMAGNET:{
+        if(argv.size() > 2)
+            onAddMagnetTorrent(argv.at(0),argv.at(1));
+        else
+            onAddMagnetTorrent(argv.at(0),{});
+    }break;
+    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
+        //TODO: replace exception
+    case COMMAND::ERROR_COMMAND: std::runtime_error("error command"); break;
+    }
 
 
 
@@ -124,32 +153,15 @@ void IoService::work(){
     try{
         std::flush(std::cout);
 
-        std::string inputStr = getLine();
+        std::string inputStr = getLine_();
 
-        std::vector<std::string>argv = getArgv(inputStr);
+        std::vector<std::string>argv = getArgv_(inputStr);
 
+        const auto eccode = static_cast<COMMAND>(commandToInt(argv.at(0)));
 
-
-
-        const int eccode = commandToInt(argv.at(0));
-
+        commandExec(eccode,{argv.begin()+1,argv.end()});
 
 
-        switch (static_cast<COMMAND>(eccode)){
-
-        case COMMAND::EXIT: onExit() ; break;
-        case COMMAND::INFOT: info_(argv); break;
-        case COMMAND::ADDT: addt_({argv.begin()+1,argv.end()});break;
-        case COMMAND::ADDMAGNET:{
-            if(argv.size() > 2)
-                onAddMagnetTorrent(argv.at(1),argv.at(2));
-            else
-                onAddMagnetTorrent(argv.at(1),{});
-        }break;
-        case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
-        //TODO: replace exception
-        default: simpleResponse("command not found",RESPONSE_CODE::CODE_ERROR); break;
-        }
     }catch(const std::exception &exp){
         simpleResponse(exp.what(),RESPONSE_CODE::CODE_ERROR);
     }
