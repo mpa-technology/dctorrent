@@ -63,7 +63,7 @@ void App::onAddTorrent_(const std::string &fileName, const std::string &savePath
 {
 
     if(!boost::filesystem::exists(fileName)){
-        ioService_->simpleResponse("no exists",RESPONSE_CODE::CODE_ERROR);
+        ioService_->simpleResponse("file no exists",RESPONSE_CODE::CODE_ERROR);
         return;
     }
 
@@ -91,8 +91,8 @@ void App::onAddMagnetTorrent_(const std::string &url, const std::string &savePat
         session_->addTorrentMagnet(std::move(torrentParam));
 
         ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
-    }catch(...){
-        ioService_->simpleResponse("torrent error add",RESPONSE_CODE::CODE_ERROR);
+    }catch(const std::exception &exp){
+        ioService_->simpleResponse(std::string("torrent error add: ")+exp.what(),RESPONSE_CODE::CODE_ERROR);
     }
 
 }
