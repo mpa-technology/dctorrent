@@ -57,33 +57,15 @@ public:
 
     IoServiceException(const std::string &msg);
 
-
-
     virtual  ~IoServiceException();
 
-
     virtual const char* what() const noexcept;
-
 
 };
 
 
 
 class IoService{
-
-    std::string getLine_();
-
-    std::vector<std::string> parsingArgument_( const std::string &string );
-
-    void commandExec_( const COMMAND command , const std::vector<std::string> &argv);
-
-
-    void info_(const std::vector<std::string> &argv);
-
-
-    void addt_(const std::vector<std::string>& argv);
-    void addtm_(const std::vector<std::string>& argv);
-
 
 
 public:
@@ -107,6 +89,23 @@ public:
 
 
     boost::signals2::signal<std::vector<int64_t>()>onGetAllTorrentId;
+
+
+private:
+    std::string getLine_();
+
+    std::vector<std::string> parsingArgument_( const std::string &string );
+
+    void commandExec_( const COMMAND command , const std::vector<std::string> &argv);
+
+
+    void info_(const std::vector<std::string> &argv);
+
+
+    void addt_(const std::vector<std::string>& argv);
+    void addtm_(const std::vector<std::string>& argv);
+
+
 
 };
 
