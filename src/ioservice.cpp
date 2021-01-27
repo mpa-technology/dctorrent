@@ -37,8 +37,8 @@ std::string IoService::getLine_(){
     std::getline(std::cin,inputString);
     return inputString;
 }
-//TODO: replace name
-std::vector<std::string> IoService::getArgv_(const std::string &string){
+
+std::vector<std::string> IoService::parsingArgument_(const std::string &string){
 
     std::vector<std::string> argv;
 
@@ -55,7 +55,7 @@ std::vector<std::string> IoService::getArgv_(const std::string &string){
 
 }
 
-void IoService::commandExec(const COMMAND command, const std::vector<std::string> &argv){
+void IoService::commandExec_(const COMMAND command, const std::vector<std::string> &argv){
 
     if(!commandExist(command))
         throw IoServiceException("command not exist");
@@ -157,11 +157,11 @@ void IoService::work(){
 
         std::string inputStr = getLine_();
 
-        std::vector<std::string>argv = getArgv_(inputStr);
+        std::vector<std::string>argv = parsingArgument_(inputStr);
 
         const auto eccode = static_cast<COMMAND>(commandToInt(argv.at(0)));
 
-        commandExec(eccode,{argv.begin()+1,argv.end()});
+        commandExec_(eccode,{argv.begin()+1,argv.end()});
 
 
     }catch(const std::exception &exp){

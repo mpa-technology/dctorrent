@@ -73,9 +73,9 @@ class IoService{
 
     std::string getLine_();
 
-    std::vector<std::string> getArgv_( const std::string &string );
+    std::vector<std::string> parsingArgument_( const std::string &string );
 
-    void commandExec( const COMMAND command , const std::vector<std::string> &argv);
+    void commandExec_( const COMMAND command , const std::vector<std::string> &argv);
 
 
     void info_(const std::vector<std::string> &argv);
