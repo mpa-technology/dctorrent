@@ -40,12 +40,7 @@ App::App(int argc, char **argv){
 
     ioService_ = std::make_unique<IoService>();
 
-    ioService_->onExit.connect(std::bind(&App::onExit_,this));
-    ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1,std::placeholders::_2));
-    ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
-    ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
-    ioService_->onInfo.connect(std::bind(&App::onInfo_,this,std::placeholders::_1));
-    ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
+    slotConnect_();
 
 
     flags_.run = true;
