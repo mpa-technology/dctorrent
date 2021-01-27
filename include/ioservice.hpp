@@ -82,6 +82,7 @@ class IoService{
 
 
     void addt_(const std::vector<std::string>& argv);
+    void addtm_(const std::vector<std::string>& argv);
 
 
 
