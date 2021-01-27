@@ -66,7 +66,7 @@ void IoService::commandExec(const COMMAND command, const std::vector<std::string
     case COMMAND::INFOT: info_(argv); break;
     case COMMAND::ADDT: addt_({argv.begin(),argv.end()});break;
     case COMMAND::ADDMAGNET:addtm_({argv.begin(),argv.end()});break;
-    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(1)));break;
+    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(0)));break;
     case COMMAND::ERROR_COMMAND: throw IoServiceException("error command"); break;
     }
 
