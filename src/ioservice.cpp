@@ -52,7 +52,6 @@ std::vector<std::string> IoService::parsingArgument_(const std::string &string){
     return argv;
 
 
-
 }
 
 void IoService::commandExec_(const COMMAND command, const std::vector<std::string> &argv){
@@ -61,7 +60,6 @@ void IoService::commandExec_(const COMMAND command, const std::vector<std::strin
         throw IoServiceException("command not exist");
 
     switch (command){
-
     case COMMAND::EXIT: onExit() ; break;
     case COMMAND::INFOT: info_(argv); break;
     case COMMAND::ADDT: addt_({argv.begin(),argv.end()});break;
@@ -157,7 +155,7 @@ void IoService::work(){
 
         std::string inputStr = getLine_();
 
-        std::vector<std::string>argv = parsingArgument_(inputStr);
+        const auto argv = parsingArgument_(inputStr);
 
         const auto eccode = static_cast<COMMAND>(commandToInt(argv.at(0)));
 
