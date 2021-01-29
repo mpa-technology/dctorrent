@@ -41,7 +41,8 @@ enum class RESPONSE_CODE{
     EXIT_OK, /*!< dctorrent exit */
     CODE_OK, /*!< response code ok */
     CODE_ERROR, /*!< response code error */
-    CODE_NON /*!< response non code */
+    CODE_NON, /*!< response non code */
+    CODE_CRITICAL_ERROR
 };
 
 
@@ -58,6 +59,7 @@ constexpr RESPONSE_CODE toResponseCode ( const int code){
     case RESPONSE_CODE::CODE_OK:return RESPONSE_CODE::CODE_OK;
     case RESPONSE_CODE::CODE_ERROR:return RESPONSE_CODE::CODE_ERROR;
     case RESPONSE_CODE::CODE_NON:return RESPONSE_CODE::CODE_NON;
+    case RESPONSE_CODE::CODE_CRITICAL_ERROR:return RESPONSE_CODE::CODE_CRITICAL_ERROR;
     }
 
     return RESPONSE_CODE::CODE_NON;
