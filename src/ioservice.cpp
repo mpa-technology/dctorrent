@@ -50,29 +50,28 @@ std::vector<std::string> IoService::parsingArgument_(const std::string &string){
     }
 
     return argv;
-
-
 }
 
-void IoService::commandExec_(const COMMAND command, const std::vector<std::string> &argv){
+Response IoService::commandExec_(const COMMAND command, const std::vector<std::string> &argv){
 
     if(!commandExist(command))
         throw IoServiceException("command not exist");
 
     switch (command){
-    case COMMAND::EXIT: onExit() ; break;
-    case COMMAND::INFOT: info_(argv); break;
-    case COMMAND::ADDT: addt_({argv.begin(),argv.end()});break;
-    case COMMAND::ADDMAGNET:addtm_({argv.begin(),argv.end()});break;
-    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(0)));break;
+    case COMMAND::EXIT:  onExit() ; return {}; break;
+    case COMMAND::INFOT: return info_(argv); break;
+    case COMMAND::ADDT: return addt_({argv.begin(),argv.end()});break;
+    case COMMAND::ADDMAGNET: return addtm_({argv.begin(),argv.end()});break;
+    case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(0))); return {}; break;
     case COMMAND::ERROR_COMMAND: throw IoServiceException("error command"); break;
+
     }
 
 
-
+    throw IoServiceException("error command");
 }
 
-void IoService::info_(const std::vector<std::string> &argv){
+Response IoService::info_(const std::vector<std::string> &argv){
 
     boost::json::object json;
     boost::json::array array;
@@ -100,6 +99,7 @@ void IoService::info_(const std::vector<std::string> &argv){
 
     }catch(const std::exception &exp){
         simpleResponse(exp.what(),RESPONSE_CODE::CODE_OK);
+        return {};
     }
 
 
@@ -108,9 +108,10 @@ void IoService::info_(const std::vector<std::string> &argv){
 
     std::cout << json << std::endl;
 
+    return {};
 }
 
-void IoService::addt_(const std::vector<std::string> &argv){
+Response IoService::addt_(const std::vector<std::string> &argv){
 
     if(argv.empty())
         throw IoServiceException("argv empty");
@@ -121,9 +122,10 @@ void IoService::addt_(const std::vector<std::string> &argv){
     else
         onAddTorrent(argv.at(0),{});
 
+    return {};
 }
 
-void IoService::addtm_(const std::vector<std::string> &argv)
+Response IoService::addtm_(const std::vector<std::string> &argv)
 {
 
     if(argv.empty())
@@ -134,6 +136,9 @@ void IoService::addtm_(const std::vector<std::string> &argv)
     else
         onAddMagnetTorrent(argv.at(0),{});
 
+
+
+    return {};
 }
 
 IoService::IoService(){
@@ -167,9 +172,11 @@ void IoService::work(){
 
         const auto eccode = static_cast<COMMAND>(commandToInt(argv.at(0)));
 
-        commandExec_(eccode,{argv.begin()+1,argv.end()});
+        const auto response = commandExec_(eccode,{argv.begin()+1,argv.end()});
 
 
+        if(response.empty())
+            simpleResponse(response);
 
 
 

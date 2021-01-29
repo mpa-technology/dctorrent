@@ -100,14 +100,14 @@ private:
 
     std::vector<std::string> parsingArgument_( const std::string &string );
 
-    void commandExec_( const COMMAND command , const std::vector<std::string> &argv);
+    Response commandExec_( const COMMAND command , const std::vector<std::string> &argv);
 
 
-    void info_(const std::vector<std::string> &argv);
+    Response info_(const std::vector<std::string> &argv);
 
 
-    void addt_(const std::vector<std::string>& argv);
-    void addtm_(const std::vector<std::string>& argv);
+    Response addt_(const std::vector<std::string>& argv);
+    Response addtm_(const std::vector<std::string>& argv);
 
 
 
