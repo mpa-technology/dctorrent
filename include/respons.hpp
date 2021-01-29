@@ -72,6 +72,8 @@ class Response{
 public:
 
 
+    Response();
+
     void setResponseCode(const int responseCode);
 
 
@@ -84,6 +86,13 @@ public:
 
     std::string getMessage() const;
     void setMessage(const std::string &message);
+
+    bool operator==(const Response &response)const;
+
+
+    bool operator!=(const Response &response)const;
+
+    bool empty()const;
 
 private:
 

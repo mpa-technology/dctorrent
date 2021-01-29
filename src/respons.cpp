@@ -29,6 +29,10 @@
 
 #include <respons.hpp>
 
+Response::Response(){
+    responseCode_ = RESPONSE_CODE::CODE_NON;
+}
+
 void Response::setResponseCode(const int responseCode){
     responseCode_ = toResponseCode(responseCode);
 }
@@ -49,4 +53,18 @@ std::string Response::getMessage() const
 void Response::setMessage(const std::string &message)
 {
     message_ = message;
+}
+
+bool Response::operator==(const Response &response) const{
+    return message_ == response.message_ &&
+           responseCode_  == response.responseCode_;
+}
+
+bool Response::operator!=(const Response &response) const{
+    return !(*this==response);
+}
+
+bool Response::empty()const{
+    return responseCode_ == RESPONSE_CODE::CODE_NON &&
+           message_.empty();
 }
