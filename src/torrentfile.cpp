@@ -98,6 +98,8 @@ std::string TorrentFile::name() const{
     return torrentHandle_.status().name;
 }
 
+
+//FIXME: rename fn
     boost::json::object TorrentFile::json() const{
 
         boost::json::object json{ {"name",name()}, {"id",id_}};
