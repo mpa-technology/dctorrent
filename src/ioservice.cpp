@@ -143,6 +143,12 @@ IoService::IoService(){
     std::locale::global(loc);
     std::cout.imbue(loc);
     std::cerr.imbue(loc);
+
+
+
+
+
+
 }
 
 void IoService::work(){
@@ -152,13 +158,19 @@ void IoService::work(){
     try{
         std::flush(std::cout);
 
+
+
         std::string inputStr = getLine_();
+
 
         const auto argv = parsingArgument_(inputStr);
 
         const auto eccode = static_cast<COMMAND>(commandToInt(argv.at(0)));
 
         commandExec_(eccode,{argv.begin()+1,argv.end()});
+
+
+
 
 
     }catch(const std::exception &exp){

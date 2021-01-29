@@ -31,6 +31,7 @@
 
 #pragma once
 
+#include <string>
 
 /*! This enum contains a list of response codes */
 enum class RESPONSE_CODE{
@@ -64,3 +65,29 @@ constexpr RESPONSE_CODE toResponseCode ( const int code){
 
     return RESPONSE_CODE::CODE_NON;
 }
+
+
+class Response{
+
+public:
+
+
+    void setResponseCode(const int responseCode);
+
+
+    void setResponseCode(const RESPONSE_CODE responseCode);
+
+
+    RESPONSE_CODE getResponseCode()const;
+
+
+
+    std::string getMessage() const;
+    void setMessage(const std::string &message);
+
+private:
+
+    RESPONSE_CODE responseCode_;
+    std::string message_;
+
+};

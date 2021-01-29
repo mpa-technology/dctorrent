@@ -40,6 +40,7 @@
 #include <boost/signals2.hpp>
 #include <boost/json.hpp>
 
+
 #include <utility.hpp>
 #include <session.hpp>
 #include <torrentfile.hpp>
@@ -88,7 +89,10 @@ public:
 
 
 
+
 private:
+
+
     std::string getLine_();
 
     std::vector<std::string> parsingArgument_( const std::string &string );

@@ -28,3 +28,25 @@
  */
 
 #include <respons.hpp>
+
+void Response::setResponseCode(const int responseCode){
+    responseCode_ = toResponseCode(responseCode);
+}
+
+void Response::setResponseCode(const RESPONSE_CODE responseCode){
+    responseCode_ = responseCode;
+}
+
+RESPONSE_CODE Response::getResponseCode() const{
+    return responseCode_;
+}
+
+std::string Response::getMessage() const
+{
+    return message_;
+}
+
+void Response::setMessage(const std::string &message)
+{
+    message_ = message;
+}
