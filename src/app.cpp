@@ -108,20 +108,7 @@ void App::onRemoveTorrent_(const int64_t id){
 
 }
 
-boost::json::object App::onInfo_(const int64_t id)
-{
-    return session_->getTorrent(id).json();
-}
 
-std::vector<int64_t> App::onGetAllTorrentId(){
-
-    std::vector<int64_t>id;
-
-    for(const auto &it : session_->getAllTorrent())
-        id.push_back(it.getId());
-
-    return id;
-}
 
 
 

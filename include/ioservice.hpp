@@ -41,11 +41,11 @@
 #include <boost/json.hpp>
 
 #include <utility.hpp>
-
 #include <session.hpp>
 #include <torrentfile.hpp>
 #include <respons.hpp>
 #include <command.hpp>
+#include <TorrentInfo.hpp>
 
 class IoServiceException : public std::exception{
 
@@ -84,11 +84,8 @@ public:
     boost::signals2::signal<void(const std::string& , const std::string&)>onAddTorrent;
     boost::signals2::signal<void(const std::string& , const std::string&)>onAddMagnetTorrent;
     boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
-    boost::signals2::signal<boost::json::object(const int64_t)>onInfo;
 
 
-
-    boost::signals2::signal<std::vector<int64_t>()>onGetAllTorrentId;
 
 
 private:

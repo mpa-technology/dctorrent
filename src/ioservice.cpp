@@ -82,15 +82,14 @@ void IoService::info_(const std::vector<std::string> &argv){
 
 
         if(argv.empty()){
-            for(const auto & id:*onGetAllTorrentId()){
-                array.push_back(*onInfo(id));
+            for(const auto &it : TorrentInfo::getAllTorrentInfo()){
+                array.push_back(it);
             }
         }
         else{
             for(auto it = argv.begin()+1;it!=argv.end();++it){
                 auto id = std::stoll(*it);
-                array.push_back(*onInfo(id));
-
+                array.push_back(TorrentInfo::getTorrentInfo(id));
             }
 
 
@@ -131,9 +130,9 @@ void IoService::addtm_(const std::vector<std::string> &argv)
         throw IoServiceException("argv empty");
 
     if(argv.size() > 1)
-        onAddTorrent(argv.at(0),argv.at(1));
+        onAddMagnetTorrent(argv.at(0),argv.at(1));
     else
-        onAddTorrent(argv.at(0),{});
+        onAddMagnetTorrent(argv.at(0),{});
 
 }
 
