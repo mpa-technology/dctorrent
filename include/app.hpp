@@ -70,10 +70,6 @@ class App{
 
 
 
-    boost::json::object onInfo_(const int64_t id);
-
-    std::vector<int64_t> onGetAllTorrentId();
-
     struct{
         bool run;
     }flags_;
@@ -97,8 +93,7 @@ private:
         ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1,std::placeholders::_2));
         ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
         ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
-        ioService_->onInfo.connect(std::bind(&App::onInfo_,this,std::placeholders::_1));
-        ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
+
 
     }
 
