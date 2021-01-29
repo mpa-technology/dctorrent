@@ -123,7 +123,6 @@ std::vector<int64_t> App::onGetAllTorrentId(){
 
 
 
-
 int App::run(){
 
     session_ = std::make_unique<Session>();
@@ -134,9 +133,19 @@ int App::run(){
 
     while (flags_.run) {
 
+        try {
+
         session_->torrentUpdate();
 
         ioService_->work();
+
+
+        }catch(const std::exception &exp){
+
+            std::string msg = std::string("unhandled exceptions: ")+exp.what();
+            IoService::simpleResponse(msg,RESPONSE_CODE::CODE_CRITICAL_ERROR);
+        }
+
     }
 
 
