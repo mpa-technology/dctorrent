@@ -40,6 +40,8 @@ App::App(int argc, char **argv){
 
     ioService_ = std::make_unique<IoService>();
 
+
+
     slotConnect_();
 
 
@@ -125,8 +127,8 @@ std::vector<int64_t> App::onGetAllTorrentId(){
 
 int App::run(){
 
-    session_ = std::make_unique<Session>();
-
+    session_ = std::make_shared<Session>();
+    torrentInfo_ = std::make_unique<TorrentInfo>(session_);
 
     ioService_->simpleResponse("start",RESPONSE_CODE::START_OK);
 
@@ -138,7 +140,6 @@ int App::run(){
         session_->torrentUpdate();
 
         ioService_->work();
-
 
         }catch(const std::exception &exp){
 

@@ -39,7 +39,7 @@
 #include <session.hpp>
 #include <ioservice.hpp>
 #include <respons.hpp>
-
+#include <TorrentInfo.hpp>
 
 
 
@@ -49,10 +49,6 @@
 class App{
 
 
-    std::vector<std::string> arguments_;
-
-    std::unique_ptr<Session>session_;
-    std::unique_ptr<IoService>ioService_;
 
     /*!
         \brief Signal to end the program
@@ -105,6 +101,13 @@ private:
         ioService_->onGetAllTorrentId.connect(std::bind(&App::onGetAllTorrentId,this));
 
     }
+
+
+    std::vector<std::string> arguments_;
+
+    std::shared_ptr<Session>session_;
+    std::unique_ptr<IoService>ioService_;
+    std::unique_ptr<TorrentInfo>torrentInfo_;
 
 
 };
