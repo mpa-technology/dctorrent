@@ -33,7 +33,7 @@
 TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
 
 
-auto files = torrentHandle_.torrent_file()->files();
+    auto files = torrentHandle_.torrent_file()->files();
 
 
     torrentHandle_.torrent_file()->files().file_range();
@@ -99,8 +99,8 @@ std::string TorrentFile::name() const{
 }
 
 
-//FIXME: rename fn
-    boost::json::object TorrentFile::json() const{
+    //FIXME: rename fn
+boost::json::object TorrentFile::json() const{
 
         boost::json::object json{ {"name",name()}, {"id",id_}};
     boost::json::array tlist;

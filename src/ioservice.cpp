@@ -128,6 +128,7 @@ Response IoService::addt_(const std::vector<std::string> &argv){
 Response IoService::addtm_(const std::vector<std::string> &argv)
 {
 
+
     if(argv.empty())
         throw IoServiceException("argv empty");
 
@@ -136,7 +137,7 @@ Response IoService::addtm_(const std::vector<std::string> &argv)
     else
         onAddMagnetTorrent(argv.at(0),{});
 
-
+    simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
 
     return {};
 }

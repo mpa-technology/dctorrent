@@ -56,26 +56,7 @@ void App::onExit_(){
 }
 
 
-void App::onAddTorrent_(const std::string &fileName, const std::string &savePath)
-{
 
-    if(!boost::filesystem::exists(fileName)){
-        ioService_->simpleResponse("file no exists",RESPONSE_CODE::CODE_ERROR);
-        return;
-    }
-
-    try{
-    TorrentParam torrentParam;
-    torrentParam.setFilePath(fileName);
-    torrentParam.setSavePath( (savePath.empty() ? "." : savePath ) );
-
-    session_->addTorrent(std::move(torrentParam));
-
-    ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
-    }catch(...){
-        ioService_->simpleResponse("torrent error add",RESPONSE_CODE::CODE_ERROR);
-    }
-}
 
 void App::onAddMagnetTorrent_(const std::string &url, const std::string &savePath){
 
@@ -115,6 +96,7 @@ void App::onRemoveTorrent_(const int64_t id){
 int App::run(){
 
     session_ = std::make_shared<Session>();
+    torrentManager_ = std::make_unique<TorrentManager>(session_);
     torrentInfo_ = std::make_unique<TorrentInfo>(session_);
 
     ioService_->simpleResponse("start",RESPONSE_CODE::START_OK);

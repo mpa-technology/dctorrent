@@ -47,6 +47,8 @@
 #include <respons.hpp>
 #include <command.hpp>
 #include <TorrentInfo.hpp>
+#include <TorrentManager.hpp>
+
 
 class IoServiceException : public std::exception{
 

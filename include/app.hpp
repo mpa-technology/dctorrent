@@ -40,7 +40,7 @@
 #include <ioservice.hpp>
 #include <respons.hpp>
 #include <TorrentInfo.hpp>
-
+#include <TorrentManager.hpp>
 
 
 /*!
@@ -59,7 +59,7 @@ class App{
         \brief Signal for adding a torrent
         \details Checks the name of the transferred file
     */
-    void onAddTorrent_(const std::string &fileName, const std::string &savePath);
+
     void onAddMagnetTorrent_(const std::string &url, const std::string &savePath);
 
     /*!
@@ -90,7 +90,6 @@ private:
     void slotConnect_(){
 
         ioService_->onExit.connect(std::bind(&App::onExit_,this));
-        ioService_->onAddTorrent.connect(std::bind(&App::onAddTorrent_,this,std::placeholders::_1,std::placeholders::_2));
         ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
         ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
 
@@ -103,7 +102,7 @@ private:
     std::shared_ptr<Session>session_;
     std::unique_ptr<IoService>ioService_;
     std::unique_ptr<TorrentInfo>torrentInfo_;
-
+    std::unique_ptr<TorrentManager>torrentManager_;
 
 };
 
