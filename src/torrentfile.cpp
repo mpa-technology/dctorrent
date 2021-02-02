@@ -155,3 +155,7 @@ TorrentFile::TorrentFile(){}
 float TorrentFile::totalProgress() const{
     return  torrentHandle_.status().progress;
 }
+
+void TorrentFile::pause(){
+    torrentHandle_.pause();
+}

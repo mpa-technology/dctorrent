@@ -76,6 +76,8 @@ public:
     bool operator==(const TorrentFile &file)const;
 
 
+    void pause();
+
 
     lt::torrent_handle getNativeTorrentHandle()const;
 
