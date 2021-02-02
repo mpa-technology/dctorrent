@@ -57,12 +57,12 @@ TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){
 
 }
 
-void TorrentFile::pause(const int &id){
+void TorrentFile::pause(const int64_t id){
     torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::dont_download);
 
 }
 
-void TorrentFile::resume(const int &id){
+void TorrentFile::resume(const int64_t id){
     torrentHandle_.file_priority(torrentNodes_.at(static_cast<size_t>(id)).index,lt::default_priority);
 }
 

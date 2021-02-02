@@ -57,9 +57,9 @@ public:
 
     TorrentFile(lt::torrent_handle th);
 
-    void pause(const int &id);
+    void pause(const int64_t id);
 
-    void resume(const int &id);
+    void resume(const int64_t id);
 
     float totalProgress()const;
 
