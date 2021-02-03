@@ -64,6 +64,7 @@ Response IoService::commandExec_(const COMMAND command, const std::vector<std::s
     case COMMAND::ADDMAGNET: return addtm_({argv.begin(),argv.end()});break;
     case COMMAND::REMOVET: onRemoveTorrent(std::stoll(argv.at(0))); return {}; break;
     case COMMAND::ERROR_COMMAND: throw IoServiceException("error command"); break;
+    case COMMAND::PAUSET: ;//TODO: ;
 
     }
 
@@ -204,6 +205,10 @@ void IoService::simpleResponse(const std::string &msg, RESPONSE_CODE code)
 
     std::cout << obj << '\n';
 
+}
+
+void IoService::simpleResponse(const Response &response){
+    simpleResponse(response.getMessage(),response.getResponseCode());
 }
 
 

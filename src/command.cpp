@@ -51,6 +51,7 @@ std::string toCommand(const int var){
     case COMMAND::REMOVET: return "REMOVET";
     case COMMAND::ADDMAGNET: return "ADDMAGNET";
     case COMMAND::ERROR_COMMAND: return "ERROR_COMMAND";
+    case COMMAND::PAUSET:return "PAUSET";
     }
 
 

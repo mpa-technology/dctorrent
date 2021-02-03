@@ -33,7 +33,16 @@
 
 #include <string>
 
+enum class COMMAND : int{
+    EXIT,
+    INFOT,
+    ADDT,
+    ADDMAGNET,
+    REMOVET,
+    PAUSET,
+    ERROR_COMMAND
 
+};
 
 class CommandException : public std::exception{
 
@@ -56,15 +65,7 @@ public:
 };
 
 
-enum class COMMAND : int{
-    EXIT,
-    INFOT,
-    ADDT,
-    ADDMAGNET,
-    REMOVET,
-    ERROR_COMMAND
 
-};
 
 
 
@@ -88,6 +89,9 @@ constexpr int commandToInt( const std::string_view sv){
     if(sv == "ADDTM" || sv=="addtm")
         return static_cast<int>(COMMAND::ADDMAGNET);
 
+    if(sv == "PAUSET" || sv == "pauset")
+        return static_cast<int>(COMMAND::PAUSET);
+
 
     return static_cast<int>(COMMAND::ERROR_COMMAND);
 }
@@ -100,6 +104,7 @@ constexpr bool commandExist(const COMMAND command){
     case COMMAND::ADDT:
     case COMMAND::REMOVET:
     case COMMAND::ADDMAGNET:
+    case COMMAND::PAUSET:
     case COMMAND::ERROR_COMMAND:return true;
     }
 

@@ -81,9 +81,7 @@ public:
 
     static void simpleResponse(const std::string &msg , int code);
     static void simpleResponse(const std::string &msg , RESPONSE_CODE code);
-    static void simpleResponse(const Response &response){
-        simpleResponse(response.getMessage(),response.getResponseCode());
-    }
+    static void simpleResponse(const Response &response);
 
 
     boost::signals2::signal<void()>onExit;
