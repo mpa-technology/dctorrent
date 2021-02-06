@@ -88,7 +88,7 @@ Response IoService::info_(const std::vector<std::string> &argv){
         }
         else{
             for(auto it = argv.begin()+1;it!=argv.end();++it){
-                auto id = std::stoll(*it);
+                const auto id = std::stoll(*it);
                 array.push_back(TorrentInfo::getTorrentInfo(id));
             }
 
