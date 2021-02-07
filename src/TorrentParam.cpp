@@ -53,7 +53,7 @@ void TorrentParam::setMagnet(const std::string &url){
     path_ = url;
 }
 
-void TorrentParam::setSavePath(const std::string_view &savePath){
+void TorrentParam::setSavePath(const std::string &savePath){
     savePath_ = savePath;
 }
 

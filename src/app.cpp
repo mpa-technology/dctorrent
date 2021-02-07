@@ -68,9 +68,9 @@ void App::onAddMagnetTorrent_(const std::string &url, const std::string &savePat
 
         session_->addTorrentMagnet(std::move(torrentParam));
 
-        ioService_->simpleResponse("torrent add",RESPONSE_CODE::CODE_OK);
+        ioService_->simpleResponse("torrent add", RESPONSE_CODE::CODE_OK);
     }catch(const std::exception &exp){
-        ioService_->simpleResponse(std::string("torrent error add: ")+exp.what(),RESPONSE_CODE::CODE_ERROR);
+        ioService_->simpleResponse(std::string("torrent error add: ") + exp.what(),RESPONSE_CODE::CODE_ERROR);
     }
 
 }
@@ -80,10 +80,10 @@ void App::onRemoveTorrent_(const int64_t id){
 
     try{
         session_->removeTorrent(id);
-        ioService_->simpleResponse("torrent remove",RESPONSE_CODE::CODE_OK);
+        ioService_->simpleResponse("torrent remove", RESPONSE_CODE::CODE_OK);
 
     }catch(...){
-        ioService_->simpleResponse("id not found",RESPONSE_CODE::CODE_ERROR);
+        ioService_->simpleResponse("id not found", RESPONSE_CODE::CODE_ERROR);
     }
 
 
@@ -99,7 +99,7 @@ int App::run(){
     torrentManager_ = std::make_unique<TorrentManager>(session_);
     torrentInfo_ = std::make_unique<TorrentInfo>(session_);
 
-    ioService_->simpleResponse("start",RESPONSE_CODE::START_OK);
+    ioService_->simpleResponse("start", RESPONSE_CODE::START_OK);
 
 
     while (flags_.run) {
@@ -112,14 +112,14 @@ int App::run(){
 
         }catch(const std::exception &exp){
 
-            std::string msg = std::string("unhandled exceptions: ")+exp.what();
+            std::string msg = std::string("unhandled exceptions: ") + exp.what();
             IoService::simpleResponse(msg,RESPONSE_CODE::CODE_CRITICAL_ERROR);
         }
 
     }
 
 
-    ioService_->simpleResponse("exit",RESPONSE_CODE::EXIT_OK);
+    ioService_->simpleResponse("exit", RESPONSE_CODE::EXIT_OK);
 
 
 
