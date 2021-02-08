@@ -1,0 +1,38 @@
+\hypertarget{class_torrent_manager}{}\section{Torrent\+Manager Class Reference}
+\label{class_torrent_manager}\index{Torrent\+Manager@{Torrent\+Manager}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_torrent_manager_a696dfbbcd1e56b05c61e7b9e972fac67}\label{class_torrent_manager_a696dfbbcd1e56b05c61e7b9e972fac67}} 
+using {\bfseries session\+Point\+Type} = std\+::shared\+\_\+ptr$<$ \hyperlink{class_session}{Session} $>$
+\item 
+\mbox{\Hypertarget{class_torrent_manager_a0ec9f47e42f2a33e4f83f129040a9403}\label{class_torrent_manager_a0ec9f47e42f2a33e4f83f129040a9403}} 
+using {\bfseries string\+List} = std\+::vector$<$ std\+::string $>$
+\item 
+\mbox{\Hypertarget{class_torrent_manager_a5e0f9e43eb4fb3261f6d7de86b176e11}\label{class_torrent_manager_a5e0f9e43eb4fb3261f6d7de86b176e11}} 
+using {\bfseries json\+List} = std\+::vector$<$ boost\+::json\+::object $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_torrent_manager_a448fade6680b6a33d5ddf71ee054c1cd}\label{class_torrent_manager_a448fade6680b6a33d5ddf71ee054c1cd}} 
+{\bfseries Torrent\+Manager} (session\+Point\+Type session)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_torrent_manager_ae0b16a0a68064229f1f69f154f5b337e}\label{class_torrent_manager_ae0b16a0a68064229f1f69f154f5b337e}} 
+static void {\bfseries add\+Torrent} (const std\+::string \&file\+Name, const std\+::string \&save\+Path)
+\item 
+\mbox{\Hypertarget{class_torrent_manager_a001407bb99faad4ece4b1e6d131c8eac}\label{class_torrent_manager_a001407bb99faad4ece4b1e6d131c8eac}} 
+static void {\bfseries pause\+Torrent} (const int64\+\_\+t id)
+\item 
+\mbox{\Hypertarget{class_torrent_manager_a0ee14a11a61ee8e343821d329a455ae3}\label{class_torrent_manager_a0ee14a11a61ee8e343821d329a455ae3}} 
+static void {\bfseries pause\+Torrent\+Node} (const int64\+\_\+t torrent\+Id, const int64\+\_\+t node\+Id)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/maxim/workspace/project/dctorrent/include/Torrent\+Manager.\+hpp\item 
+/home/maxim/workspace/project/dctorrent/src/Torrent\+Manager.\+cpp\end{DoxyCompactItemize}
