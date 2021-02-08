@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_torrent_manager_8hpp">
+    <title>TorrentManager.hpp File Reference</title>
+    <programlisting>#include &lt;memory&gt;</programlisting>
+    <programlisting>#include &lt;boost/json.hpp&gt;</programlisting>
+    <programlisting>#include &lt;boost/filesystem.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Session.hpp&gt;</programlisting>
+<para>Include dependency diagram for TorrentManager.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_torrent_manager_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for TorrentManager.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_torrent_manager_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_torrent_manager">TorrentManager</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/TorrentManager.hpp</para>
+    </simplesect>
+</section>

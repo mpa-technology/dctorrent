@@ -1,0 +1,48 @@
+digraph "/home/maxim/workspace/project/dctorrent/include/TorrentManager.hpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node192 [label="/home/maxim/workspace\l/project/dctorrent/include\l/TorrentManager.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node192 -> Node193 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node193 [label="memory",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node192 -> Node194 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node194 [label="boost/json.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node192 -> Node195 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node195 [label="boost/filesystem.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node192 -> Node196 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node196 [label="Session.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_session_8hpp_source.html"];
+  Node196 -> Node197 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node197 [label="TorrentParam.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_param_8hpp_source.html"];
+  Node197 -> Node198 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node198 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node197 -> Node199 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node199 [label="libtorrent/add_torrent\l_params.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node197 -> Node200 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node200 [label="libtorrent/torrent\l_info.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node197 -> Node201 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node201 [label="libtorrent/magnet_uri.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node196 -> Node202 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node202 [label="TorrentFile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_file_8hpp_source.html"];
+  Node202 -> Node203 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node203 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node202 -> Node198 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node202 -> Node204 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node204 [label="libtorrent/torrent\l_handle.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node202 -> Node205 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node205 [label="libtorrent/torrent\l_status.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node202 -> Node206 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node206 [label="TorrentNode.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_node_8hpp_source.html"];
+  Node206 -> Node198 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node206 -> Node207 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node207 [label="stdexcept",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node206 -> Node208 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node208 [label="libtorrent/units.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node206 -> Node209 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node209 [label="libtorrent/download\l_priority.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node202 -> Node194 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node196 -> Node210 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node210 [label="libtorrent/session.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node196 -> Node201 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node196 -> Node211 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node211 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

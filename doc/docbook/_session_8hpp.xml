@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_session_8hpp">
+    <title>Session.hpp File Reference</title>
+    <programlisting>#include &lt;TorrentParam.hpp&gt;</programlisting>
+    <programlisting>#include &lt;TorrentFile.hpp&gt;</programlisting>
+    <programlisting>#include &lt;libtorrent/session.hpp&gt;</programlisting>
+    <programlisting>#include &lt;libtorrent/magnet_uri.hpp&gt;</programlisting>
+    <programlisting>#include &lt;iostream&gt;</programlisting>
+<para>Include dependency diagram for Session.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_session_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Session.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_session_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_session_exception">SessionException</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_session">Session</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Макросы</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_session_8hpp_1a1799d3129acba4a19c6ed00f5cc664f6">TORRENT_NO_DEPRECATE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/Session.hpp</para>
+    </simplesect>
+</section>

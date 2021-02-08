@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_torrent_node_8cpp">
+    <title>TorrentNode.cpp File Reference</title>
+    <programlisting>#include &lt;TorrentNode.hpp&gt;</programlisting>
+<para>Include dependency diagram for TorrentNode.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_torrent_node_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for TorrentNode.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_torrent_node_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Функции</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>TORRENT_PRIORITY <link linkend="_torrent_node_8cpp_1a54ac774fb4b60d718c9191926c14cdb4">toTorrentPriority</link> (
+const int value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>TORRENT_PRIORITY <link linkend="_torrent_node_8cpp_1a5d461a7cd3c10474af8436a1e0b99f91">toTorrentPriority</link> (
+libtorrent::download_priority_t value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/src/TorrentNode.cpp</para>
+    </simplesect>
+</section>

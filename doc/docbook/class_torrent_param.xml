@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_torrent_param">
+<title>TorrentParam class Reference</title>
+<para>Inheritance diagram for TorrentParam</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_param__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TorrentParam</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_param__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string path_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string savePath_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool isFileLoad_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_torrent_param_1a7c7c2a0f16115b8128ffef98fb7c9f38">TorrentParam</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_param_1acdc640b26946ecec8aaee930c110c0c1">setFilePath</link> (
+const std::string &amp; filePath)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_param_1a6f4c51423ed8424f6e3ecf20f487e5e8">setMagnet</link> (
+const std::string &amp; url)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_param_1a99d7b501c72b4ce55165bb52f05ea96f">setSavePath</link> (
+const std::string &amp; savePath)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lt::add_torrent_params <link linkend="class_torrent_param_1ad0b9c2afa31bf6656320729f411080c7">params</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_torrent_param_1a197b1db24cc471524e4d7d6f16659d35">isMagnet</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_torrent_param_1a3cbd43a4cc67bd93be05f16abb555a63">isFile</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_torrent_param_1a7c7c2a0f16115b8128ffef98fb7c9f38">
+                <title>TorrentParam::TorrentParam ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_1acdc640b26946ecec8aaee930c110c0c1">
+                <title>void TorrentParam::setFilePath (const std::string &amp;filePath)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_1a6f4c51423ed8424f6e3ecf20f487e5e8">
+                <title>void TorrentParam::setMagnet (const std::string &amp;url)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_1a99d7b501c72b4ce55165bb52f05ea96f">
+                <title>void TorrentParam::setSavePath (const std::string &amp;savePath)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_1ad0b9c2afa31bf6656320729f411080c7">
+                <title>libtorrent::add_torrent_params TorrentParam::params ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_1a197b1db24cc471524e4d7d6f16659d35">
+                <title>bool TorrentParam::isMagnet () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_1a3cbd43a4cc67bd93be05f16abb555a63">
+                <title>bool TorrentParam::isFile () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

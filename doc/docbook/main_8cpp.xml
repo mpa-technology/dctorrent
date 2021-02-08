@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="main_8cpp">
+    <title>main.cpp File Reference</title>
+    <programlisting>#include &lt;Main.hpp&gt;</programlisting>
+<para>Include dependency diagram for main.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="main_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for main.cpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="main_8cpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Функции</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="main_8cpp_1acaf2b06df9da0b6f86f4d70c5e3f2255">main</link> (
+int argc, char ** argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="main_8cpp_1aba0f5caa5a2c79413024b529d6f7e95b">catch</link> (
+const std::exception &amp; exp)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/src/main.cpp</para>
+    </simplesect>
+</section>

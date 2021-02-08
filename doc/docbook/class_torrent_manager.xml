@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_torrent_manager">
+<title>TorrentManager class Reference</title>
+<para>Inheritance diagram for TorrentManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TorrentManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::shared_ptr&lt; <link linkend="class_session">Session</link> &gt;  <link linkend="class_torrent_manager_1a696dfbbcd1e56b05c61e7b9e972fac67">sessionPointType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::vector&lt; std::string &gt;  <link linkend="class_torrent_manager_1a0ec9f47e42f2a33e4f83f129040a9403">stringList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::vector&lt; boost::json::object &gt;  <link linkend="class_torrent_manager_1a5e0f9e43eb4fb3261f6d7de86b176e11">jsonList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static TorrentManager * torrent_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>sessionPointType session_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_torrent_manager_1a448fade6680b6a33d5ddf71ee054c1cd">TorrentManager</link> (
+sessionPointType session)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_torrent_manager_1ae0b16a0a68064229f1f69f154f5b337e">addTorrent</link> (
+const std::string &amp; fileName, const std::string &amp; savePath)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_torrent_manager_1a001407bb99faad4ece4b1e6d131c8eac">pauseTorrent</link> (
+const int64_t id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_torrent_manager_1a0ee14a11a61ee8e343821d329a455ae3">pauseTorrentNode</link> (
+const int64_t torrentId, const int64_t nodeId)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_torrent_manager_1a00baa6df3a282940d69fc027034e6976">verify_</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_torrent_manager_1a696dfbbcd1e56b05c61e7b9e972fac67">
+                <title>using TorrentManager::sessionPointType =  std::shared_ptr&lt;Session&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_manager_1a0ec9f47e42f2a33e4f83f129040a9403">
+                <title>using TorrentManager::stringList =  std::vector&lt;std::string&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_manager_1a5e0f9e43eb4fb3261f6d7de86b176e11">
+                <title>using TorrentManager::jsonList =  std::vector&lt;boost::json::object&gt;</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_torrent_manager_1a448fade6680b6a33d5ddf71ee054c1cd">
+                <title>TorrentManager::TorrentManager (sessionPointType session)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_manager_1ae0b16a0a68064229f1f69f154f5b337e">
+                <title>void TorrentManager::addTorrent (const std::string &amp;fileName, const std::string &amp;savePath)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_manager_1a001407bb99faad4ece4b1e6d131c8eac">
+                <title>void TorrentManager::pauseTorrent (const int64_t id)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_manager_1a0ee14a11a61ee8e343821d329a455ae3">
+                <title>void TorrentManager::pauseTorrentNode (const int64_t torrentId, const int64_t nodeId)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_manager_1a00baa6df3a282940d69fc027034e6976">
+                <title>void TorrentManager::verify_ ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

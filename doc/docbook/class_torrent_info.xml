@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_torrent_info">
+<title>TorrentInfo class Reference</title>
+<para>Inheritance diagram for TorrentInfo</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_info__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TorrentInfo</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_info__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::shared_ptr&lt; <link linkend="class_session">Session</link> &gt;  <link linkend="class_torrent_info_1a48ea7d5033a3cbe98af5c335dc1a4747">sessionPointType</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::vector&lt; std::string &gt;  <link linkend="class_torrent_info_1a61cc54f994d201a10eeec77d5bca88bb">stringList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef std::vector&lt; boost::json::object &gt;  <link linkend="class_torrent_info_1aa50ef897a74c15383ca2be3b7e7cc84f">jsonList</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static TorrentInfo * torrent_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>sessionPointType session_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_torrent_info_1ad1951d38efaed083fa99acb1791ebeb5">TorrentInfo</link> (
+sessionPointType session)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static stringList <link linkend="class_torrent_info_1a2e780e998c0056fcd9cb5fe487a5fe82">getTorrentFileNames</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static boost::json::object <link linkend="class_torrent_info_1a044027a0abb8666449b8f5b839649242">getTorrentInfo</link> (
+const int64_t id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static jsonList <link linkend="class_torrent_info_1a83bfa2e026eddc44ae747aaf312b8d6a">getAllTorrentInfo</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_torrent_info_1a63f2a297be59cf22e231b14437638ef9">verify_</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_torrent_info_1a48ea7d5033a3cbe98af5c335dc1a4747">
+                <title>using TorrentInfo::sessionPointType =  std::shared_ptr&lt;Session&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_info_1a61cc54f994d201a10eeec77d5bca88bb">
+                <title>using TorrentInfo::stringList =  std::vector&lt;std::string&gt;</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_info_1aa50ef897a74c15383ca2be3b7e7cc84f">
+                <title>using TorrentInfo::jsonList =  std::vector&lt;boost::json::object&gt;</title> <emphasis></emphasis>
+                
+            </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_torrent_info_1ad1951d38efaed083fa99acb1791ebeb5">
+                <title>TorrentInfo::TorrentInfo (sessionPointType session)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_info_1a2e780e998c0056fcd9cb5fe487a5fe82">
+                <title>TorrentInfo::stringList TorrentInfo::getTorrentFileNames ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_info_1a044027a0abb8666449b8f5b839649242">
+                <title>boost::json::object TorrentInfo::getTorrentInfo (const int64_t id)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_info_1a83bfa2e026eddc44ae747aaf312b8d6a">
+                <title>TorrentInfo::jsonList TorrentInfo::getAllTorrentInfo ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_info_1a63f2a297be59cf22e231b14437638ef9">
+                <title>void TorrentInfo::verify_ ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

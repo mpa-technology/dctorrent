@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_io_service_8hpp">
+    <title>IoService.hpp File Reference</title>
+    <programlisting>#include &lt;iostream&gt;</programlisting>
+    <programlisting>#include &lt;vector&gt;</programlisting>
+    <programlisting>#include &lt;string&gt;</programlisting>
+    <programlisting>#include &lt;boost/algorithm/string.hpp&gt;</programlisting>
+    <programlisting>#include &lt;boost/locale.hpp&gt;</programlisting>
+    <programlisting>#include &lt;boost/signals2.hpp&gt;</programlisting>
+    <programlisting>#include &lt;boost/json.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Utility.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Session.hpp&gt;</programlisting>
+    <programlisting>#include &lt;TorrentFile.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Respons.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Command.hpp&gt;</programlisting>
+    <programlisting>#include &lt;TorrentInfo.hpp&gt;</programlisting>
+    <programlisting>#include &lt;TorrentManager.hpp&gt;</programlisting>
+<para>Include dependency diagram for IoService.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_io_service_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for IoService.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_io_service_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_io_service_exception">IoServiceException</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_io_service">IoService</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/IoService.hpp</para>
+    </simplesect>
+</section>

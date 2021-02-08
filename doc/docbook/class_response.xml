@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_response">
+<title>Response class Reference</title>
+<para>Inheritance diagram for Response</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_response__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Response</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_response__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RESPONSE_CODE responseCode_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string message_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_response_1aa9b6e391d77fce8daca8bac13730ec8e">Response</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_response_1a5027d8f799de6c3b363f346a0938ba24">setResponseCode</link> (
+const int responseCode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_response_1a173e4ecbd97fc996f994cefd6a96151c">setResponseCode</link> (
+const RESPONSE_CODE responseCode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RESPONSE_CODE <link linkend="class_response_1a6c6264ecd2a5b3dd810088ab60454e06">getResponseCode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string <link linkend="class_response_1a3c1d22536ecef18e21cc01fe10ad5703">getMessage</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_response_1ad8851ad3fb70be26ba3454f4fa65f50a">setMessage</link> (
+const std::string &amp; message)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_response_1a2370772ff85de1e6b7cea030a49af69a">operator==</link> (
+const <link linkend="class_response">Response</link> &amp; response)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_response_1a5a71397a64da703f9cfd4573397132d7">operator!=</link> (
+const <link linkend="class_response">Response</link> &amp; response)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_response_1aa77324541c1140d20c66174f37736ba7">empty</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_response_1aa9b6e391d77fce8daca8bac13730ec8e">
+                <title>Response::Response ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1a5027d8f799de6c3b363f346a0938ba24">
+                <title>void Response::setResponseCode (const int responseCode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1a173e4ecbd97fc996f994cefd6a96151c">
+                <title>void Response::setResponseCode (const RESPONSE_CODE responseCode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1a6c6264ecd2a5b3dd810088ab60454e06">
+                <title>RESPONSE_CODE Response::getResponseCode () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1a3c1d22536ecef18e21cc01fe10ad5703">
+                <title>std::string Response::getMessage () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1ad8851ad3fb70be26ba3454f4fa65f50a">
+                <title>void Response::setMessage (const std::string &amp;message)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1a2370772ff85de1e6b7cea030a49af69a">
+                <title>bool Response::operator== (const Response &amp;response) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1a5a71397a64da703f9cfd4573397132d7">
+                <title>bool Response::operator!= (const Response &amp;response) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_response_1aa77324541c1140d20c66174f37736ba7">
+                <title>bool Response::empty () const</title> <emphasis></emphasis>
+                
+            </section>
+</section>

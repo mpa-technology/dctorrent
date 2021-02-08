@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <info>
+    <title>dctorrent</title>
+    </info>
+        <xi:include href="md__home_maxim_workspace_project_dctorrent__r_e_a_d_m_e.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <chapter>
+        <title>Классы</title>
+        <xi:include href="class_app.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_command_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="classstd_1_1exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_io_service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_io_service_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_not_implemented_exception__.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_response.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_session.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_session_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_torrent_file.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_torrent_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_torrent_info_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_torrent_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="struct_torrent_node.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_torrent_param.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_torrent_param_exception.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Файлы</title>
+        <xi:include href="_app_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_command_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_io_service_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_main_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_not_implemented_exception_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_respons_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_session_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_file_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_info_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_info_exception_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_manager_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_node_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_param_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_utility_8hpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_r_e_a_d_m_e_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_app_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_command_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_io_service_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_io_service_exception_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_not_implemented_exception_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_respons_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_session_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_file_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_info_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_info_exception_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_manager_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_node_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_torrent_param_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+    <chapter>
+        <title>Директории</title>
+        <xi:include href="dir_d44c64559bbebec7f509842c48db8b23.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="dir_68267d1309a1af8e8297ef4c3efbcdba.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </chapter>
+</book>

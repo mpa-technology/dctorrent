@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_torrent_node_8hpp">
+    <title>TorrentNode.hpp File Reference</title>
+    <programlisting>#include &lt;string&gt;</programlisting>
+    <programlisting>#include &lt;stdexcept&gt;</programlisting>
+    <programlisting>#include &lt;libtorrent/units.hpp&gt;</programlisting>
+    <programlisting>#include &lt;libtorrent/download_priority.hpp&gt;</programlisting>
+<para>Include dependency diagram for TorrentNode.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_torrent_node_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for TorrentNode.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_torrent_node_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="struct_torrent_node">TorrentNode</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Макросы</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_torrent_node_8hpp_1a1799d3129acba4a19c6ed00f5cc664f6">TORRENT_NO_DEPRECATE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Перечисления</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="_torrent_node_8hpp_1a9dd84557e4dbd3aa5868f0b5401dbdbc">TORRENT_PRIORITY</link> {
+<link linkend="_torrent_node_8hpp_1a9dd84557e4dbd3aa5868f0b5401dbdbca7628eba0a3879b74e6889169265acbda">DONT_DOWNLOAD</link>= 0,
+<link linkend="_torrent_node_8hpp_1a9dd84557e4dbd3aa5868f0b5401dbdbca6e6d3954234ba451717cb2e4da4c2d3a">DEFAULT_PRIORITY</link>= 4,
+<link linkend="_torrent_node_8hpp_1a9dd84557e4dbd3aa5868f0b5401dbdbca22fdb5e22079d83faa87d80ea2165e0e">LOW_PRIORITY</link>= 1,
+<link linkend="_torrent_node_8hpp_1a9dd84557e4dbd3aa5868f0b5401dbdbca72a497e2f7eb83ae53ae9e6b44c66200">TOP_PRIORITY</link>= 7
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Функции</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>TORRENT_PRIORITY <link linkend="_torrent_node_8hpp_1a0f8df2d30137b86d7e77932ed9d5aeac">toTorrentPriority</link> (
+lt::download_priority_t value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>TORRENT_PRIORITY <link linkend="_torrent_node_8hpp_1a54ac774fb4b60d718c9191926c14cdb4">toTorrentPriority</link> (
+const int value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/TorrentNode.hpp</para>
+    </simplesect>
+</section>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_session_exception">
+<title>SessionException class Reference</title>
+<para>Inheritance diagram for SessionException</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_session_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for SessionException</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_session_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string msg_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_session_exception_1a9b5db8bd5748d69b5d533850118f9a4b">SessionException</link> (
+const std::string &amp; msg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_session_exception_1ac827a1902b7a3b1d5b4c1de06f6d3804">~SessionException</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="class_session_exception_1a50439e6eb93e97cdc80da54fa00836a7">what</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_session_exception_1a9b5db8bd5748d69b5d533850118f9a4b">
+                <title>SessionException::SessionException (const std::string &amp;msg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_exception_1ac827a1902b7a3b1d5b4c1de06f6d3804">
+                <title>virtual SessionException::~SessionException ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_exception_1a50439e6eb93e97cdc80da54fa00836a7">
+                <title>const char * SessionException::what () const noexcept</title> <emphasis></emphasis>
+                
+            </section>
+</section>

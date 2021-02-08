@@ -1,0 +1,43 @@
+digraph "/home/maxim/workspace/project/dctorrent/src/Session.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node394 [label="/home/maxim/workspace\l/project/dctorrent/src\l/Session.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node394 -> Node395 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node395 [label="Session.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_session_8hpp_source.html"];
+  Node395 -> Node396 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node396 [label="TorrentParam.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_param_8hpp_source.html"];
+  Node396 -> Node397 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node397 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node396 -> Node398 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node398 [label="libtorrent/add_torrent\l_params.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node396 -> Node399 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node399 [label="libtorrent/torrent\l_info.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node396 -> Node400 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node400 [label="libtorrent/magnet_uri.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node395 -> Node401 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node401 [label="TorrentFile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_file_8hpp_source.html"];
+  Node401 -> Node402 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node402 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node401 -> Node397 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node401 -> Node403 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node403 [label="libtorrent/torrent\l_handle.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node401 -> Node404 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node404 [label="libtorrent/torrent\l_status.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node401 -> Node405 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node405 [label="TorrentNode.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_node_8hpp_source.html"];
+  Node405 -> Node397 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node405 -> Node406 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node406 [label="stdexcept",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node405 -> Node407 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node407 [label="libtorrent/units.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node405 -> Node408 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node408 [label="libtorrent/download\l_priority.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node401 -> Node409 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node409 [label="boost/json.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node395 -> Node410 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node410 [label="libtorrent/session.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node395 -> Node400 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node395 -> Node411 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node411 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

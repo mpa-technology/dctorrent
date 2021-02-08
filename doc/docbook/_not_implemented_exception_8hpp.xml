@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_not_implemented_exception_8hpp">
+    <title>NotImplementedException.hpp File Reference</title>
+    <programlisting>#include &lt;string&gt;</programlisting>
+    <programlisting>#include &lt;exception&gt;</programlisting>
+<para>Include dependency diagram for NotImplementedException.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_not_implemented_exception_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for NotImplementedException.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_not_implemented_exception_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_not_implemented_exception__">NotImplementedException_</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Макросы</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_not_implemented_exception_8hpp_1aabcde68b133734395f868540779eac74">NotImplementedException</link> <link linkend="class_not_implemented_exception__">NotImplementedException_</link>(__func__,__PRETTY_FUNCTION__,std::string())</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="_not_implemented_exception_8hpp_1a346c97c2c6e462b77c39ed3fa551f7ac">NotImplementedExceptionMessage</link> <link linkend="class_not_implemented_exception__">NotImplementedException_</link>(__func__,__PRETTY_FUNCTION__,msg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/NotImplementedException.hpp</para>
+    </simplesect>
+</section>

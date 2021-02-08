@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_app">
+<title>App class Reference</title>
+<para>
+    <programlisting>#include <link linkend="_app_8hpp">&lt;App.hpp&gt;</link></programlisting>
+</para>
+<para>Inheritance diagram for App</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_app__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for App</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_app__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+        </section>
+        <section>
+            <title>Открытые атрибуты</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool run</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct App::@0 flags_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; std::string &gt; arguments_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::shared_ptr&lt; Session &gt; session_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::unique_ptr&lt; IoService &gt; ioService_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::unique_ptr&lt; TorrentInfo &gt; torrentInfo_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::unique_ptr&lt; TorrentManager &gt; torrentManager_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_app_1a013152c8fde7fbea1d14573f2e2ac14d">onExit_</link> (
+)<para><emphasis>Signal to end the program.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_app_1a61af7191f5cca376d1cb20f492e1bedc">onAddMagnetTorrent_</link> (
+const std::string &amp; url, const std::string &amp; savePath)<para><emphasis>Signal for adding a torrent.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_app_1a3a6c54473153f6bb08c9e0fbf1e82a99">onRemoveTorrent_</link> (
+const int64_t id)<para><emphasis>Signal to delete torrent.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_app_1a501d95277aa131ba6e582adefb27d507">slotConnect_</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_app_1ac94bd74b1c19faaf5c62e3b14e6b10c5">App</link> (
+int argc, char ** argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_app_1a8d27eeb51b813760dc39425d7a9a37e2">run</link> (
+)<para><emphasis>Launches the main loop of the application.</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Application class.Essential for good style. </para>
+    </simplesect>
+        <section>
+            <title>Данные класса</title>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_app_1a013152c8fde7fbea1d14573f2e2ac14d">
+                <title>void App::onExit_ ()</title> <emphasis>Signal to end the program.</emphasis>
+                
+<para>Applications guarantees exit only after the cycle has run </para>
+
+            </section>
+            <section xml:id="class_app_1a61af7191f5cca376d1cb20f492e1bedc">
+                <title>void App::onAddMagnetTorrent_ (const std::string &amp;url, const std::string &amp;savePath)</title> <emphasis>Signal for adding a torrent.</emphasis>
+                
+<para>Checks the name of the transferred file </para>
+
+            </section>
+            <section xml:id="class_app_1a3a6c54473153f6bb08c9e0fbf1e82a99">
+                <title>void App::onRemoveTorrent_ (const int64_t id)</title> <emphasis>Signal to delete torrent.</emphasis>
+                
+<para>I guarantee verification id </para>
+
+            </section>
+            <section xml:id="class_app_1a501d95277aa131ba6e582adefb27d507">
+                <title>void App::slotConnect_ ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_app_1ac94bd74b1c19faaf5c62e3b14e6b10c5">
+                <title>App::App (int argc, char **argv)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_app_1a8d27eeb51b813760dc39425d7a9a37e2">
+                <title>int App::run ()</title> <emphasis>Launches the main loop of the application.</emphasis>
+                
+            </section>
+</section>

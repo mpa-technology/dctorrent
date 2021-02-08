@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_io_service_exception">
+<title>IoServiceException class Reference</title>
+<para>Inheritance diagram for IoServiceException</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_io_service_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IoServiceException</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_io_service_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string msg_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_io_service_exception_1a0c6c309f815b3ee7ed3422d5b4ac0aa5">IoServiceException</link> (
+const std::string &amp; msg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_io_service_exception_1af347be12f8c7f3b3e32646f2f543e9e7">~IoServiceException</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="class_io_service_exception_1a123f1a3f928da87f5268c936979f89e5">what</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_io_service_exception_1a0c6c309f815b3ee7ed3422d5b4ac0aa5">
+                <title>IoServiceException::IoServiceException (const std::string &amp;msg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_exception_1af347be12f8c7f3b3e32646f2f543e9e7">
+                <title>IoServiceException::~IoServiceException ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_exception_1a123f1a3f928da87f5268c936979f89e5">
+                <title>const char * IoServiceException::what () const noexcept</title> <emphasis></emphasis>
+                
+            </section>
+</section>

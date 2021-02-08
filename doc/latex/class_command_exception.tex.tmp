@@ -1,14 +1,14 @@
-\hypertarget{class_command_exception}{}\section{Command\+Exception Class Reference}
+\hypertarget{class_command_exception}{}\section{Класс Command\+Exception}
 \label{class_command_exception}\index{Command\+Exception@{Command\+Exception}}
 
 
-Inheritance diagram for Command\+Exception\+:
+Граф наследования\+:Command\+Exception\+:
 % FIG 0
 
 
-Collaboration diagram for Command\+Exception\+:
+Граф связей класса Command\+Exception\+:
 % FIG 1
-\subsection*{Public Member Functions}
+\subsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_command_exception_ab301af4e30c459578d49453bb7c863f0}\label{class_command_exception_ab301af4e30c459578d49453bb7c863f0}} 
@@ -19,7 +19,7 @@ virtual const char $\ast$ {\bfseries what} () const noexcept
 \end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
 \item 
 /home/maxim/workspace/project/dctorrent/include/Command.\+hpp\item 
 /home/maxim/workspace/project/dctorrent/src/Command.\+cpp\end{DoxyCompactItemize}

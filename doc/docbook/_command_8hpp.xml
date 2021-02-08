@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_command_8hpp">
+    <title>Command.hpp File Reference</title>
+    <programlisting>#include &lt;string&gt;</programlisting>
+<para>Include dependency diagram for Command.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_command_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Command.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_command_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_command_exception">CommandException</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Перечисления</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bf">COMMAND</link> {
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfaa42b2fb0e720a080e79a92f4ca97d927">EXIT</link>,
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfa771640f52c2f9974e8bcd0410282cbe9">INFOT</link>,
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfa7fe8542e6fe3a906f1d45b69c5e80498">ADDT</link>,
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfab227842e001c1244dcca66037ba5f71b">ADDMAGNET</link>,
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfab1724edf7a61982729465ca7a9b57c83">REMOVET</link>,
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfa7f0c1b79326d893bcc3a3bc61749419e">PAUSET</link>,
+<link linkend="_command_8hpp_1a5bf9d47a13edbb35b6484485f1c655bfa78776a7c90ac99699d7d12caf824d47e">ERROR_COMMAND</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Функции</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string <link linkend="_command_8hpp_1aa2de29f0b5d70d7a9c441c5bdd189682">toCommand</link> (
+const int var)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr int <link linkend="_command_8hpp_1aa7bcdee13b0c1e423669a7e1862b4fed">commandToInt</link> (
+const std::string_view sv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr bool <link linkend="_command_8hpp_1af01a371084749986a5ab9f8e922ed270">commandExist</link> (
+const COMMAND command)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/Command.hpp</para>
+    </simplesect>
+</section>

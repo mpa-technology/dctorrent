@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_torrent_param_exception">
+<title>TorrentParamException class Reference</title>
+<para>Inheritance diagram for TorrentParamException</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_param_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TorrentParamException</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_param_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const std::string msg_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_torrent_param_exception_1a96e240b0809c3c13375f70803641909f">TorrentParamException</link> (
+const std::string &amp; msg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_torrent_param_exception_1a4bdcbbbec0c33859317bedb7547185fc">~TorrentParamException</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="class_torrent_param_exception_1a91e212adfd98c4a999bc37f35e12930a">what</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_torrent_param_exception_1a96e240b0809c3c13375f70803641909f">
+                <title>TorrentParamException::TorrentParamException (const std::string &amp;msg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_exception_1a4bdcbbbec0c33859317bedb7547185fc">
+                <title>virtual TorrentParamException::~TorrentParamException ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_param_exception_1a91e212adfd98c4a999bc37f35e12930a">
+                <title>const char * TorrentParamException::what () const noexcept</title> <emphasis></emphasis>
+                
+            </section>
+</section>

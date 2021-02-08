@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_io_service">
+<title>IoService class Reference</title>
+<para>Inheritance diagram for IoService</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_io_service__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for IoService</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_io_service__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Открытые атрибуты</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>boost::signals2::signal&lt; void()&gt; onExit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>boost::signals2::signal&lt; void(const std::string &amp;, const std::string &amp;)&gt; onAddTorrent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>boost::signals2::signal&lt; void(const std::string &amp;, const std::string &amp;)&gt; onAddMagnetTorrent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>boost::signals2::signal&lt; void(const int64_t)&gt; onRemoveTorrent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_io_service_1a0c3a72c2c612adb748b8f55618f27e1b">IoService</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_io_service_1a567121c3f219b94b076d622d6881c0ef">work</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_io_service_1a707f96e25e98c5caaace1100095e374a">simpleResponse</link> (
+const std::string &amp; msg, int code)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_io_service_1a73cdc0bb026f8dae7be3649b269ad541">simpleResponse</link> (
+const std::string &amp; msg, RESPONSE_CODE code)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_io_service_1a3c3ec538c9632b5aff0d4770a1c5822e">simpleResponse</link> (
+const <link linkend="class_response">Response</link> &amp; response)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string <link linkend="class_io_service_1a3c5eeaa2fb068ab061bf18a73a6a4c3c">getLine_</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; std::string &gt; <link linkend="class_io_service_1ad048cb2e2becda77b5b9353c12d25806">parsingArgument_</link> (
+const std::string &amp; string)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_response">Response</link> <link linkend="class_io_service_1aafa88c251e456bfdb20be3d1e0d75bc3">commandExec_</link> (
+const COMMAND command, const std::vector&lt; std::string &gt; &amp; argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_response">Response</link> <link linkend="class_io_service_1ad609357afdec70318129eb3d11195f49">info_</link> (
+const std::vector&lt; std::string &gt; &amp; argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_response">Response</link> <link linkend="class_io_service_1a8b97887ebcf29e688edbc008cb7e9c2e">addt_</link> (
+const std::vector&lt; std::string &gt; &amp; argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_response">Response</link> <link linkend="class_io_service_1a373e18274e6fe03aad1563337cf64834">addtm_</link> (
+const std::vector&lt; std::string &gt; &amp; argv)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_io_service_1a0c3a72c2c612adb748b8f55618f27e1b">
+                <title>IoService::IoService ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a567121c3f219b94b076d622d6881c0ef">
+                <title>void IoService::work ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a707f96e25e98c5caaace1100095e374a">
+                <title>void IoService::simpleResponse (const std::string &amp;msg, int code)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a73cdc0bb026f8dae7be3649b269ad541">
+                <title>void IoService::simpleResponse (const std::string &amp;msg, RESPONSE_CODE code)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a3c3ec538c9632b5aff0d4770a1c5822e">
+                <title>void IoService::simpleResponse (const Response &amp;response)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a3c5eeaa2fb068ab061bf18a73a6a4c3c">
+                <title>std::string IoService::getLine_ ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1ad048cb2e2becda77b5b9353c12d25806">
+                <title>std::vector&lt; std::string &gt; IoService::parsingArgument_ (const std::string &amp;string)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1aafa88c251e456bfdb20be3d1e0d75bc3">
+                <title>Response IoService::commandExec_ (const COMMAND command, const std::vector&lt; std::string &gt; &amp;argv)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1ad609357afdec70318129eb3d11195f49">
+                <title>Response IoService::info_ (const std::vector&lt; std::string &gt; &amp;argv)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a8b97887ebcf29e688edbc008cb7e9c2e">
+                <title>Response IoService::addt_ (const std::vector&lt; std::string &gt; &amp;argv)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_io_service_1a373e18274e6fe03aad1563337cf64834">
+                <title>Response IoService::addtm_ (const std::vector&lt; std::string &gt; &amp;argv)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

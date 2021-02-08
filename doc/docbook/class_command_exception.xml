@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_command_exception">
+<title>CommandException class Reference</title>
+<para>Inheritance diagram for CommandException</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_command_exception__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for CommandException</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_command_exception__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string msg_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_command_exception_1ab301af4e30c459578d49453bb7c863f0">CommandException</link> (
+const std::string &amp; msg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_command_exception_1abe156a7b052c99d9b402408204d1363a">~CommandException</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="class_command_exception_1a363be2a35dc135ba46764054e7e6062e">what</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_command_exception_1ab301af4e30c459578d49453bb7c863f0">
+                <title>CommandException::CommandException (const std::string &amp;msg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_command_exception_1abe156a7b052c99d9b402408204d1363a">
+                <title>CommandException::~CommandException ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_command_exception_1a363be2a35dc135ba46764054e7e6062e">
+                <title>const char * CommandException::what () const noexcept</title> <emphasis></emphasis>
+                
+            </section>
+</section>

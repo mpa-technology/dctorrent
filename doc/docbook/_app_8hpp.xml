@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_app_8hpp">
+    <title>App.hpp File Reference</title>
+    <programlisting>#include &lt;iostream&gt;</programlisting>
+    <programlisting>#include &lt;memory&gt;</programlisting>
+    <programlisting>#include &lt;boost/filesystem.hpp&gt;</programlisting>
+    <programlisting>#include &lt;NotImplementedException.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Session.hpp&gt;</programlisting>
+    <programlisting>#include &lt;IoService.hpp&gt;</programlisting>
+    <programlisting>#include &lt;Respons.hpp&gt;</programlisting>
+    <programlisting>#include &lt;TorrentInfo.hpp&gt;</programlisting>
+    <programlisting>#include &lt;TorrentManager.hpp&gt;</programlisting>
+<para>Include dependency diagram for App.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_app_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for App.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_app_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_app">App</link></para>
+<para><emphasis>Application class.Essential for good style.</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/App.hpp</para>
+    </simplesect>
+</section>

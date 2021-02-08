@@ -1,0 +1,6 @@
+digraph "/home/maxim/workspace/project/dctorrent/src/TorrentParam.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node488 [label="/home/maxim/workspace\l/project/dctorrent/src\l/TorrentParam.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

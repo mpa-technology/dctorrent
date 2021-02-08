@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_torrent_file">
+<title>TorrentFile class Reference</title>
+<para>Inheritance diagram for TorrentFile</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_file__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for TorrentFile</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_torrent_file__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lt::torrent_handle torrentHandle_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; TorrentNode &gt; torrentNodes_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t id_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_torrent_file_1a2a92bbd5e407cbccb53b821cbcf846aa">TorrentFile</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_torrent_file_1a27ce12d60a57cf1d96a11f8a0f577f10">TorrentFile</link> (
+lt::torrent_handle th)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_file_1a6e6d855070b528ce105730cbc0978dd5">pause</link> (
+const int64_t id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_file_1a560df176eab6c5de04239bdfc543524c">resume</link> (
+const int64_t id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>float <link linkend="class_torrent_file_1ad0ad60a81ee1c36ca141e0e567003a2d">totalProgress</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::vector&lt; <link linkend="struct_torrent_node">TorrentNode</link> &gt; <link linkend="class_torrent_file_1a897f2b650fe0751f6f600da7b91554b7">getNode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_file_1addc6398cd278de5c1006243e69bc8939">update</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_torrent_file_1a2705d475c4d765e8c5f271d53749de38">isFinished</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string <link linkend="class_torrent_file_1a24e7ea45aabbb85a63c9f52ca0124290">name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>boost::json::object <link linkend="class_torrent_file_1acc06bd2ca7292b99f6293d71a48bd0ff">json</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_torrent_file_1a1c08dc50fd62ab94752ef59e848a2963">operator==</link> (
+const <link linkend="class_torrent_file">TorrentFile</link> &amp; file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_file_1a3a45110028c23fd44b9852dd6f2407bf">pause</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lt::torrent_handle <link linkend="class_torrent_file_1a7e1f048d2dfa195638155d62fe5ab02c">getNativeTorrentHandle</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t <link linkend="class_torrent_file_1ade6c6fe4d6214f2ce004b40532746dba">getId</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_torrent_file_1a757e86a747ebcb13bd57cf4de1c9d013">setId</link> (
+const int64_t &amp; id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_torrent_file_1a2a92bbd5e407cbccb53b821cbcf846aa">
+                <title>TorrentFile::TorrentFile ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a27ce12d60a57cf1d96a11f8a0f577f10">
+                <title>TorrentFile::TorrentFile (lt::torrent_handle th)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a6e6d855070b528ce105730cbc0978dd5">
+                <title>void TorrentFile::pause (const int64_t id)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a560df176eab6c5de04239bdfc543524c">
+                <title>void TorrentFile::resume (const int64_t id)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1ad0ad60a81ee1c36ca141e0e567003a2d">
+                <title>float TorrentFile::totalProgress () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a897f2b650fe0751f6f600da7b91554b7">
+                <title>std::vector&lt; TorrentNode &gt; TorrentFile::getNode () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1addc6398cd278de5c1006243e69bc8939">
+                <title>void TorrentFile::update ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a2705d475c4d765e8c5f271d53749de38">
+                <title>bool TorrentFile::isFinished () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a24e7ea45aabbb85a63c9f52ca0124290">
+                <title>std::string TorrentFile::name () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1acc06bd2ca7292b99f6293d71a48bd0ff">
+                <title>boost::json::object TorrentFile::json () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a1c08dc50fd62ab94752ef59e848a2963">
+                <title>bool TorrentFile::operator== (const TorrentFile &amp;file) const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a3a45110028c23fd44b9852dd6f2407bf">
+                <title>void TorrentFile::pause ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a7e1f048d2dfa195638155d62fe5ab02c">
+                <title>libtorrent::torrent_handle TorrentFile::getNativeTorrentHandle () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1ade6c6fe4d6214f2ce004b40532746dba">
+                <title>int64_t TorrentFile::getId () const</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_torrent_file_1a757e86a747ebcb13bd57cf4de1c9d013">
+                <title>void TorrentFile::setId (const int64_t &amp;id)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

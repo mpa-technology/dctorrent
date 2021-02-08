@@ -1,0 +1,16 @@
+digraph "/home/maxim/workspace/project/dctorrent/src/TorrentParam.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node482 [label="/home/maxim/workspace\l/project/dctorrent/src\l/TorrentParam.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node482 -> Node483 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node483 [label="TorrentParam.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_param_8hpp_source.html"];
+  Node483 -> Node484 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node484 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node483 -> Node485 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node485 [label="libtorrent/add_torrent\l_params.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node483 -> Node486 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node486 [label="libtorrent/torrent\l_info.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node483 -> Node487 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node487 [label="libtorrent/magnet_uri.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

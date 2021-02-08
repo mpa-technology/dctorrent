@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_session">
+<title>Session class Reference</title>
+<para>Inheritance diagram for Session</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_session__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Session</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_session__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lt::session session_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::list&lt; TorrentFile &gt; torrentFiles_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int64_t <link linkend="class_session_1a8823bc74040e89d5c449dc70390426aa">findFreeId_</link> (
+const int64_t &amp; id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::list&lt; <link linkend="class_torrent_file">TorrentFile</link> &gt; <link linkend="class_session_1a6737074b34547727cd703250d8374d06">getAllTorrent</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_torrent_file">TorrentFile</link> <link linkend="class_session_1a79df8817751b97160c096e3cf149d845">getTorrent</link> (
+const int64_t id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_session_1a30028efacc66ba9a49455c4cff0b325a">torrentUpdate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>lt::session &amp; <link linkend="class_session_1ae651253171e918d5d6b1a1081ebe8f32">session</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_session_1aa160f757e11e9e68075d28ae1309ae85">addTorrentMagnet</link> (
+<link linkend="class_torrent_param">TorrentParam</link> &amp;&amp; tf)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_session_1ac6bbf71f6931ee121fb169fb134d9395">addTorrent</link> (
+<link linkend="class_torrent_param">TorrentParam</link> &amp;&amp; tf)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_session_1adc5d2ea634964b3898fdb7b600e1ea87">removeTorrent</link> (
+const <link linkend="class_torrent_file">TorrentFile</link> &amp; tf)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_session_1a372beddfe745b1b3620960ee8698738a">removeTorrent</link> (
+const int64_t id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_session_1a8823bc74040e89d5c449dc70390426aa">
+                <title>int64_t Session::findFreeId_ (const int64_t &amp;id=0)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1a6737074b34547727cd703250d8374d06">
+                <title>std::list&lt; TorrentFile &gt; Session::getAllTorrent ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1a79df8817751b97160c096e3cf149d845">
+                <title>TorrentFile Session::getTorrent (const int64_t id)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1a30028efacc66ba9a49455c4cff0b325a">
+                <title>void Session::torrentUpdate ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1ae651253171e918d5d6b1a1081ebe8f32">
+                <title>libtorrent::session &amp; Session::session ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1aa160f757e11e9e68075d28ae1309ae85">
+                <title>void Session::addTorrentMagnet (TorrentParam &amp;&amp;tf)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1ac6bbf71f6931ee121fb169fb134d9395">
+                <title>void Session::addTorrent (TorrentParam &amp;&amp;tf)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1adc5d2ea634964b3898fdb7b600e1ea87">
+                <title>void Session::removeTorrent (const TorrentFile &amp;tf)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_session_1a372beddfe745b1b3620960ee8698738a">
+                <title>void Session::removeTorrent (const int64_t id)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

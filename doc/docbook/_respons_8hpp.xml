@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_respons_8hpp">
+    <title>Respons.hpp File Reference</title>
+    <programlisting>#include &lt;string&gt;</programlisting>
+<para>Include dependency diagram for Respons.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_respons_8hpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Respons.hpp</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_respons_8hpp__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Классы </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_response">Response</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Перечисления</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120">RESPONSE_CODE</link> {
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120abd80a4f6981aa529267c1da9cebbd338">START_FAILURE</link>,
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120a070a18de034404a1c0bd02894fd4ea2e">START_OK</link>,
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120a55391e9d7adde27a8e92af9bfa9aa75d">EXIT_OK</link>,
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120a9880a957de5e02e6a65b39992ed9e669">CODE_OK</link>,
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120a21571f190df073bb389e46665b41ba9b">CODE_ERROR</link>,
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120a770f7e074f7bf6c6b22198f0fe589f01">CODE_NON</link>,
+<link linkend="_respons_8hpp_1a75dd93544267700a0f1fb11871839120a70079cd74523d665b918ac2d0570821c">CODE_CRITICAL_ERROR</link>
+}</literallayout>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Функции</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>constexpr RESPONSE_CODE <link linkend="_respons_8hpp_1a71eda9676397bd180fe27766cfaa555e">toResponseCode</link> (
+const int code)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+        <title>Подробное описание</title>
+    <para>Definition in file /home/maxim/workspace/project/dctorrent/include/Respons.hpp</para>
+    </simplesect>
+</section>

@@ -1,0 +1,41 @@
+digraph "/home/maxim/workspace/project/dctorrent/include/Session.hpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node119 [label="/home/maxim/workspace\l/project/dctorrent/include\l/Session.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node119 -> Node120 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node120 [label="TorrentParam.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_param_8hpp_source.html"];
+  Node120 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node121 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node120 -> Node122 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node122 [label="libtorrent/add_torrent\l_params.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node120 -> Node123 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node123 [label="libtorrent/torrent\l_info.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node120 -> Node124 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node124 [label="libtorrent/magnet_uri.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node119 -> Node125 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node125 [label="TorrentFile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_file_8hpp_source.html"];
+  Node125 -> Node126 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node126 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node125 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node125 -> Node127 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node127 [label="libtorrent/torrent\l_handle.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node125 -> Node128 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node128 [label="libtorrent/torrent\l_status.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node125 -> Node129 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 [label="TorrentNode.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_torrent_node_8hpp_source.html"];
+  Node129 -> Node121 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node129 -> Node130 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node130 [label="stdexcept",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node129 -> Node131 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="libtorrent/units.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node129 -> Node132 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="libtorrent/download\l_priority.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node125 -> Node133 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="boost/json.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node119 -> Node134 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="libtorrent/session.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node119 -> Node124 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node119 -> Node135 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_not_implemented_exception__">
+<title>NotImplementedException_ class Reference</title>
+<para>Inheritance diagram for NotImplementedException_</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_not_implemented_exception____inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for NotImplementedException_</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_not_implemented_exception____coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Закрытые данные</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>std::string msg_</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_not_implemented_exception___1ab10428134a851c0f564d142a497b4d3f">NotImplementedException_</link> (
+const std::string &amp; fnName, const std::string &amp; className, const std::string &amp; msg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_not_implemented_exception___1a52f8412731950dd82d5fe7be23a3ffab">~NotImplementedException_</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const char * <link linkend="class_not_implemented_exception___1a7a92099331b07ede1d316e8340ce207a">what</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Данные класса</title>
+        </section>
+            <section xml:id="class_not_implemented_exception___1ab10428134a851c0f564d142a497b4d3f">
+                <title>NotImplementedException_::NotImplementedException_ (const std::string &amp;fnName, const std::string &amp;className, const std::string &amp;msg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_not_implemented_exception___1a52f8412731950dd82d5fe7be23a3ffab">
+                <title>NotImplementedException_::~NotImplementedException_ ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_not_implemented_exception___1a7a92099331b07ede1d316e8340ce207a">
+                <title>const char * NotImplementedException_::what () const noexcept</title> <emphasis></emphasis>
+                
+            </section>
+</section>
