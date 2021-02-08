@@ -27,7 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <main.hpp>
+#include <Main.hpp>
 
 
 int main( int argc, char **argv )try{

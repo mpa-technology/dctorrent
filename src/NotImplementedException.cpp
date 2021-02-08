@@ -28,21 +28,20 @@
  */
 
 
-#include <torrentnode.hpp>
-
-TORRENT_PRIORITY toTorrentPriority(const int value){
-
-    switch (static_cast<TORRENT_PRIORITY>(value)) {
-    case TORRENT_PRIORITY::DONT_DOWNLOAD: return TORRENT_PRIORITY::DONT_DOWNLOAD;
-    case TORRENT_PRIORITY::DEFAULT_PRIORITY: return TORRENT_PRIORITY::DEFAULT_PRIORITY;
-    case TORRENT_PRIORITY::LOW_PRIORITY: return TORRENT_PRIORITY::LOW_PRIORITY;
-    case TORRENT_PRIORITY::TOP_PRIORITY: return TORRENT_PRIORITY::TOP_PRIORITY;
-    }
+#include <NotImplementedException.hpp>
 
 
-    throw  std::invalid_argument("value not TORRENT_PRIORITY");
+NotImplementedException_::NotImplementedException_(const std::string &fnName, const std::string &className, const std::string &msg){
+    msg_ =  "function(" +fnName+") in class(" + className +")";
+
+    if(!msg.empty())
+        msg_.append(" : ").append(msg);
 }
 
-TORRENT_PRIORITY toTorrentPriority(libtorrent::download_priority_t value){
-    return toTorrentPriority(static_cast<int>(static_cast<unsigned char>(value)));
+
+NotImplementedException_::~NotImplementedException_(){}
+
+const char *NotImplementedException_::what() const noexcept
+{
+    return msg_.c_str();
 }

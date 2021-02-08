@@ -27,75 +27,44 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma once
+#include <Respons.hpp>
 
+Response::Response(){
+    responseCode_ = RESPONSE_CODE::CODE_NON;
+}
 
-#include <TorrentParam.hpp>
-#include <torrentfile.hpp>
+void Response::setResponseCode(const int responseCode){
+    responseCode_ = toResponseCode(responseCode);
+}
 
-#ifndef TORRENT_NO_DEPRECATE
-#define TORRENT_NO_DEPRECATE
-#endif
+void Response::setResponseCode(const RESPONSE_CODE responseCode){
+    responseCode_ = responseCode;
+}
 
-#include <libtorrent/session.hpp>
-#include <libtorrent/magnet_uri.hpp>
-#include <iostream>
+RESPONSE_CODE Response::getResponseCode() const{
+    return responseCode_;
+}
 
+std::string Response::getMessage() const
+{
+    return message_;
+}
 
+void Response::setMessage(const std::string &message)
+{
+    message_ = message;
+}
 
+bool Response::operator==(const Response &response) const{
+    return message_ == response.message_ &&
+           responseCode_  == response.responseCode_;
+}
 
-class SessionException : public std::exception{
+bool Response::operator!=(const Response &response) const{
+    return !(*this==response);
+}
 
-
-    std::string msg_;
-
-public:
-
-
-    SessionException(const std::string &msg);
-
-
-
-    virtual  ~SessionException(){}
-
-
-    virtual const char* what() const noexcept;
-
-
-};
-
-
-class Session{
-
-
-    lt::session session_;
-
-
-    std::list<TorrentFile>torrentFiles_;
-
-    int64_t findFreeId_(const int64_t &id = 0);
-
-
-public:
-
-    std::list<TorrentFile> getAllTorrent();
-
-    TorrentFile getTorrent(const int64_t id);
-
-    void torrentUpdate();
-
-    lt::session &session();
-
-    void addTorrentMagnet(TorrentParam &&tf);
-
-    void addTorrent(TorrentParam &&tf);
-
-
-
-
-    void removeTorrent(const TorrentFile &tf);
-    void removeTorrent(const int64_t id);
-
-
-};
-
+bool Response::empty()const{
+    return responseCode_ == RESPONSE_CODE::CODE_NON &&
+           message_.empty();
+}

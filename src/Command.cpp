@@ -27,90 +27,35 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
-
-#pragma once
-
-#include <iostream>
-#include <vector>
-#include <string>
-
-#include <boost/algorithm/string.hpp>
-#include <boost/locale.hpp>
-#include <boost/signals2.hpp>
-#include <boost/json.hpp>
-
-
-#include <utility.hpp>
-#include <session.hpp>
-#include <torrentfile.hpp>
-#include <respons.hpp>
-#include <command.hpp>
-#include <TorrentInfo.hpp>
-#include <TorrentManager.hpp>
-
-
-class IoServiceException : public std::exception{
-
-
-    std::string msg_;
-
-public:
-
-
-    IoServiceException(const std::string &msg);
-
-    virtual  ~IoServiceException();
-
-    virtual const char* what() const noexcept;
-
-};
+#include <Command.hpp>
 
 
 
-class IoService{
+CommandException::CommandException(const std::string &msg):
+    msg_(msg){}
 
+CommandException::~CommandException(){}
 
-public:
-
-
-    IoService();
-
-
-    void work( );
-
-    static void simpleResponse(const std::string &msg , int code);
-    static void simpleResponse(const std::string &msg , RESPONSE_CODE code);
-    static void simpleResponse(const Response &response);
-
-
-    boost::signals2::signal<void()>onExit;
-    boost::signals2::signal<void(const std::string& , const std::string&)>onAddTorrent;
-    boost::signals2::signal<void(const std::string& , const std::string&)>onAddMagnetTorrent;
-    boost::signals2::signal<void(const int64_t)>onRemoveTorrent;
+const char *CommandException::what() const noexcept{
+    return msg_.c_str();
+}
 
 
 
+std::string toCommand(const int var){
 
-
-private:
-
-
-    std::string getLine_();
-
-    std::vector<std::string> parsingArgument_( const std::string &string );
-
-    Response commandExec_( const COMMAND command , const std::vector<std::string> &argv);
-
-
-    Response info_(const std::vector<std::string> &argv);
-
-
-    Response addt_(const std::vector<std::string>& argv);
-    Response addtm_(const std::vector<std::string>& argv);
+    switch (static_cast<COMMAND>(var)) {
+    case COMMAND::EXIT: return "EXIT";
+    case COMMAND::INFOT: return "INFO";
+    case COMMAND::ADDT: return "ADDT";
+    case COMMAND::REMOVET: return "REMOVET";
+    case COMMAND::ADDMAGNET: return "ADDMAGNET";
+    case COMMAND::ERROR_COMMAND: return "ERROR_COMMAND";
+    case COMMAND::PAUSET:return "PAUSET";
+    }
 
 
 
-
-};
+    throw CommandException("command not found");
+}
 

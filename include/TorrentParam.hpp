@@ -44,7 +44,7 @@
 class TorrentParamException : public std::exception{
 
 
-    std::string msg_;
+    const std::string msg_;
 
 public:
 

@@ -27,7 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <ioservice.hpp>
+#include <IoService.hpp>
 
 IoServiceException::IoServiceException(const std::string &msg):msg_(msg){}
 

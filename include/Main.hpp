@@ -27,35 +27,40 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <command.hpp>
+
+#pragma once
+
+#include <iostream>
+#include <exception>
+
+#include <App.hpp>
 
 
 
-CommandException::CommandException(const std::string &msg):
-    msg_(msg){}
 
-CommandException::~CommandException(){}
 
-const char *CommandException::what() const noexcept{
-    return msg_.c_str();
-}
+int main(int argc, char **argv );
 
 
 
-std::string toCommand(const int var){
-
-    switch (static_cast<COMMAND>(var)) {
-    case COMMAND::EXIT: return "EXIT";
-    case COMMAND::INFOT: return "INFO";
-    case COMMAND::ADDT: return "ADDT";
-    case COMMAND::REMOVET: return "REMOVET";
-    case COMMAND::ADDMAGNET: return "ADDMAGNET";
-    case COMMAND::ERROR_COMMAND: return "ERROR_COMMAND";
-    case COMMAND::PAUSET:return "PAUSET";
-    }
 
 
 
-    throw CommandException("command not found");
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

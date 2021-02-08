@@ -30,8 +30,9 @@
 #pragma once
 #include <memory>
 #include <boost/json.hpp>
-#include <session.hpp>
 #include <boost/filesystem.hpp>
+
+#include <Session.hpp>
 
 class TorrentManager{
 public:

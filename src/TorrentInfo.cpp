@@ -1,4 +1,4 @@
-#include "TorrentInfo.hpp"
+#include <TorrentInfo.hpp>
 
 TorrentInfo* TorrentInfo::torrent_ = nullptr;
 

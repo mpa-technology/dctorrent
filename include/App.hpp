@@ -27,37 +27,83 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 #pragma once
 
 #include <iostream>
-#include <exception>
+#include <memory>
 
-#include <app.hpp>
+#include <boost/filesystem.hpp>
 
-
-
-
-
-int main(int argc, char **argv );
-
-
-
+#include <NotImplementedException.hpp>
+#include <Session.hpp>
+#include <IoService.hpp>
+#include <Respons.hpp>
+#include <TorrentInfo.hpp>
+#include <TorrentManager.hpp>
 
 
-
-
-
-
+/*!
+    \brief Application class.Essential for good style.
+*/
+class App{
 
 
 
+    /*!
+        \brief Signal to end the program
+        \details Applications guarantees exit only after the cycle has run
+    */
+    void onExit_();
+    /*!
+        \brief Signal for adding a torrent
+        \details Checks the name of the transferred file
+    */
+
+    void onAddMagnetTorrent_(const std::string &url, const std::string &savePath);
+
+    /*!
+        \brief Signal to delete torrent
+        \details I guarantee verification id
+    */
+    void onRemoveTorrent_(const int64_t id);
 
 
 
+    struct{
+        bool run;
+    }flags_;
+
+public:
 
 
+    App(int argc, char **argv);
 
+    /*!
+        \brief Launches the main loop of the application
+    */
+    int run();
+
+
+private:
+
+    void slotConnect_(){
+
+        ioService_->onExit.connect(std::bind(&App::onExit_,this));
+        ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
+        ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
+
+
+    }
+
+
+    std::vector<std::string> arguments_;
+
+    std::shared_ptr<Session>session_;
+    std::unique_ptr<IoService>ioService_;
+    std::unique_ptr<TorrentInfo>torrentInfo_;
+    std::unique_ptr<TorrentManager>torrentManager_;
+
+};
 
 
 

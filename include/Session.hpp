@@ -29,85 +29,73 @@
 
 #pragma once
 
+
+#include <TorrentParam.hpp>
+#include <TorrentFile.hpp>
+
+#ifndef TORRENT_NO_DEPRECATE
+#define TORRENT_NO_DEPRECATE
+#endif
+
+#include <libtorrent/session.hpp>
+#include <libtorrent/magnet_uri.hpp>
 #include <iostream>
-#include <memory>
-
-#include <boost/filesystem.hpp>
-
-#include <notimplementedexception.hpp>
-
-#include <session.hpp>
-#include <ioservice.hpp>
-#include <respons.hpp>
-#include <TorrentInfo.hpp>
-#include <TorrentManager.hpp>
-
-
-/*!
-    \brief Application class.Essential for good style.
-*/
-class App{
 
 
 
-    /*!
-        \brief Signal to end the program
-        \details Applications guarantees exit only after the cycle has run
-    */
-    void onExit_();
-    /*!
-        \brief Signal for adding a torrent
-        \details Checks the name of the transferred file
-    */
 
-    void onAddMagnetTorrent_(const std::string &url, const std::string &savePath);
-
-    /*!
-        \brief Signal to delete torrent
-        \details I guarantee verification id
-    */
-    void onRemoveTorrent_(const int64_t id);
+class SessionException : public std::exception{
 
 
-
-    struct{
-        bool run;
-    }flags_;
+    std::string msg_;
 
 public:
 
 
-    App(int argc, char **argv);
-
-    /*!
-        \brief Launches the main loop of the application
-    */
-    int run();
+    SessionException(const std::string &msg);
 
 
-private:
 
-    void slotConnect_(){
-
-        ioService_->onExit.connect(std::bind(&App::onExit_,this));
-        ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
-        ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
+    virtual  ~SessionException(){}
 
 
-    }
+    virtual const char* what() const noexcept;
 
-
-    std::vector<std::string> arguments_;
-
-    std::shared_ptr<Session>session_;
-    std::unique_ptr<IoService>ioService_;
-    std::unique_ptr<TorrentInfo>torrentInfo_;
-    std::unique_ptr<TorrentManager>torrentManager_;
 
 };
 
 
+class Session{
+
+
+    lt::session session_;
+
+
+    std::list<TorrentFile>torrentFiles_;
+
+    int64_t findFreeId_(const int64_t &id = 0);
+
+
+public:
+
+    std::list<TorrentFile> getAllTorrent();
+
+    TorrentFile getTorrent(const int64_t id);
+
+    void torrentUpdate();
+
+    lt::session &session();
+
+    void addTorrentMagnet(TorrentParam &&tf);
+
+    void addTorrent(TorrentParam &&tf);
 
 
 
+
+    void removeTorrent(const TorrentFile &tf);
+    void removeTorrent(const int64_t id);
+
+
+};
 

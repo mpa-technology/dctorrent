@@ -27,7 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <torrentfile.hpp>
+#include <TorrentFile.hpp>
 
 
 TorrentFile::TorrentFile(libtorrent::torrent_handle th) : torrentHandle_(th){

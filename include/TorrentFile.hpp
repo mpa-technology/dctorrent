@@ -41,7 +41,7 @@
 #include <libtorrent/torrent_handle.hpp>
 #include <libtorrent/torrent_status.hpp>
 
-#include <torrentnode.hpp>
+#include <TorrentNode.hpp>
 
 #include <boost/json.hpp>
 

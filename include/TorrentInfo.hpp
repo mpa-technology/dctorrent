@@ -1,9 +1,9 @@
 #pragma once
 #include <memory>
 #include <boost/json.hpp>
-#include <session.hpp>
 
-#include <torrentinfoexception.hpp>
+#include <Session.hpp>
+#include <TorrentInfoException.hpp>
 
 
 class TorrentInfo{

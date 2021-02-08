@@ -27,44 +27,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <respons.hpp>
 
-Response::Response(){
-    responseCode_ = RESPONSE_CODE::CODE_NON;
-}
+#include <TorrentInfoException.hpp>
 
-void Response::setResponseCode(const int responseCode){
-    responseCode_ = toResponseCode(responseCode);
-}
 
-void Response::setResponseCode(const RESPONSE_CODE responseCode){
-    responseCode_ = responseCode;
-}
+TorrentInfoException::TorrentInfoException(const std::string &msg):msg_(msg){}
 
-RESPONSE_CODE Response::getResponseCode() const{
-    return responseCode_;
-}
+TorrentInfoException::~TorrentInfoException(){}
 
-std::string Response::getMessage() const
+const char *TorrentInfoException::what() const noexcept
 {
-    return message_;
-}
-
-void Response::setMessage(const std::string &message)
-{
-    message_ = message;
-}
-
-bool Response::operator==(const Response &response) const{
-    return message_ == response.message_ &&
-           responseCode_  == response.responseCode_;
-}
-
-bool Response::operator!=(const Response &response) const{
-    return !(*this==response);
-}
-
-bool Response::empty()const{
-    return responseCode_ == RESPONSE_CODE::CODE_NON &&
-           message_.empty();
+    return msg_.c_str();
 }

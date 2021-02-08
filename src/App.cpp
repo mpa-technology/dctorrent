@@ -27,7 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <app.hpp>
+#include <App.hpp>
 
 App::App(int argc, char **argv){
 
