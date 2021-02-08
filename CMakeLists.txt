@@ -5,8 +5,10 @@ project(dctorrent CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+option(DEBUG_MOD OFF)
 
 
+if(NOT DEBUG_MOD)
 
 add_compile_options(
     -Werror
@@ -27,12 +29,14 @@ add_compile_options(
     -Wsign-promo
 )
 
+endif()
+
 file(GLOB SOURCE "src/*.cpp")
 
 
 add_executable( ${PROJECT_NAME} ${SOURCE} )
 
-target_link_libraries( ${PROJECT_NAME} -lstdc++ -lboost_system -lboost_locale -lboost_json -lboost_filesystem -ltorrent-rasterbar -lpthread )
+target_link_libraries( ${PROJECT_NAME} -ltorrent-rasterbar  -lstdc++ -lboost_system -lboost_locale -lboost_json -lboost_filesystem -lpthread )
 
 
 target_include_directories( ${PROJECT_NAME} PUBLIC include/)

@@ -30,23 +30,19 @@
 #include <main.hpp>
 
 
-int main( int argc, char **argv ){
+int main( int argc, char **argv )try{
 
-
-    try {
-        App app(argc,argv);
-        return app.run();
-    }  catch (const std::exception &exp) {
-        std::cerr << exp.what() << std::endl;
-    }
-
-
-
-
-
-
+    App app(argc,argv);
+    return app.run();
+} catch (const std::exception &exp) {
+    std::cerr << exp.what() << std::endl;
     return EXIT_FAILURE;
 }
+
+
+
+
+
 
 
 

@@ -36,7 +36,6 @@ NotImplementedException_::NotImplementedException_(const std::string &fnName, co
 
     if(!msg.empty())
         msg_.append(" : ").append(msg);
-
 }
 
 

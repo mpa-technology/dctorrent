@@ -32,7 +32,6 @@
 
 TorrentParamException::TorrentParamException(const std::string &msg):msg_(msg){}
 
-TorrentParamException::~TorrentParamException(){}
 
 const char *TorrentParamException::what() const noexcept{
     return msg_.c_str();

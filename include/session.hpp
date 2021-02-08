@@ -56,7 +56,7 @@ public:
 
 
 
-    virtual  ~SessionException();
+    virtual  ~SessionException(){}
 
 
     virtual const char* what() const noexcept;

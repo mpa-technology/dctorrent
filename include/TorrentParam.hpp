@@ -53,7 +53,7 @@ public:
 
 
 
-    virtual  ~TorrentParamException();
+    virtual  ~TorrentParamException(){}
 
 
     virtual const char* what() const noexcept;
@@ -81,7 +81,7 @@ public:
     void setMagnet(const std::string& url);
 
 
-    void setSavePath( const std::string_view &savePath);
+    void setSavePath(const std::string &savePath);
 
     lt::add_torrent_params params();
 

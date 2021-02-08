@@ -34,7 +34,7 @@
 
 SessionException::SessionException(const std::string &msg): msg_(msg){}
 
-SessionException::~SessionException(){}
+
 
 const char *SessionException::what() const noexcept{
     return msg_.c_str();
@@ -91,13 +91,13 @@ void Session::addTorrentMagnet(TorrentParam &&tf){
 
 
 
-    std::chrono::time_point<std::chrono::steady_clock> start = std::chrono::steady_clock::now();
+    const auto start = std::chrono::steady_clock::now();
 
 
 
     while (!th.status().has_metadata) {
 
-       auto elapsed = std::chrono::duration_cast<std::chrono::seconds>
+       const auto elapsed = std::chrono::duration_cast<std::chrono::seconds>
             (std::chrono::steady_clock::now() - start).count();
 
        if(elapsed >= 25)

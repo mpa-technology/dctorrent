@@ -20,7 +20,7 @@ public:
 
 
 private:
-    std::string msg_;
+    const std::string msg_;
 
 
 };

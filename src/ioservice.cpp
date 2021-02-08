@@ -151,11 +151,6 @@ IoService::IoService(){
     std::cout.imbue(loc);
     std::cerr.imbue(loc);
 
-
-
-
-
-
 }
 
 void IoService::work(){
