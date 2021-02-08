@@ -3,27 +3,8 @@
 #include <boost/json.hpp>
 #include <session.hpp>
 
-class TorrentInfoException : public std::exception{
+#include <torrentinfoexception.hpp>
 
-
-public:
-
-    TorrentInfoException(const std::string &msg):msg_(msg){}
-
-
-   ~TorrentInfoException(){}
-
-    const char *what() const noexcept
-    {
-        return msg_.c_str();
-    }
-
-
-private:
-    const std::string msg_;
-
-
-};
 
 class TorrentInfo{
 public:
