@@ -68,6 +68,19 @@ void TorrentManager::pauseTorrentNode(const int64_t torrentId, const int64_t nod
     torrent_->session_->getTorrent(torrentId).pause(nodeId);
 }
 
+void TorrentManager::removeTorrent(const int64_t id){
+    verify_();
+
+    try {
+        torrent_->session_->removeTorrent(id);
+    } catch (const std::exception &exp) {
+       throw std::runtime_error(exp.what());
+    }
+
+
+
+}
+
 
 
 

@@ -31,6 +31,7 @@
 
 #include <iostream>
 #include <memory>
+#include <vector>
 
 #include <boost/filesystem.hpp>
 
@@ -86,14 +87,7 @@ public:
 
 private:
 
-    void slotConnect_(){
-
-        ioService_->onExit.connect(std::bind(&App::onExit_,this));
-        ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
-        ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
-
-
-    }
+    void slotConnect_();
 
 
     std::vector<std::string> arguments_;

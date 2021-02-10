@@ -51,7 +51,7 @@ public:
 
     static void pauseTorrentNode(const int64_t torrentId, const int64_t nodeId);
 
-
+    static void removeTorrent(const int64_t id);
 
 private:
     static TorrentManager* torrent_;

@@ -29,13 +29,13 @@
 
 #include <App.hpp>
 
+
+
+
 App::App(int argc, char **argv){
 
 
-    for(int i = 0 ; i != argc; ++i)
-        arguments_.push_back(argv[i]);
-
-
+    arguments_ = std::vector<std::string>(argv + 1, argv + argc);
 
 
     ioService_ = std::make_unique<IoService>();
@@ -112,7 +112,7 @@ int App::run(){
 
         }catch(const std::exception &exp){
 
-            std::string msg = std::string("unhandled exceptions: ") + exp.what();
+            const auto msg = std::string("unhandled exceptions: ") + exp.what();
             IoService::simpleResponse(msg,RESPONSE_CODE::CODE_CRITICAL_ERROR);
         }
 
@@ -124,4 +124,13 @@ int App::run(){
 
 
     return EXIT_SUCCESS;
+}
+
+void App::slotConnect_(){
+
+    ioService_->onExit.connect(std::bind(&App::onExit_,this));
+    ioService_->onAddMagnetTorrent.connect(std::bind(&App::onAddMagnetTorrent_,this,std::placeholders::_1,std::placeholders::_2));
+    ioService_->onRemoveTorrent.connect(std::bind(&App::onRemoveTorrent_,this,std::placeholders::_1));
+
+
 }
