@@ -145,7 +145,7 @@ int64_t TorrentFile::getId() const
     return id_;
 }
 
-void TorrentFile::setId(const int64_t &id)
+void TorrentFile::setId(const int64_t id)
 {
     id_ = id;
 }

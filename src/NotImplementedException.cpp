@@ -32,7 +32,7 @@
 
 
 NotImplementedException_::NotImplementedException_(const std::string &fnName, const std::string &className, const std::string &msg){
-    msg_ =  "function(" +fnName+") in class(" + className +")";
+    msg_ =  "function(" + fnName+ ") in class(" + className + ")";
 
     if(!msg.empty())
         msg_.append(" : ").append(msg);

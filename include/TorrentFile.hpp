@@ -83,5 +83,5 @@ public:
 
 
     int64_t getId() const;
-    void setId(const int64_t &id);
+    void setId(const int64_t id);
 };
